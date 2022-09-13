@@ -17,4 +17,8 @@ app.get('/api/stocks', (req, res) => {
   })
 })
 
+app.get('/', (req, res) => {  
+  res.send("stocks api v1, have fun!");
+})
+
 module.exports = app;
