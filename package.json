@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "local:api": "node ./scenarios/stocksapi/api/server.js",
-    "test:stocksapi": "mocha ./scenarios/stocksapi/test/**/*.js",
-    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js"
+    "test:stocksapi": "mocha ./scenarios/stocksapi/test/**/*.spec.js",
+    "test:uiplayground": "wdio wdio.conf.js --suite e2euitests",
+    "test": "wdio wdio.conf.js"
+
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,7 @@
     "wdio-chromedriver-service": "^7.3.2"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "webdriver-manager": "^12.1.8"
   }
 }

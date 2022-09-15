@@ -51,8 +51,15 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './scenarios/uiplayground/test/specs/*.spec.js',
+        './scenarios/stocksapi/test/**/*.spec.js'
     ],
+
+    suites: {
+        e2euitests: [
+            './scenarios/uiplayground/test/specs/*.spec.js',
+        ]
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
