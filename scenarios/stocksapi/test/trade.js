@@ -32,7 +32,19 @@ describe('STOCKS API - REQUEST Validation', function () {
     });
   });
 
-  // Negative Scenario - BUG
+  // Negative Scenario
+  describe('Using Post method', function () {
+    let date = '5-January-2000'
+    it('should have status 404', async function () {
+      return chai.request(app)
+        .post('/api/stocks?date='+date)
+        .then(function (res) {
+          expect(res).to.have.status(404);
+        })
+    });
+  });
+
+  // Bug Scenario
   describe('Leading zeros in date parameter', function () {
     let date = '03-February-2022'
     it('should have status 400', async function () {
@@ -44,7 +56,7 @@ describe('STOCKS API - REQUEST Validation', function () {
     });
   });
 
-  // Negative Scenario - BUG
+  // Bug Scenario
   describe('Unsupported date format in date parameter', function () {
     let date = '12/12/2005'
     it('should have status 400', async function () {
