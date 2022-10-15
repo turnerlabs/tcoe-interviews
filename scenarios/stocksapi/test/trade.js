@@ -75,8 +75,8 @@ describe('stocks api', function () {
         })
     });
     
-    // Test Case for Boundary Condition and it has high possibility for a bug due to random values as high>=(open|close)>=low 
-    it('Verify the response for the boundary condition', async function () {
+    // Test Case for verification on output value and it has high possibility for a bug due to random values as high>=(open|close)>=low 
+    it('Verify the response for output value', async function () {
       return chai.request(app)
         .get(endpoint).query('date='+date)
         .then(function (res) {
@@ -155,7 +155,7 @@ describe('stocks api', function () {
         })
     });
 
-    //Test case for Future Date
+    //Test case for Boundary condition with Future Date
     it('Verify the status code and response for the future date', async function () {
       return chai.request(app)
         .get(endpoint).query('date='+futureDate)
