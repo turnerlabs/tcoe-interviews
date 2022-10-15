@@ -12,10 +12,11 @@ chai.use(chaiHttp);
 describe('stocks api', function () {
   describe('trades', function () {
 
-    date = '6-October-2022';
-    endpoint= '/api/stocks';
-    invalidDate = '05-January-2000';
-    invalidEndpoint= '/api/stock';
+    const date = '6-October-2022';
+    const endpoint= '/api/stocks';
+    const invalidDate = '05-January-2000';
+    const invalidEndpoint= '/api/stock';
+    const futureDate = '05-January-2050';
 
     //Test Case for Request Behaviour 1 :
     it('Status Code should not be 400', async function () {
@@ -154,6 +155,14 @@ describe('stocks api', function () {
         })
     });
 
-    
+    //Test case for Future Date
+    it('Verify the status code and response for the future date', async function () {
+      return chai.request(app)
+        .get(endpoint).query('date='+futureDate)
+        .then(function (res) {
+        expect(res).to.have.status(404);
+        expect(res.body).to.be.empty;
+    });
   });
+});
 });
