@@ -9,33 +9,30 @@ class LoginPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get inputUsername () {
-        return $('#username');
+
+    get acceptCookies () {
+        return $('#onetrust-accept-btn-handler');
+       
     }
 
-    get inputPassword () {
-        return $('#password');
+    get businessLink () {
+        return $('//a[@href="/business"]');
     }
-
-    get btnSubmit () {
-        return $('button[type="submit"]');
-    }
-
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
-    async login (username, password) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
-    }
-
+ 
     /**
      * overwrite specific options to adapt it to page object
      */
     open () {
-        return super.open('login');
+        return super.open();
+    }
+
+    async validateURL () {
+        await this.acceptCookies.click();
+        await this.businessLink.click();
     }
 }
 
