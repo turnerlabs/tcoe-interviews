@@ -4,6 +4,7 @@ class ClassAttributePage extends Page {
 
     get bluebuttonElement () {
         return $("//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]")
+        //return $("//button[contains(concat(' ', @class, ' '), ' btn-primary ')]")
     }
 
     async checkClassAttribute () {
