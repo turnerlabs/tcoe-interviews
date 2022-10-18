@@ -51,7 +51,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './scenarios/uiplayground/test/specs/playground.e2e.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -162,7 +162,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ['spec', ['allure', {outputDir: 'allure-results'}]],
 
 
     
