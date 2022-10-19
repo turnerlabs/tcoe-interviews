@@ -6,19 +6,22 @@
   "scripts": {
     "local:api": "node ./scenarios/stocksapi/api/server.js",
     "test:stocksapi": "mocha ./scenarios/stocksapi/test/**/*.js",
-    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js"
+    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js",
+    "testUI": "wdio ./configs/wdio.conf.js --suite amadeoSmoke",
+    "test": "wdio wdio.conf.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wdio/cli": "^7.24.0",
+    "@wdio/cli": "^7.25.2",
     "@wdio/local-runner": "^7.24.0",
     "@wdio/mocha-framework": "^7.24.0",
     "@wdio/spec-reporter": "^7.24.0",
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
     "chromedriver": "^105.0.0",
+    "deepmerge": "^4.2.2",
     "mocha": "^10.0.0",
     "wdio-chromedriver-service": "^7.3.2"
   },
