@@ -1,13 +1,63 @@
-const LoginPage = require('../pageobjects/login.page');
-const SecurePage = require('../pageobjects/secure.page');
+const { expect } = require('chai');
+const UITAPHomePage=require('../pageobjects/UITAP_Home');
+const expectedURLData= require('../resources/businessLink')
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open();
-
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
+describe('UITAP application', () => {
+    it('verify all business link', async () => {
+        await UITAPHomePage.open();
+        await UITAPHomePage.clickOnDynamicIDLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.dynamicIDPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnClassAttributeLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.classAttributePageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnHiddenLayerLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.hiddenLayerPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnLoadDelayLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.loadDelayPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnAjaxLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.ajaxDataPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnClientDelayLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.clientDelayPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnClickLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.clickPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnTextInputLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.textInputPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnScrollbarsLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.scrollbarsPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnDynamicTableLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.dynamicTablePageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnVerifyTextLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.verifyTextPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnCProgressbarLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.progressBarPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnVisibilityLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.visibilityPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnSampleAppLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.sampleAppPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnMouseoverLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.mouseoverPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnNBSPLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.nbspPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnOverlappedLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.overlappedPageURL);
+        await browser.back();
+        await UITAPHomePage.clickOnShadowdomLink();
+        expect(await UITAPHomePage.getPageUrl()).to.equal(expectedURLData.shadowdomPageURL);
+   
     });
 });
