@@ -1,0 +1,146 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1666151633424' stop='1666151639793'>
+    <name>sceanrio: 1:Scenario name</name>
+    <title>sceanrio: 1:Scenario name</title>
+    <test-cases>
+        <test-case start='1666151633425' status='passed' stop='1666151633429'>
+            <name></name>
+            <title></title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1666151633429' status='passed' stop='1666151639659'>
+            <name>Given User opens "uitestingplayground" link</name>
+            <title>Given User opens "uitestingplayground" link</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps>
+                <step start='1666151633432' status='passed' stop='1666151634528'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='c99f1ce5-2ea2-4177-b733-03a646556836-attachment.json' type='application/json' size='46'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1666151639540' status='passed' stop='1666151639658'>
+                    <name>GET /session/:sessionId/screenshot</name>
+                    <title>GET /session/:sessionId/screenshot</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='fb7a7f9e-f72a-43ff-a075-0c7ebbad6fe7-attachment.png' type='image/png' size='129815'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1666151639659' status='broken' stop='1666151639788'>
+            <name>Given User selects "class attribute" header</name>
+            <title>Given User selects "class attribute" header</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps>
+                <step start='1666151639670' status='passed' stop='1666151639786'>
+                    <name>GET /session/:sessionId/screenshot</name>
+                    <title>GET /session/:sessionId/screenshot</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='a6e55dc4-0af2-4d76-85e4-b3e65ec6d856-attachment.png' type='image/png' size='129815'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>TypeError: Cannot read property 'scrollIntoView' of undefined</message>
+                <stack-trace>TypeError: Cannot read property 'scrollIntoView' of undefined
+                    at World.&lt;anonymous> (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\scenarios\uiplayground\test\stepdefintions\Common.ts:17:42)
+                    at World.executeAsync (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\@wdio\cucumber-framework\node_modules\@wdio\utils\build\shim.js:333:27)
+                    at World.testFrameworkFnWrapper (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\@wdio\cucumber-framework\node_modules\@wdio\utils\build\test-framework\testFnWrapper.js:51:32)
+                    at async wrapPromiseWithTimeout (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\@cucumber\cucumber\src\time.ts:72:10)
+                    at async Object.run (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\@cucumber\cucumber\src\user_code_runner.ts:86:16)
+                    at async Object.run (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\@cucumber\cucumber\src\runtime\step_runner.ts:50:20)
+                    at async TestCaseRunner.invokeStep (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\@cucumber\cucumber\src\runtime\test_case_runner.ts:130:12)
+                    at async TestCaseRunner.runStep (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\@cucumber\cucumber\src\runtime\test_case_runner.ts:312:20)
+                    at async C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\@cucumber\cucumber\src\runtime\test_case_runner.ts:214:36</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1666151639788' status='broken' stop='1666151639789'>
+            <name>When User is displayed with "Class Attribute" browser title</name>
+            <title>When User is displayed with "Class Attribute" browser title</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Step "User is displayed with "Class Attribute" browser title" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.</message>
+                <stack-trace>Step "User is displayed with "Class Attribute" browser title" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.
+                	at Feature(C:\Users\Sidhant\Desktop\interview\tcoe-interviews\scenarios\uiplayground\test\features\ClassAttribute.feature):1:1
+                	at Scenario(1:Scenario name):7:1
+                	at Step(User is displayed with "Class Attribute" browser title):9:1
+                </stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1666151639789' status='broken' stop='1666151639789'>
+            <name>Then User is navigated to "class attribute" url</name>
+            <title>Then User is navigated to "class attribute" url</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Step "User is navigated to "class attribute" url" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.</message>
+                <stack-trace>Step "User is navigated to "class attribute" url" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.
+                	at Feature(C:\Users\Sidhant\Desktop\interview\tcoe-interviews\scenarios\uiplayground\test\features\ClassAttribute.feature):1:1
+                	at Scenario(1:Scenario name):7:1
+                	at Step(User is navigated to "class attribute" url):10:1
+                </stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1666151639789' status='passed' stop='1666151639790'>
+            <name></name>
+            <title></title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

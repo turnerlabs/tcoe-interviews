@@ -1,0 +1,112 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1666159099067' stop='1666159123270'>
+    <name>defects: 1: Browser title and URL validation</name>
+    <title>defects: 1: Browser title and URL validation</title>
+    <test-cases>
+        <test-case start='1666159099069' status='passed' stop='1666159099074'>
+            <name></name>
+            <title></title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1666159099075' status='broken' stop='1666159123267'>
+            <name>Given User selects "class attribute" header</name>
+            <title>Given User selects "class attribute" header</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps>
+                <step start='1666159099080' status='passed' stop='1666159111118'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='97e46651-be73-4242-a75f-fcbb74c95e43-attachment.json' type='application/json' size='78'/>
+                        <attachment title='Response' source='f0a10497-e59b-4afb-bf99-941b452e822c-attachment.json' type='application/json' size='1022'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1666159111125' status='passed' stop='1666159123133'>
+                    <name>POST /session/:sessionId/elements</name>
+                    <title>POST /session/:sessionId/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='622be753-4695-4dc3-b446-9adf2bf9f8b1-attachment.json' type='application/json' size='78'/>
+                        <attachment title='Response' source='e100bb52-3d9c-417e-8212-fca157b06dc8-attachment.json' type='application/json' size='2'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1666159123138' status='passed' stop='1666159123264'>
+                    <name>GET /session/:sessionId/screenshot</name>
+                    <title>GET /session/:sessionId/screenshot</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='4b816f3e-8190-4c5a-9a79-d588ab9c1fbc-attachment.png' type='image/png' size='6038'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Error: Can't call scrollIntoView on element with selector "//a[contains(text(),"Class Attribute")]" because element wasn't found</message>
+                <stack-trace>Error: Can't call scrollIntoView on element with selector "//a[contains(text(),"Class Attribute")]" because element wasn't found
+                    at implicitWait (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\webdriverio\build\utils\implicitWait.js:34:19)
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\webdriverio\build\middlewares.js:20:29)
+                    at async Element.wrapCommandFn (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async World.&lt;anonymous> (C:\Users\Sidhant\Desktop\interview\tcoe-interviews\scenarios\uiplayground\test\stepdefintions\homepage.ts:16:9)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1666159123267' status='pending' stop='1666159123268'>
+            <name>When User is displayed with "Class Attribute" browser title</name>
+            <title>When User is displayed with "Class Attribute" browser title</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1666159123268' status='pending' stop='1666159123268'>
+            <name>Then User is navigated to class attribute url</name>
+            <title>Then User is navigated to class attribute url</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1666159123268' status='passed' stop='1666159123269'>
+            <name></name>
+            <title></title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-106.0.5249.119'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
