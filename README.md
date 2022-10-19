@@ -6,4 +6,4 @@ We have created a variety of Scenarios that we think are good ways to evaluate c
 
 * [API Challenge](./scenarios/stocksapi/README.md)
 * [UI Challenge](./scenarios/uiplayground/README.md)
-
+* [Android Challenge](./scenarios/androidplayground/README.md)
