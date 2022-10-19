@@ -6,7 +6,8 @@
   "scripts": {
     "local:api": "node ./scenarios/stocksapi/api/server.js",
     "test:stocksapi": "mocha ./scenarios/stocksapi/test/**/*.js",
-    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js"
+    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js",
+    "mobile:android:local": "wdio mobile/config/wdio.android.local.app.conf.js"
   },
   "keywords": [],
   "author": "",
