@@ -33,7 +33,7 @@ class HomePage extends Page {
      * Open Base Page
      */
     open () {
-        return super.open(UI_PLAYGROUND_URL);
+        return super.open('http://uitestingplayground.com/');
     }
 }
 
