@@ -1,13 +1,20 @@
-const LoginPage = require('../pageobjects/login.page');
-const SecurePage = require('../pageobjects/secure.page');
+const HomePage = require('../pageobjects/home.page');
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open();
+describe('UI PlayGround Application', () => {
 
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
+    it('should click resources link on header and validate url', async () => {
+        await HomePage.open();   
+        await HomePage.clickHamburgerLink();
+        await HomePage.clickResourcesLink();
+        await expect(browser).toHaveUrl('http://uitestingplayground.com/resources');
     });
+
+
+    it('should click business link on header and validate url', async () => {
+        await HomePage.open();   
+        await HomePage.clickHamburgerLink();
+        await HomePage.clickBusinessLink();
+        await expect(browser).toHaveUrl('http://uitestingplayground.com/business');
+    });
+
 });
