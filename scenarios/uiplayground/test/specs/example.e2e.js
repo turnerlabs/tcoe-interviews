@@ -1,13 +1,16 @@
-const LoginPage = require('../pageobjects/login.page');
-const SecurePage = require('../pageobjects/secure.page');
+const MainPage = require('../pageobjects/main.page');
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open();
-
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
+describe('Playground application', () => {
+    it('should navigate to resources', async () => {
+       await MainPage.open();
+       await MainPage.clickResourcesLink();
+       await expect(MainPage.resourcesTitle).toBeExisting();  
     });
+
+    it('should navigate to business', async () => {
+        await MainPage.open();
+        const isExisting = await MainPage.linkBusiness.isExisting()
+        await expect(isExisting).toBeFalsy();  
+     });
+
 });
