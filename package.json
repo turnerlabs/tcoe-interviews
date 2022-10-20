@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "local:api": "node ./scenarios/stocksapi/api/server.js",
-    "test:stocksapi": "mocha ./scenarios/stocksapi/test/**/*.js",
-    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js"
+    "test": "wdio wdio.conf.js"
   },
   "keywords": [],
   "author": "",
