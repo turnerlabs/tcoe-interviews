@@ -23,6 +23,7 @@
     "wdio-chromedriver-service": "^7.3.2"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "moment": "^2.29.4"
   }
 }
