@@ -23,3 +23,29 @@ Your testing of the function should demonstrate your ability to analyze a syste
 3. Feel free to add/modify/remove existing tests if needed.
 4. Configure the script where anyone should be able to run all tests by executing npm test
 Create a pull request to merge back to turnerlabs/tcoe-interviews (github.com)
+
+# Appium project
+
+**NOTE:** This project is for Webdriver V7 where the tests are written with `async`/`await` and TypeScript. If you need a boilerplate for sync mode then check the following:
+
+The project runs Appium tests together with WebdriverIO for:
+
+- iOS/Android Native Apps
+- iOS/Android Hybrid Apps
+- Android Chrome and iOS Safari browser ([check here](./README.md#automating-chrome-or-safari))
+
+## Based on
+
+This project is currently based on:
+
+- **WebdriverIO:** `7.##.#`
+- **Appium:** `1.22.#`
+
+## Installation
+
+1. Fork project
+1. Running `npm install`
+1. Installing Appium on a local machine [here](./docs/APPIUM.md)
+1. Setting up Android and iOS on a local machine [here](./docs/ANDROID_IOS_SETUP.md)
+1. Making demo app available. Create a `./apps` directory. Download the app files (.app / .apk) with version >= `0.4.0` [here](https://github.com/webdriverio/native-demo-app/releases). Move the files into the directory `apps`.
+1. Running tests `npm run android.app` or `npm run android.app`
