@@ -1,0 +1,62 @@
+{
+  "uid" : "4930d890554db4b3",
+  "name" : "Enter text input and check on button",
+  "fullName" : "Text Input Test.Enter text input and check on button",
+  "historyId" : "a96bb16d5e090508836be3c2b56f5bef",
+  "time" : {
+    "start" : 1666543975846,
+    "stop" : 1666543979036,
+    "duration" : 3190
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-5"
+  }, {
+    "name" : "suite",
+    "value" : "Text Input Test"
+  }, {
+    "name" : "testClass",
+    "value" : "Text Input Test"
+  }, {
+    "name" : "testMethod",
+    "value" : "Enter text input and check on button"
+  }, {
+    "name" : "package",
+    "value" : "Text Input Test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-106.0.5249.119"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4930d890554db4b3.json",
+  "parameterValues" : [ "chrome-106.0.5249.119" ]
+}

@@ -1,0 +1,101 @@
+[ {
+  "uid" : "4930d890554db4b3",
+  "name" : "Enter text input and check on button",
+  "time" : {
+    "start" : 1666543975846,
+    "stop" : 1666543979036,
+    "duration" : 3190
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "19af47251d47baba",
+  "name" : "Reach home page with correct URL",
+  "time" : {
+    "start" : 1666543967653,
+    "stop" : 1666543968855,
+    "duration" : 1202
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2dbe2d7bef553235",
+  "name" : "Sample app testing page for valid logins",
+  "time" : {
+    "start" : 1666543978689,
+    "stop" : 1666543982613,
+    "duration" : 3924
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d796032b9b2990ee",
+  "name" : "Sample app testing page for invalid logins",
+  "time" : {
+    "start" : 1666543982613,
+    "stop" : 1666543984540,
+    "duration" : 1927
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bb62627c812562f4",
+  "name" : "Click on button on scroll page",
+  "time" : {
+    "start" : 1666543977594,
+    "stop" : 1666543979682,
+    "duration" : 2088
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "223c4c5f8f564d06",
+  "name" : "Click button on client delay page",
+  "time" : {
+    "start" : 1666543967663,
+    "stop" : 1666543984784,
+    "duration" : 17121
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "481708ce33c5c8e8",
+  "name" : "Reach dynamic ID page with correct URL and click on button",
+  "time" : {
+    "start" : 1666543967663,
+    "stop" : 1666543969753,
+    "duration" : 2090
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9a0b5cc8d671f2f6",
+  "name" : "Stop on 75% progress bar page",
+  "time" : {
+    "start" : 1666543977636,
+    "stop" : 1666543994650,
+    "duration" : 17014
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f531f3e867ba390a",
+  "name" : "Click blue button on class attribute page",
+  "time" : {
+    "start" : 1666543967594,
+    "stop" : 1666543969881,
+    "duration" : 2287
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "80c3aec141d7c6cb",
+  "name" : "Reach click DOM page with correct URL and click on button",
+  "time" : {
+    "start" : 1666543968010,
+    "stop" : 1666543970412,
+    "duration" : 2402
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

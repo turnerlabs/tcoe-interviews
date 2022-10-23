@@ -1,0 +1,62 @@
+{
+  "uid" : "19af47251d47baba",
+  "name" : "Reach home page with correct URL",
+  "fullName" : "UI Test Playground.Reach home page with correct URL",
+  "historyId" : "74d4d89583b89fcdb18b091bbdee8924",
+  "time" : {
+    "start" : 1666543967653,
+    "stop" : 1666543968855,
+    "duration" : 1202
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "UI Test Playground"
+  }, {
+    "name" : "testClass",
+    "value" : "UI Test Playground"
+  }, {
+    "name" : "testMethod",
+    "value" : "Reach home page with correct URL"
+  }, {
+    "name" : "package",
+    "value" : "UI Test Playground"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-106.0.5249.119"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "19af47251d47baba.json",
+  "parameterValues" : [ "chrome-106.0.5249.119" ]
+}

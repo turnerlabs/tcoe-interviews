@@ -1,0 +1,62 @@
+{
+  "uid" : "f531f3e867ba390a",
+  "name" : "Click blue button on class attribute page",
+  "fullName" : "Class Attribute Test.Click blue button on class attribute page",
+  "historyId" : "ca0dd7f86f72772e2b2fbf7c9383bffb",
+  "time" : {
+    "start" : 1666543967594,
+    "stop" : 1666543969881,
+    "duration" : 2287
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-2"
+  }, {
+    "name" : "suite",
+    "value" : "Class Attribute Test"
+  }, {
+    "name" : "testClass",
+    "value" : "Class Attribute Test"
+  }, {
+    "name" : "testMethod",
+    "value" : "Click blue button on class attribute page"
+  }, {
+    "name" : "package",
+    "value" : "Class Attribute Test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-106.0.5249.119"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f531f3e867ba390a.json",
+  "parameterValues" : [ "chrome-106.0.5249.119" ]
+}

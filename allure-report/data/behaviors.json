@@ -1,0 +1,175 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Click blue button on class attribute page",
+    "uid" : "f531f3e867ba390a",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543967594,
+      "stop" : 1666543969881,
+      "duration" : 2287
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  }, {
+    "name" : "Reach home page with correct URL",
+    "uid" : "19af47251d47baba",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543967653,
+      "stop" : 1666543968855,
+      "duration" : 1202
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  }, {
+    "name" : "Click button on client delay page",
+    "uid" : "223c4c5f8f564d06",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543967663,
+      "stop" : 1666543984784,
+      "duration" : 17121
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  }, {
+    "name" : "Reach dynamic ID page with correct URL and click on button",
+    "uid" : "481708ce33c5c8e8",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543967663,
+      "stop" : 1666543969753,
+      "duration" : 2090
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  }, {
+    "name" : "Reach click DOM page with correct URL and click on button",
+    "uid" : "80c3aec141d7c6cb",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543968010,
+      "stop" : 1666543970412,
+      "duration" : 2402
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  }, {
+    "name" : "Enter text input and check on button",
+    "uid" : "4930d890554db4b3",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543975846,
+      "stop" : 1666543979036,
+      "duration" : 3190
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  }, {
+    "name" : "Click on button on scroll page",
+    "uid" : "bb62627c812562f4",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543977594,
+      "stop" : 1666543979682,
+      "duration" : 2088
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  }, {
+    "name" : "Stop on 75% progress bar page",
+    "uid" : "9a0b5cc8d671f2f6",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543977636,
+      "stop" : 1666543994650,
+      "duration" : 17014
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  }, {
+    "name" : "Sample app testing page for valid logins",
+    "uid" : "2dbe2d7bef553235",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543978689,
+      "stop" : 1666543982613,
+      "duration" : 3924
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  }, {
+    "name" : "Sample app testing page for invalid logins",
+    "uid" : "d796032b9b2990ee",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1666543982613,
+      "stop" : 1666543984540,
+      "duration" : 1927
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ "chrome-106.0.5249.119" ]
+  } ]
+}

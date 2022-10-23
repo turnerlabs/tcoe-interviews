@@ -5,36 +5,6 @@ exports.config = {
     // ====================
     //
     //
-    // =====================
-    // Server Configurations
-    // =====================
-    // Host address of the running Selenium server. This information is usually obsolete as
-    // WebdriverIO automatically connects to localhost. Also, if you are using one of the
-    // supported cloud services like Sauce Labs, Browserstack, Testing Bot or LambdaTest you don't
-    // need to define host and port information because WebdriverIO can figure that out
-    // according to your user and key information. However, if you are using a private Selenium
-    // backend you should define the host address, port, and path here.
-    //
-    hostname: 'https://www.browserstack.com/',
-    port: 80,
-    path: '',
-    //
-    // =================
-    // Service Providers
-    // =================
-    // WebdriverIO supports Sauce Labs, Browserstack, Testing Bot and LambdaTest (other cloud providers
-    // should work too though). These services define specific user and key (or access key)
-    // values you need to put in here in order to connect to these services.
-    //
-    user: process.env.BROWSERSTACK_USER,
-    key: process.env.BROWSERSTACK_KEY,
-    //
-    // If you run your tests on Sauce Labs you can specify the region you want to run your tests
-    // in via the `region` property. Available short handles for regions are `us` (default), `eu` and `apac`.
-    // These regions are used for the Sauce Labs VM cloud and the Sauce Labs Real Device Cloud.
-    // If you don't provide the region it will default for the `us`
-    
-    //
     // ==================
     // Specify Test Files
     // ==================
@@ -51,7 +21,15 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './scenarios/uiplayground/test/specs/uiplayground.e2e.js',
+        './scenarios/uiplayground/test/specs/dynamicId.spec.js',
+        './scenarios/uiplayground/test/specs/classAttribute.spec.js',
+        './scenarios/uiplayground/test/specs/clientsideDelay.spec.js',
+        './scenarios/uiplayground/test/specs/click.spec.js',
+        './scenarios/uiplayground/test/specs/textInput.spec.js',
+        './scenarios/uiplayground/test/specs/scrollBars.spec.js',
+        './scenarios/uiplayground/test/specs/progressBar.spec.js',
+        './scenarios/uiplayground/test/specs/sampleApp.spec.js',
     ],
     // Patterns to exclude.
     exclude: [
@@ -124,7 +102,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://www.cnn.com',
+    baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -162,7 +140,11 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ['spec',['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }]],
 
 
     
