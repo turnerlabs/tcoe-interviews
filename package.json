@@ -6,19 +6,20 @@
   "scripts": {
     "local:api": "node ./scenarios/stocksapi/api/server.js",
     "test:stocksapi": "mocha ./scenarios/stocksapi/test/**/*.js",
-    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js"
+    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js",
+    "test": "npx wdio run wdio.conf.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wdio/cli": "^7.24.0",
-    "@wdio/local-runner": "^7.24.0",
-    "@wdio/mocha-framework": "^7.24.0",
-    "@wdio/spec-reporter": "^7.24.0",
+    "@wdio/cli": "^7.25.2",
+    "@wdio/local-runner": "^7.25.2",
+    "@wdio/mocha-framework": "^7.25.2",
+    "@wdio/spec-reporter": "^7.25.1",
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
-    "chromedriver": "^105.0.0",
+    "chromedriver": "^105.0.1",
     "mocha": "^10.0.0",
     "wdio-chromedriver-service": "^7.3.2"
   },
