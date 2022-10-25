@@ -4,7 +4,7 @@ In this challenge, your task is to test a simple REST API that contains informat
 
 ## Instructions
 
-Create a fork in your account, perform the following tasks, and then submit a pull request back to this repository.
+Create a fork in your account, perform the following tasks, and then submit a pull request back to this repository turnerlabs/tcoe-interviews (github.com). Once you start working on the coding challenge, you have to finish the challenge and raise the pull request within 4 hours. Make sure that you have to submit a PR within 48 hours from the time of invitation to complete the coding exercise. Feel free to reach out anytime if you have any questions.
 
 ## What you will be building
 
