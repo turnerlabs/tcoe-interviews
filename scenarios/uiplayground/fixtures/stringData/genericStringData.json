@@ -1,0 +1,30 @@
+[
+  {
+    "testCriteria": "more than 1 chars",
+    "values": [
+      {
+        "value": "test"
+      },
+      {
+        "value": "morethan1"
+      },
+      {
+        "value": "morethan1char"
+      }
+    ]
+  },
+  {
+    "testCriteria": "less than 20 chars",
+    "values": [
+      {
+        "value": "textwithlessthan20"
+      },
+      {
+        "value": "lessthan20text"
+      },
+      {
+        "value": "lessthan20"
+      }
+    ]
+  }
+]
