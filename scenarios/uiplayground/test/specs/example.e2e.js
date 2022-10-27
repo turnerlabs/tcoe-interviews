@@ -2,6 +2,8 @@ const LoginPage = require('../pageobjects/login.page');
 const SecurePage = require('../pageobjects/secure.page');
 const ProgressBarPage = require('../pageobjects/progressbar.page');
 const DynamicIdPage = require('../pageobjects/dynamicId.page');
+const ClientSideDelayPage = require('../pageobjects/clientSideDelay.page');
+
 
 
 describe.skip('My Login application', () => {
@@ -26,12 +28,22 @@ describe.skip('Progress Bar Test', () => {
     });
 });
 
-describe('Dynamic Id Test', () => {
+describe.skip('Dynamic Id Test', () => {
     it('should print the text of the dynamic Id Button', async () => {
         await DynamicIdPage.open();
         const textButton = DynamicIdPage.dynamicIdButton.getText();
         console.log(textButton);
         await expect(DynamicIdPage.dynamicIdButton)
             .toHaveTextContaining('Button with Dynamic ID')
+    });
+});
+
+describe('Client Side Delay Test', () => {
+    it('should be able to wait for an element to show up after a JS processing', async () => {
+        await ClientSideDelayPage.open();
+        await ClientSideDelayPage.clickOnClientSideLogicTriggerButton();
+        await ClientSideDelayPage.waitToJavaScriptProcessingFinished();
+        await expect(ClientSideDelayPage.successMessage)
+            .toHaveTextContaining('Data calculated on the client side.')
     });
 });
