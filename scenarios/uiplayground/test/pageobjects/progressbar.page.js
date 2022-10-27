@@ -32,10 +32,11 @@ class ProgressBarPage extends Page {
      *
      */
     async waitProgressBarToPercentage(percentage) {
-        let currentPercentage = await this.progressBar.getAttribute(percentageAttribute)
-        while (currentPercentage !== percentage) {
-            currentPercentage = await this.progressBar.getAttribute(percentageAttribute)
-        }
+        await this.progressBar.waitUntil(async function () {
+            return (await this.getText()) === percentage + '%'
+        }, {
+            timeout: 60000
+        });
         await this.stopButton.click()
     }
 

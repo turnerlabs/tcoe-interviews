@@ -10,6 +10,7 @@ class DynamicIdPage extends Page {
     get dynamicIdButton() {
         return $('.btn.btn-primary')
     }
+
     /**
      * overwrite specific options to adapt it to page object
      */

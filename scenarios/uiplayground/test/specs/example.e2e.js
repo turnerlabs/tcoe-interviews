@@ -2,6 +2,7 @@ const ProgressBarPage = require('../pageobjects/progressbar.page');
 const DynamicIdPage = require('../pageobjects/dynamicId.page');
 const ClientSideDelayPage = require('../pageobjects/clientSideDelay.page');
 const ClickPage = require('../pageobjects/click.page');
+const SampleApp = require('../pageobjects/sampleApp.page');
 
 describe('Progress Bar Test', () => {
     it('should stop the progress bar in 75% percentage', async () => {
@@ -34,11 +35,27 @@ describe('Client Side Delay Test', () => {
     });
 });
 
-describe('Click Test', () => {
+describe.skip('Click Test', () => {
     it('should be able to click and not generate a event', async () => {
         await ClickPage.open();
         await ClickPage.clickOnClickEventButton();
         await expect(ClickPage.clickEventButton).not
             .toHaveAttributeContaining('class', 'btn btn-primary');
+    });
+});
+
+describe('Sample App Test', () => {
+    const user = 'testAutomationUser';
+    it('should not be able to login with a wrong password', async () => {
+        await SampleApp.open();
+        await SampleApp.fillFormAndLogIn(user, 'wrong-password');
+        await expect(SampleApp.logInStatusLabel)
+            .toHaveTextContaining('Invalid username/password')
+    });
+    it('should be able to login with the correct password', async () => {
+        await SampleApp.open();
+        await SampleApp.fillFormAndLogIn(user, 'pwd');
+        await expect(SampleApp.logInStatusLabel)
+            .toHaveTextContaining('Welcome, ' + user + '!')
     });
 });
