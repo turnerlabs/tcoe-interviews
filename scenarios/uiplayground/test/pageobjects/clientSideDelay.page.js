@@ -8,7 +8,7 @@ class ClientSideDelayPage extends Page {
      * Page Locators
      */
     get clientSideLogicTriggerButton() {
-        return $('.btn.btn-primary')
+        return $('#ajaxButton')
     }
 
     get spinner() {
@@ -36,7 +36,6 @@ class ClientSideDelayPage extends Page {
             timeoutMsg: 'JS Processing doesnt finished in the expected time'
         });
     }
-
 
     /**
      * overwrite specific options to adapt it to page object

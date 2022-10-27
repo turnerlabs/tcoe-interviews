@@ -1,23 +1,9 @@
-const LoginPage = require('../pageobjects/login.page');
-const SecurePage = require('../pageobjects/secure.page');
 const ProgressBarPage = require('../pageobjects/progressbar.page');
 const DynamicIdPage = require('../pageobjects/dynamicId.page');
 const ClientSideDelayPage = require('../pageobjects/clientSideDelay.page');
+const ClickPage = require('../pageobjects/click.page');
 
-
-
-describe.skip('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open();
-
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
-    });
-});
-
-describe.skip('Progress Bar Test', () => {
+describe('Progress Bar Test', () => {
     it('should stop the progress bar in 75% percentage', async () => {
         const percentage = '75'
         await ProgressBarPage.open();
@@ -28,7 +14,7 @@ describe.skip('Progress Bar Test', () => {
     });
 });
 
-describe.skip('Dynamic Id Test', () => {
+describe('Dynamic Id Test', () => {
     it('should print the text of the dynamic Id Button', async () => {
         await DynamicIdPage.open();
         const textButton = DynamicIdPage.dynamicIdButton.getText();
@@ -45,5 +31,14 @@ describe('Client Side Delay Test', () => {
         await ClientSideDelayPage.waitToJavaScriptProcessingFinished();
         await expect(ClientSideDelayPage.successMessage)
             .toHaveTextContaining('Data calculated on the client side.')
+    });
+});
+
+describe('Click Test', () => {
+    it('should be able to click and not generate a event', async () => {
+        await ClickPage.open();
+        await ClickPage.clickOnClickEventButton();
+        await expect(ClickPage.clickEventButton).not
+            .toHaveAttributeContaining('class', 'btn btn-primary');
     });
 });
