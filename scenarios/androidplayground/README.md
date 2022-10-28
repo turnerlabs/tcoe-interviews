@@ -1,10 +1,6 @@
-# UI Challenge
+# Android Challenge
 
-In this challenge, your task is to test an Android for proper UI functionality. 
-
-## Instructions
-
-Create a fork in your account, perform the following tasks, and then submit a pull request back to this repository.
+In this challenge, your task is to test an Android for proper UI functionality.
 
 ## What you will be building
 
@@ -13,8 +9,6 @@ Create a fork in your account, perform the following tasks, and then submit a pu
 * Provide at least one test case that proves the request behavior does not work as intended (there's a bug)
 * Provide at least one test case that demonstrates boundary based testing
 * Provide at least one negative test case
-
-Your testing of the function should demonstrate your ability to analyze a system and understand it's intended behavior, and verify that it succeeds or fails to meet those expectations.
 
 ## The System Under Test
 

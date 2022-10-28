@@ -1,10 +1,6 @@
 # Stocks API Challenge
 
-In this challenge, your task is to test a simple REST API that contains information about stocks. 
-
-## Instructions
-
-Create a fork in your account, perform the following tasks, and then submit a pull request back to this repository turnerlabs/tcoe-interviews (github.com). Once you start working on the coding challenge, you have to finish the challenge and raise the pull request within 4 hours. Make sure that you have to submit a PR within 48 hours from the time of invitation to complete the coding exercise. Feel free to reach out anytime if you have any questions.
+In this challenge, your task is to test a simple REST API that contains information about stocks.
 
 ## What you will be building
 
@@ -13,8 +9,6 @@ Create a fork in your account, perform the following tasks, and then submit a pu
 * Provide at least one test case that proves the request behavior does not work as intended (there's a bug)
 * Provide at least one test case that demonstrates boundary based testing
 * Provide at least one negative test case
-
-Your testing of the function should demonstrate your ability to analyze a system and understand it's intended behavior, and verify that it succeeds or fails to meet those expectations.
 
 ## Validating Your Results
 
