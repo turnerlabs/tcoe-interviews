@@ -5,8 +5,6 @@ describe('progress bar tests', () => {
         await ProgressBarPage.open();
         await ProgressBarPage.startProcesing();
         await ProgressBarPage.stopAfterSomeProgress();
-        
-        //await ProgressBarPage.getResultNumber();
         await expect(ProgressBarPage.stopingResult).toHaveTextContaining(['0','1']);
 
     });

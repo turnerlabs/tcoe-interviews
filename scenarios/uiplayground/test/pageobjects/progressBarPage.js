@@ -23,10 +23,6 @@ class ProgressBarPage extends Page {
     }
 
     async stopAfterSomeProgress(){
-        //await browser.pause(2000);
-
-        //await console.log("*******************",await this.progressBarElement.getCSSProperty('style'));
-        //await console.log("*******************",await this.progressBarElement.getText());
         await this.progressBarElement.waitUntil(async function(){
             return (await this.getText() == '75%')
         },{timeout: 50000,
@@ -36,14 +32,6 @@ class ProgressBarPage extends Page {
 
         await this.btnStop.click();
     }
-
-    async getResultNumber(){
-        //await console.log('*******', this.StopingResult.getText())
-        await this.stopingResult.getText().then(str =>{
-            console.log('*******+*******++', str.substring(2))
-        } )
-    }
-
     open () {
         return super.open('progressbar');
     }

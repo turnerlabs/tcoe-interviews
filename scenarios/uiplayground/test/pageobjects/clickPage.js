@@ -8,7 +8,6 @@ class ClickPage extends Page{
 
     async clickOnBtn(){
         await this.btnClickIgnore.click();
-        await browser.pause(2000);
     }
 
     open(){
