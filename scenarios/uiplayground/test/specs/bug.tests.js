@@ -10,8 +10,6 @@ describe('Ajax Test', () => {
         await AjaxPage.waitToJavaScriptProcessingFinished();
         await expect(AjaxPage.successMessage)
             .toHaveTextContaining('Data loaded with AJAX get request.');
-        await expect(AjaxPage.successMessageList)
-            .toBeElementsArrayOfSize(1)
         await AjaxPage.clickOnAjaxTriggerButton();
         await AjaxPage.waitToJavaScriptProcessingFinished();
         await expect(AjaxPage.successMessageList)
@@ -20,7 +18,7 @@ describe('Ajax Test', () => {
 });
 
 describe('Visibility Test', () => {
-    it('should have the unhide button After click the hide button', async () => {
+    it('should have the unhide button after click the hide button', async () => {
         await VisibilityPage.open();
         await expect(VisibilityPage.hideButton).toBeExisting();
         await VisibilityPage.clickOnHideButton();
@@ -30,7 +28,7 @@ describe('Visibility Test', () => {
 });
 
 describe('Shadow DOM Test', () => {
-    it('should copy the GUID in the clipboard', async () => {
+    it('should copy the GUID on the clipboard', async () => {
         await ShadowDomPage.open();
         await ShadowDomPage.clickOnGenerateButton();
         const currentGuid = await ShadowDomPage.getCurrentGuidValue();
