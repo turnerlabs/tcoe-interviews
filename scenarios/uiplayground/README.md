@@ -10,3 +10,4 @@ Baseurl -  http://uitestingplayground.com/
 
 - [Exercise 1](./scenarios/uiplayground/exercise-1.md)
 - [Exercise 2](./scenarios/uiplayground/exercise-2.md)
+- [Exercise 3](./scenarios/uiplayground/exercise-3.md)
