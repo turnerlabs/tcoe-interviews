@@ -1,0 +1,100 @@
+import { AssertionError } from "assert";
+import { Console } from "console";
+import { format } from "path";
+import { describe } from "yargs";
+
+
+
+const assert = require('assert');
+describe('Progress Bare ' , function(){
+it('User should see the progress bar sucessfully' , function(){
+   browser.url('http://uitestingplayground.com');
+   browser.pause('2000');
+   $('=progressbar').click();
+   browser.pause('2000');
+   $('=btn btn-primary btn-test').click();
+   browser.pause('3000');
+   if( $('=progressBar').width('75%'))
+   {
+    $('=stopButton').click();
+    Console.log("Progress Bar is up to 75%");
+   }
+   else
+   {
+     AssertionError('Progress bar is more than expoected');
+   }
+
+   
+})
+})
+
+
+const assert = require('assert');
+describe('Client Delay ' , function(){
+it('System will delay when user clicks on delya button' , function(){
+   browser.url('http://uitestingplayground.com');
+   browser.pause('2000');
+   $('=/clientdelay').click();
+   browser.pause('2000');
+   setTimeout(done,2000);
+   $('=ajaxButton').click();
+   browser.pause('3000');
+   if( $('=bg-spinner').style('display: none') && $('=bg-success')=== true)
+   {
+    Console.log("Data calculated on the client side sucessfull.");
+   }
+   else
+   {
+     AssertionError('Data calculated on the client side failed.');
+   }
+
+   
+})
+})
+
+
+
+const assert = require('assert');
+describe('Dynamic ID ' , function(){
+it('User will know if the page is using a  dynamic button when clicks on it' , function(){
+   browser.url('http://uitestingplayground.com');
+   browser.pause('2000');
+   $('=/dynamicid').click();
+   browser.pause('2000');
+   setTimeout(done,2000);
+   if$('=010cf12b-953b-87e6-4b9d-0c92a6b6dc02').format() == format('010cf12b-953b-87e6-4b9d-0c92a6b6dc02)')
+   {
+   $('=010cf12b-953b-87e6-4b9d-0c92a6b6dc02').click().record();
+   }
+   Console.log('Dynamic ID')
+   browser.pause('3000');
+   assert();
+   AssertionError('Nothing should displayed.');
+   
+
+   
+})
+})
+
+
+
+const assert = require('assert');
+describe('Load Delay ' , function(){
+it('System will delay in displaying data when clicks on ' , function(done){
+   browser.url('http://uitestingplayground.com');
+   browser.pause('2000');
+   $('=/loaddelay').click();
+   browser.pause('2000');
+   if($('=btn btn-primary').setTimeout(done,1000))
+   {
+    assert().Console.log('The data was not displayed quickly');
+    
+   }
+   else
+    {
+   AssertionError('The data was displayed after a long load.');
+     $('=btn btn-primary').retry();
+    }
+   
+})
+})
