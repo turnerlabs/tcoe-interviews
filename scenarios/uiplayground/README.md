@@ -27,10 +27,3 @@ Create a fork in your account, perform the following tasks, and then submit a pu
   * Write a test case that proves the click request behavior does not work as intended (there's a bug). You can intentionally write a negative test case       here (Pls use the base url and create a neagtive test case by finding the bug)
   
 Your testing of the function should demonstrate your ability to analyze a system and understand it's intended behavior, and verify that it succeeds or fails to meet those expectations.
-
-**Below needs clean up**
-* Print button text when button element is using a dynamic ID
-* Perform a test where an element may appaear on a page after heavy JavaScript processing on a client side.
-
-
-
