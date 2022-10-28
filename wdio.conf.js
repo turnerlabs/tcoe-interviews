@@ -52,7 +52,7 @@ exports.config = {
     //
     specs: [
         'scenarios/uiplayground/test/specs/positive.tests.js',
-        'scenarios/uiplayground/test/specs/negative.tests.js'
+        'scenarios/uiplayground/test/specs/bug.tests.js'
     ],
     // Patterns to exclude.
     exclude: [

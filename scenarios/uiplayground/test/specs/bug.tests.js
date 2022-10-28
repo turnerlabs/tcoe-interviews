@@ -1,6 +1,7 @@
 const AjaxPage = require('../pageobjects/ajaxData.page');
 const VisibilityPage = require('../pageobjects/visibility.page');
 const ShadowDomPage = require("../pageobjects/shadowDom.page");
+const ClickPage = require('../pageobjects/click.page');
 
 describe('Ajax Test', () => {
     it('should have a success message only after trigger the button more that once', async () => {
@@ -36,5 +37,14 @@ describe('Shadow DOM Test', () => {
         await ShadowDomPage.clickOnCopyButton();
         const clipboardGuid = await ShadowDomPage.getClipboardGuidValue();
         await expect(currentGuid).toEqual(clipboardGuid);
+    });
+});
+
+describe('Click Test', () => {
+    it('should be able to click and not generate a event', async () => {
+        await ClickPage.open();
+        await ClickPage.clickOnClickEventButton();
+        await expect(ClickPage.clickEventButton).not
+            .toHaveAttributeContaining('class', 'btn btn-primary');
     });
 });
