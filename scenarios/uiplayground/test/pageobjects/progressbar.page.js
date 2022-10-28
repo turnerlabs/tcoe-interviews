@@ -35,7 +35,7 @@ class ProgressBarPage extends Page {
             return (await this.getText()) === percentage + '%'
         }, {
             timeout: 60000,
-            interval: 1
+            interval: 25
         });
         await this.stopButton.click()
     }
