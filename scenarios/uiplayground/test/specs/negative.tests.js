@@ -1,6 +1,6 @@
 const AjaxPage = require('../pageobjects/ajaxData.page');
 const VisibilityPage = require('../pageobjects/visibility.page');
-const HomePage = require("../pageobjects/home.page");
+const ShadowDomPage = require("../pageobjects/shadowDom.page");
 
 describe('Ajax Test', () => {
     it('should have a success message only after trigger the button more that once', async () => {
@@ -24,5 +24,17 @@ describe('Visibility Test', () => {
         await expect(VisibilityPage.hideButton).toBeExisting();
         await VisibilityPage.clickOnHideButton();
         await expect(VisibilityPage.unHideButton).toBeExisting();
+        await expect(VisibilityPage.hideButton).not.toBeExisting();
+    });
+});
+
+describe('Shadow DOM Test', () => {
+    it('should copy the GUID in the clipboard', async () => {
+        await ShadowDomPage.open();
+        await ShadowDomPage.clickOnGenerateButton();
+        const currentGuid = await ShadowDomPage.getCurrentGuidValue();
+        await ShadowDomPage.clickOnCopyButton();
+        const clipboardGuid = await ShadowDomPage.getClipboardGuidValue();
+        await expect(currentGuid).toEqual(clipboardGuid);
     });
 });

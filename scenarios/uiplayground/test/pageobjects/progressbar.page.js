@@ -29,7 +29,6 @@ class ProgressBarPage extends Page {
 
     /**
      * Wait the Progress Bar to Percentage Value
-     *
      */
     async waitProgressBarToPercentage(percentage) {
         await this.progressBar.waitUntil(async function () {
@@ -41,6 +40,9 @@ class ProgressBarPage extends Page {
         await this.stopButton.click()
     }
 
+    /**
+     * Get Progress Bar Percentage Value
+     */
     async getCurrentProgressBarValue() {
         return await this.progressBar.getText();
     }
