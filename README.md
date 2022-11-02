@@ -12,7 +12,7 @@ Feel free to reach out anytime if you have any questions.
 
 ## Scenarios
 
-* [API Challenge](./scenarios/stocksapi/README.md)
+* [API Challenges](scenarios/apiplayground/README.md)
 * [UI Challenges](./scenarios/uiplayground/README.md)
 * [Android Challenge](./scenarios/androidplayground/README.md)
 
