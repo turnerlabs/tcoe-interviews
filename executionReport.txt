@@ -1,0 +1,100 @@
+
+> tcoe-interviews@1.0.0 test:stocksapi
+> mocha ./scenarios/apiplayground/test/**/*.js
+
+
+
+  SC001_stocks_api: Verification of request API behavior
+    SC001_TC001_To validate the API request on appending valid end point to the base URL
+      √ verifying request status appending valid uri path to base URL (499ms)
+API request is success with status code: 200
+
+  SC001_stocks_api: Verification of request API behavior
+    SC001_TC002_To validate the API request on appending / to the base URL
+API request is success with status code: 200
+      √ verifying request status appending / to base URL
+
+  SC002_stocks_api: Verification of API response behavior
+    SC002_TC001_To validate the API response JSON payload keys
+      √ verifying response JSON payload keys
+
+  SC002_stocks_api: Verification of API response behavior
+    SC002_TC002_To validate the API response JSON payload key-value type
+      1) verifying response JSON payload keys
+
+  SC002_stocks_api: Verification of API response behavior
+    SC002_TC003_To validate that the API response JSON payload date matches with request date
+requestedDate: 2-November-2022
+responseDate: 2-November-2022
+      √ verifying response JSON payload date matches with request date
+
+  SC002_stocks_api: Verification of API response behavior
+    SC002_TC004_To validate that the API response time
+      √ verifying API response time
+Request took 0.6297523 seconds
+Request took 0.631207 seconds
+
+  SC003_stocks_api: Verification of API response behavior on sending invalid date value
+    SC003_TC001_To validate that the API response JSON payload retrieves no data on sending blank date 
+      2) verifying response JSON payload retrieves no data on sending blank date
+
+  SC003_stocks_api: Verification of API response behavior on sending invalid date value
+    SC003_TC002_To validate that the API response JSON payload throws error on sending date day with leading zero 
+      3) verifying response JSON payload throws error on sending date day with leading zero
+
+  SC004_stocks_api: Verification of API response behavior on sending date value as today
+    SC004_TC001_To validate that the API response JSON payload returns data on sending date value as today 
+API request failed with status code: 200
+      √ verifying response JSON payload returns data on sending date value as today
+
+  SC004_stocks_api: Verification of API response behavior on sending date value as today+1
+    SC004_TC002_To validate that the API response JSON payload returns data on sending date value as today+1 
+      4) verifying response JSON payload returns data on sending date value as today+1
+
+  SC005_stocks_api: Verification of API response behavior with invalid end point url
+    SC004_TC001_To validate that the API response JSON payload returns error code on sending request with invalid end point
+API request failed with status code: 404
+      √ verifying response JSON payload returns error code on sending request with invalid end point
+
+
+  7 passing (659ms)
+  4 failing
+
+  1) SC002_stocks_api: Verification of API response behavior
+       SC002_TC002_To validate the API response JSON payload key-value type
+         verifying response JSON payload keys:
+     AssertionError: expected '8278.38' to be a number
+      at C:\Automation\tcoe-interviews\scenarios\apiplayground\test\trade.js:68:66
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  2) SC003_stocks_api: Verification of API response behavior on sending invalid date value
+       SC003_TC001_To validate that the API response JSON payload retrieves no data on sending blank date 
+         verifying response JSON payload retrieves no data on sending blank date:
+     AssertionError: expected { date: '', open: '2016.20', …(3) } to be empty
+      at C:\Automation\tcoe-interviews\scenarios\apiplayground\test\trade.js:122:44
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  3) SC003_stocks_api: Verification of API response behavior on sending invalid date value
+       SC003_TC002_To validate that the API response JSON payload throws error on sending date day with leading zero 
+         verifying response JSON payload throws error on sending date day with leading zero:
+
+      AssertionError: expected { Object (_events, _eventsCount, ...) } to not have status code 200
+      + expected - actual
+
+
+      at C:\Automation\tcoe-interviews\scenarios\apiplayground\test\trade.js:136:33
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  4) SC004_stocks_api: Verification of API response behavior on sending date value as today+1
+       SC004_TC002_To validate that the API response JSON payload returns data on sending date value as today+1 
+         verifying response JSON payload returns data on sending date value as today+1:
+
+      AssertionError: expected { Object (_events, _eventsCount, ...) } to not have status code 200
+      + expected - actual
+
+
+      at C:\Automation\tcoe-interviews\scenarios\apiplayground\test\trade.js:167:38
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+
+
