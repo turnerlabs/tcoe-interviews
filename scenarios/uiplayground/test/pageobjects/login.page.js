@@ -1,42 +1,20 @@
+class Login {
+    get titlePage() { return $('h3') }
+    get usernameInput() { return $('input[type="text"]') }
+    get passwordInput() { return $('input[type="password"]') }
+    get loginButton() { return $('#login') }
+    get loginMsg() { return $('#loginstatus') }
 
-
-const Page = require('./page');
-
-/**
- * sub page containing specific selectors and methods for a specific page
- */
-class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () {
-        return $('#username');
+    async login(username, password) {
+        await this.usernameInput.setValue(username);
+        await this.passwordInput.setValue(password);
+        await this.loginButton.click();
     }
 
-    get inputPassword () {
-        return $('#password');
+    async clickLoginBtn() {
+        await this.loginButton.waitForDisplayed()
+        await this.loginButton.click()
     }
 
-    get btnSubmit () {
-        return $('button[type="submit"]');
-    }
-
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    async login (username, password) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
-    }
-
-    /**
-     * overwrite specific options to adapt it to page object
-     */
-    open () {
-        return super.open('login');
-    }
 }
-
-module.exports = new LoginPage();
+module.exports = new Login();
