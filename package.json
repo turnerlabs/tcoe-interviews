@@ -6,7 +6,7 @@
   "scripts": {
     "local:api": "node ./scenarios/apiplayground/api/server.js",
     "test:stocksapi": "mocha ./scenarios/apiplayground/test/**/*.js",
-    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js",
+    "test:uiplayground": "wdio ./wdio.uiplayground.conf.js",
     "mobile:android:local": "wdio mobile/config/wdio.android.local.app.conf.js"
   },
   "keywords": [],
@@ -19,9 +19,9 @@
     "@wdio/spec-reporter": "^7.24.0",
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
-    "chromedriver": "^105.0.0",
+    "chromedriver": "^107.0.0",
     "mocha": "^10.0.0",
-    "wdio-chromedriver-service": "^7.3.2"
+    "wdio-chromedriver-service": "^8.0.0"
   },
   "dependencies": {
     "express": "^4.18.1"
