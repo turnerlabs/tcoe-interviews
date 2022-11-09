@@ -1,7 +1,5 @@
-
-
 const Page = require('./page');
-
+const loginURL = 'sampleapp';
 /**
  * sub page containing specific selectors and methods for a specific page
  */
@@ -9,33 +7,46 @@ class LoginPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get inputUsername () {
-        return $('#username');
-    }
-
-    get inputPassword () {
-        return $('#password');
-    }
-
-    get btnSubmit () {
-        return $('button[type="submit"]');
-    }
+     get userNameText () { return $('[name="UserName"]'); }
+     get passwordText () { return $('[name="Password"]'); }
+     get loginButton () { return $('#login'); }
+     get statusText () { return $('#loginstatus'); }
 
     /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
+     * Logs in the web application
+     * @param username
+     * @param password
      */
-    async login (username, password) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
+     async login (username, password) {
+        await this.userNameText.setValue(username);
+        await this.passwordText.setValue(password);
+        await this.loginButton.click();
     }
-
     /**
-     * overwrite specific options to adapt it to page object
+     * Clicks on logout Button
+     */
+     async loginButtonClick () {
+        await this.loginButton.click();
+    }
+    /**
+     * overwrite open function with login url
      */
     open () {
-        return super.open('login');
+        return super.open(loginURL);
+    }
+
+    /**
+     * Returns userNameText value
+     */
+    async userNameTextValue () {
+        return (await this.userNameText.getValue());
+    }
+
+    /**
+     * Returns password value
+     */
+     async passwordTextValue () {
+        return (await this.passwordText.getValue());
     }
 }
 
