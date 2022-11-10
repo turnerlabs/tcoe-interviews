@@ -24,10 +24,19 @@ class Overlapped {
 
     async isIdInputVisible() {
         const idInputEl = await $(this.idInputXPath);
-        return this.isInputVisibleInScrollableDiv(idInputEl)
+        return this.isElementVisibleInScrollableDiv(idInputEl)
     }
 
-    async isInputVisibleInScrollableDiv(inputEl) {
+    /**
+     * Generated this function for validating if the element is displayed in the parent div due to
+     * existing functionality such as isDisplayed and isDisplayedInViewport not behaving correctly
+     * within the given context.
+     * 
+     * @param {HTMLElement} inputEl 
+     * @returns Promise<boolean>
+     * 
+     */
+    async isElementVisibleInScrollableDiv(inputEl) {
         const scrollableDivEl = $(this.scrollableDivXPath);
         const divLocation = await scrollableDivEl.getLocation();
         const divDimensions = await scrollableDivEl.getSize();
