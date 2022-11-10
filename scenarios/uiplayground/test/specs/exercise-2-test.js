@@ -16,7 +16,7 @@ describe('Login tests', () => {
         await LoginPage.verifyInvalidCredentialText();
     });
 
-    it('test empty credentials', async () => {
+    it('should throw an error for empty credentials', async () => {
         await LoginPage.open();
         await LoginPage.login('','');
         await LoginPage.verifyInvalidCredentialText();
