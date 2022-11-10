@@ -8,4 +8,18 @@ describe('Login tests', () => {
         await LoginPage.verifyUserCanLogOut();
         await LoginPage.verifyStaticElementsType();
     });
+
+    it('should throw an error message for invalid credential', async () => {
+        await LoginPage.open();
+        await LoginPage.login('abc','abc');
+        await LoginPage.verifyInvalidCredentialText();
+    });
+
+    it('test empty credentials', async () => {
+        await LoginPage.open();
+        await LoginPage.login('','');
+        await LoginPage.verifyInvalidCredentialText();
+    });
+
+
 });

@@ -30,6 +30,10 @@ class LoginPage extends Page {
         return $("//button[text()='Log Out']");
     }
 
+    get invalidCredentialErrorTxt () {
+        return $(".text-danger");
+    }
+
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
@@ -55,6 +59,11 @@ class LoginPage extends Page {
         const pwdElement = await this.inputPassword.getAttribute('type');
         await assert.equal(unameElement,'text',"FAIL: Attribute type is not of type TEXT");
         await assert.equal(pwdElement,'password',"FAIL: Attribute type is not of type PASSWORD");
+    }
+
+    async verifyInvalidCredentialText() {
+        const invalidCredText = await this.invalidCredentialErrorTxt.getText();
+        await assert.strictEqual(invalidCredText,"Invalid username/password","FAIL: Error message does not match");
     }
 
     /**
