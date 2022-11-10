@@ -66,6 +66,14 @@ class LoginPage extends Page {
         await assert.strictEqual(invalidCredText,"Invalid username/password","FAIL: Error message does not match");
     }
 
+    async verifyLoginFieldsAreHidden() {
+        const unameIsExisting = await this.inputUsername.isExisting();
+        const pwdIsExisting = await this.inputPassword.isExisting()
+
+        await assert.isFalse(unameIsExisting,"FAIL: Username field is present after successful login");
+        await assert.isFalse(pwdIsExisting,"FAIL: Password field is present after successful login");
+    }
+
     /**
      * overwrite specific options to adapt it to page object
      */

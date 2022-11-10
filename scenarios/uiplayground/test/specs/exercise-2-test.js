@@ -21,5 +21,4 @@ describe('Login tests', () => {
         await LoginPage.verifyInvalidCredentialText();
     });
 
-
 });
