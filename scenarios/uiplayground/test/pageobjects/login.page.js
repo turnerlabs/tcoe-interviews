@@ -2,6 +2,7 @@
 
 const Page = require('./page');
 const assert = require('chai').assert;
+const testData = require('../../testData/constants');
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -46,12 +47,12 @@ class LoginPage extends Page {
 
     async verifyWelcomeText(username) {
         const welcomeText = await this.welcomeTextLabel.getText();
-        await assert.strictEqual(welcomeText,`Welcome, ${username}!`,"FAIL: Welcome text does not match expected value");
+        await assert.strictEqual(welcomeText,`${testData.welcomeText}, ${username}!`,"FAIL: Welcome text does not match expected value");
     }
 
     async verifyUserCanLogOut() {
         const logOutText = await this.btnSubmit.getText();
-        await assert.strictEqual(logOutText,'Log Out',"FAIL: Log out text button is not visible");
+        await assert.strictEqual(logOutText,`${testData.logOutText}`,"FAIL: Log out text button is not visible");
     }
 
     async verifyStaticElementsType() {
@@ -63,7 +64,7 @@ class LoginPage extends Page {
 
     async verifyInvalidCredentialText() {
         const invalidCredText = await this.invalidCredentialErrorTxt.getText();
-        await assert.strictEqual(invalidCredText,"Invalid username/password","FAIL: Error message does not match");
+        await assert.strictEqual(invalidCredText,`${testData.invalidUserErrorText}`,"FAIL: Error message does not match");
     }
 
     async verifyLoginFieldsAreHidden() {
