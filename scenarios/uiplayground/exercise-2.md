@@ -2,21 +2,17 @@
 
 ## What you will be building
 
-Scenarios are listed below
+Build following spec files
 
-Cases:
-* Create tests for below scenarios
-  - Navigate to the url - http://uitestingplayground.com/sampleapp
-  - Validate that a set of user credentials behave as expected
-    - You should test with valid credentials
-    - You should test for invalid credentials
-    - You should test for empty credentials
-  - Validate that user should see welcome text 
-  - Validate that user can log out 
-    - User should see logout text
-  - Validate username and password element's type attribute 
+* Test spec - 1
+  - Navigate to the url - https://www.cnn.com/
+  - Validate site search functionality
+  
+* Test spec - 2  
+  - Navigate to url - https://www.cnn.com/videos/entertainment/2022/11/11/henry-winkler-career-struggle-grease-wtcw-cprog-vpx.cnn 
+  - Validate the video functionality on the page 
+  - Validate related video suggestions feature
 
-Bug cases:
-* Create a test for below bug scenario
-  - Navigate to the url - http://uitestingplayground.com/sampleapp
-    - Username and Password fields should not be visible after user has logged in
+* Test spec - 3
+  - Navigate to the url - https://www.cnn.com/travel/gallery/top-christmas-markets/index.html
+  - Validate the image gallery functionality on the page
