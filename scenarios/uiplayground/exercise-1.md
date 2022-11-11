@@ -16,5 +16,5 @@
     Navigate to the url - http://uitestingplayground.com/visibility and click on hide button then expect unhide button to show in place of hide button
   * Create a test for below bug scenario -the copy button doesn't work, write a test that proves it
     Navigate to the url -http://uitestingplayground.com/shadowdom
-  * Write a test case that proves the event based click request does not work as intended.
-    Navigate to the url -http://uitestingplayground.com/click
+  * Navigate to the url -http://uitestingplayground.com/click. Write a test case that proves the event based click request does not work as intended.
+    
