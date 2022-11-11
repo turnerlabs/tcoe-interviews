@@ -4,7 +4,10 @@ In these challenges, your task is to test a website for proper UI functionality
 
 Please build upon the provided UI framework. Feel free to make a WDIO config file.
 
-Baseurl -  http://uitestingplayground.com/
+Baseurl -  
+http://uitestingplayground.com/
+or
+https://www.cnn.com/
 
 ## Exercises
 
