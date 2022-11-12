@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "local:api": "node ./scenarios/apiplayground/api/server.js",
-    "test:stocksapi": "mocha ./scenarios/apiplayground/test/**/*.js",
+    "test:stocksapi": "mocha ./scenarios/apiplayground/test/exercise-1/**/*.js",
+    "test:petfinderapi": "API_KEY=xH7Y9lVQAMlHBjLLfItkZ9wWMqSqohfT0lVmlyUeew3fPI0Yue API_SECRET=PKEIsDBSJXbBIuXKiIjm9X1NK1wLsxiQkPAR68hp mocha ./scenarios/apiplayground/test/exercise-2/**/*.js",
     "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js",
     "mobile:android:local": "wdio mobile/config/wdio.android.local.app.conf.js"
   },

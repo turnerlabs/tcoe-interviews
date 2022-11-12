@@ -1,0 +1,34 @@
+{
+    "iterations": [
+        {
+            "day": 5,
+            "month": "January",
+            "year": 2000
+        },
+        {
+            "day": 5,
+            "month": "January",
+            "year": 2001
+        },
+        {
+            "day": 1,
+            "month": "October",
+            "year": 1979
+        },
+        {
+            "day": 24,
+            "month": "October",
+            "year": 1979
+        },
+        {
+            "day": 31,
+            "month": "October",
+            "year": 2021
+        },
+        {
+            "day": 31,
+            "month": "December",
+            "year": 2021
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "iterations": [
+        {
+            "day": "05",
+            "month": "January",
+            "year": 2000,
+            "check": "leading zeroes in the day should not be allowed by backend"
+        },
+        {
+            "day": null,
+            "month": "January",
+            "year": 2000,
+            "check": "missing day or other date attribute should not be allowed by backend"
+        },
+        {
+            "day": 5,
+            "month": "January",
+            "year": 3000,
+            "check": "Date in the future is not validated by backend"
+        },
+        {
+            "day": 35,
+            "month": "January",
+            "year": 2021,
+            "check": "Invalid date is not validated by backend"
+        }
+    ]
+}
