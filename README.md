@@ -14,6 +14,7 @@ Feel free to reach out anytime if you have any questions.
 
 * [API Challenges](scenarios/apiplayground/README.md)
 * [UI Challenges](./scenarios/uiplayground/README.md)
-* [Android Challenge](./scenarios/androidplayground/README.md)
+* [Android Challenges](./scenarios/androidplayground/README.md)
+* [DevOps Challenges](./scenarios/devopsplayground/README.md)
 
 Your testing of the provided scenarios should demonstrate your ability to analyze a system and understand it's intended behavior, and verify that it succeeds or fails to meet those expectations.
