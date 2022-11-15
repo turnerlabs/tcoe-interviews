@@ -25,8 +25,3 @@ Cases:
     - Validate Memory data
     - Validate Network data
     - Validate Disk data
-
-Bug cases:
-* Create tests for below scenario
-    - Navigate to the url - http://uitestingplayground.com/overlapped
-        - ID element should be displayed in viewport when user scrolls down
