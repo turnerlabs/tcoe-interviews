@@ -1,4 +1,4 @@
-# DevOps Challenge 1
+# DevOps Challenge 2
 
 ## What you will be building
 
