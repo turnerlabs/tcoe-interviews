@@ -8,4 +8,8 @@
 
   * We expect a lot of traffic, so allocating an ECS cluster would be ideal (classic or Fargate). EKS would work too. One or the other is fine.
   * We want to have a lot of the traffic cached so we don't have to go to origin all the time for every request, please allocate a CloudFront distribution in front to create cached responses.
+
+  ### Additional Requirements
+
+  * scripts must be defined in [terraform](https://www.terraform.io/)
   
