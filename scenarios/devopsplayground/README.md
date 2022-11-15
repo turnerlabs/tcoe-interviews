@@ -7,3 +7,4 @@ Please create the necessary iac in [terraform](https://www.terraform.io/)
 ## Exercises
 
 - [Exercise 1](./exercise-1.md)
+- [Exercise 2](./exercise-2.md)
