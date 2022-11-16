@@ -282,6 +282,39 @@ resource "aws_cloudfront_distribution" "s3_dist" {
     origin_id   = var.s3_origin_id
   }
 
+  origin {
+    domain_name = aws_alb.application_load_balancer.dns_name
+    origin_id   = "alb_origin_ID"
+    custom_origin_config {
+      http_port                = 80
+      https_port               = 443
+      origin_protocol_policy   = "match-viewer"
+      origin_ssl_protocols     = ["TLSv1.2"]
+      origin_keepalive_timeout = 60
+      origin_read_timeout      = 60
+    }
+  }
+
+  ordered_cache_behavior {
+    path_pattern     = "/content/*"
+    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+    cached_methods   = ["GET", "HEAD"]
+    target_origin_id = "alb_origin_ID"
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+
+    min_ttl                = 0
+    default_ttl            = 3600
+    max_ttl                = 86400
+    compress               = true
+    viewer_protocol_policy = "redirect-to-https"
+  }
+
   enabled             = true
   default_root_object = "index.html"
 
