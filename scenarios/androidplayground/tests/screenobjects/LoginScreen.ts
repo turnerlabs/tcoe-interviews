@@ -1,6 +1,11 @@
 import AppScreen from './AppScreen';
 import Gestures from '../helpers/Gestures';
 
+const SELECTORS = {
+    CHARACTERS_LESS: '*//[@content-desc="Login-screen"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.TextView[2]',
+    CHARACTERS_MATCH: '*//[@content-desc="Login-screen"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.TextView[3]'
+};
+
 class LoginScreen extends AppScreen {
     constructor () {
         super('~Login-screen');
@@ -76,6 +81,34 @@ class LoginScreen extends AppScreen {
         // On smaller screens there could be a possibility that the button is not shown
         await Gestures.checkIfDisplayedWithSwipeUp(await this.signUpButton, 2);
         await this.signUpButton.click();
+    }
+
+    async submitSignUpFormException({ username, password, confirmPassword }:{username:string; password:string; confirmPassword:string}) {
+        await this.email.setValue(username);
+        await this.password.setValue(password);
+        await this.repeatPassword.setValue(confirmPassword);
+
+        if (await driver.isKeyboardShown()) {
+            /**
+             * Normally we would hide the keyboard with this command `driver.hideKeyboard()`, but there is an issue for hiding the keyboard
+             * on iOS when using the command. You will get an error like below
+             *
+             *  Request failed with status 400 due to Error Domain=com.facebook.WebDriverAgent Code=1 "The keyboard on iPhone cannot be
+             *  dismissed because of a known XCTest issue. Try to dismiss it in the way supported by your application under test."
+             *  UserInfo={NSLocalizedDescription=The keyboard on iPhone cannot be dismissed because of a known XCTest issue. Try to dismiss
+             *  it in the way supported by your application under test.}
+             *
+             * That's why we click outside of the keyboard.
+             */
+            await $('~Login-screen').click();
+        }
+        // On smaller screens there could be a possibility that the button is not shown
+        await Gestures.checkIfDisplayedWithSwipeUp(await this.signUpButton, 2);
+        await this.signUpButton.click();
+    }
+
+    async getLessCharactersAlert() {
+        return `${await $(SELECTORS.CHARACTERS_LESS).getText()}`;
     }
 }
 

@@ -56,7 +56,7 @@ class DragScreen extends AppScreen {
                     // 2. Move finger into start position where the element is
                     //    Appium can automatically determine the location of the element instead
                     //    of doing it ourselves
-                    { type: 'pointerMove', duration: 0, origin: elementOne.elementId  },
+                    { type: 'pointerMove', duration: 100, origin: elementOne.elementId  },
                     // 3. Finger comes down into contact with screen
                     { type: 'pointerDown', button: 0 },
                     // 4. Pause for a little bit

@@ -22,26 +22,25 @@ describe('WebdriverIO and Appium, when using swiping', () => {
 
     it('should be able to fill the form - happy path', async () => {
         /**
-         * Testing the Input field in order to verify the mirror field
+         * Fill the text field
          */
         await FormsScreen.input.waitForDisplayed();
         await FormsScreen.input.setValue(myText);
         await FormsScreen.inputTextResult.waitForDisplayed();
-        await expect((await FormsScreen.inputTextResult.getText()) === await FormsScreen.input.getText());
 
         /**
-         * Testing the switch to change the value
+         * Switch to change the value
          */
         await expect((await FormsScreen.isSwitchActive() === true));
         await FormsScreen.tapOnSwitch();
         await expect((await FormsScreen.isSwitchActive() === false));
+        await FormsScreen.tapOnSwitch();
 
         /**
-         * Testing the switch to change the value
+         * Select a value from dropdown
          */
         await FormsScreen.tapOnDropDown();
         await AndroidSettings.waitAndTap(dropdownAppiumOption);
-        await expect(await FormsScreen.getDropDownText() === dropdownAppiumOption);
 
         /**
          * Ending the form
@@ -55,6 +54,19 @@ describe('WebdriverIO and Appium, when using swiping', () => {
         await NativeAlert.waitForIsShown();
         await NativeAlert.topOnButtonWithText('OK');
         await NativeAlert.waitForIsShown(false);
+    });
+
+    it('should be able verify the switch can change properly', async () => {
+        await expect((await FormsScreen.isSwitchActive() === true));
+        await FormsScreen.tapOnSwitch();
+        await expect((await FormsScreen.isSwitchActive() === false));
+        await expect((await FormsScreen.switchText.getText()).includes("OFF"));
+    });
+
+    it('should be able verify the value selected in dropdown options - Text', async () => {
+        await FormsScreen.tapOnDropDown();
+        await AndroidSettings.waitAndTap(dropdownAppiumOption);
+        await expect(await FormsScreen.getDropDownText() === dropdownAppiumOption);
     });
 
 });

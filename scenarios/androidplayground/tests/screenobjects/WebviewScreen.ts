@@ -12,6 +12,14 @@ class WebViewScreen extends WebView {
             reverse: !isShown,
         });
     }
+
+    /**
+     * Wait for the screen to be displayed based on Xpath
+     */
+    async clickSearButton() {
+        const selector =  browser.isAndroid ? '*//button[text="Search"]' : '*//XCUIElementTypeWebView';
+        $(selector).click();
+    }
 }
 
 export default new WebViewScreen();

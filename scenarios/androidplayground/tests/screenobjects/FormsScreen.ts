@@ -8,7 +8,7 @@ class FormsScreen extends AppScreen {
     get input () {return $('~text-input');}
     get inputTextResult () {return $('~input-text-result');}
     private get switch () {return $('~switch');}
-    private get switchText () {return $('~switch-text');}
+    get switchText () {return $('~switch-text');}
     private get dropDown () {return $('~Dropdown');}
     get activeButton () {return $('~button-Active');}
     get inActiveButton () {return $('~button-Inactive');}

@@ -36,4 +36,15 @@ describe('WebdriverIO and Appium, when interacting with a login form,', () => {
         await NativeAlert.topOnButtonWithText('OK');
         await NativeAlert.waitForIsShown(false);
     });
+
+    it('shouldn´t be able sign up successfully - less characters expected - false case scenario', async () => {
+        // Always make sure you are on the right tab
+        await LoginScreen.tapOnSignUpContainerButton();
+        // Submit wrong data
+        await LoginScreen.submitSignUpFormException({ username: 'test@webdriver.io', password: 'myPass', confirmPassword: 'myPass' });
+        // Verify exception message
+        await expect (NativeAlert.waitForIsShown(false));
+        // await expect (await LoginScreen.getLessCharactersAlert() === 'Please enter at least 8 characters');
+    });
+
 });
