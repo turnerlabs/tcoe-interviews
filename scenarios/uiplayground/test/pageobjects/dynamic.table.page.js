@@ -41,7 +41,7 @@ class DynamicTablePage extends Page {
      * overwrite specific options to adapt it to page object
      */
     open () {
-        return super.open('dynamictable');
+        return super.open('http://uitestingplayground.com/dynamictable');
     }
 }
 
