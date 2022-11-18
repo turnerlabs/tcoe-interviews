@@ -1,0 +1,17 @@
+[
+    {
+        "data" : {
+            "specialcCharacter" : "/"
+        }
+    },
+    {
+        "data" : {
+            "specialcCharacter" : "+"
+        }
+    },
+    {
+        "data" : {
+            "specialcCharacter" : "-"
+        }
+    }
+]

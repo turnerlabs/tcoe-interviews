@@ -20,6 +20,12 @@ exports.config = {
     // then the current working directory is where your `package.json` resides, so `wdio`
     // will be called from there.
     //
+    suites: {
+        TS_001_SF : [
+            "./scenarios/uiplayground/test/specs/TS_001_Search_Functionality/TS_001_SF.js"
+            
+        ]
+    },
     specs: [
         './test/specs/**/*.js'
     ],
