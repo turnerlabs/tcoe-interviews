@@ -22,7 +22,7 @@ class SearchResult {
     }
 
     /**
-     * 
+     * This method searches a specific keyword on the page dinamically
      * @param { keyword you want to look for in each result } keyword 
      * @returns number of ocurrences
      */
@@ -33,9 +33,9 @@ class SearchResult {
     }
 
     /**
-     * 
+     * This method opens each article found on the main page and validates the specifc keyword in the article
      * @param {*} keyword 
-     * @returns array with all of numbers of ocurrencies for all items found
+     * @returns array with all of numbers of ocurrencies of the keyword in each article
      */
     async visitPages(keyword){
 
@@ -63,7 +63,7 @@ class SearchResult {
     }
 
     /**
-     * 
+     * This method validates that the array doesnt contain 0 value
      * @param {array with number of ocurrences} numbers 
      * @returns true if arrays contans 0 or false if it doesnt 
      */
@@ -71,10 +71,16 @@ class SearchResult {
         return  numbers.includes(0) ? true : false
     }
 
+    /**
+     * this methos press clear button on search bar
+     */
     async pressSearchClearBtn(){
         await this.searchClear.click();
     }
 
+    /**
+     * this method gets the value on search bar
+     */
     async getValueSearchBar(){
         //await this.searchBar.waitForDisplayed();
         await this.searchBar.getValue();

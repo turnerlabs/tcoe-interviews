@@ -23,8 +23,13 @@ exports.config = {
     suites: {
         TS_001_SF : [
             "./scenarios/uiplayground/test/specs/TS_001_Search_Functionality/TS_001_SF.js"
-            
-        ]
+            ],
+        TS_001_VF : [
+            "./scenarios/uiplayground/test/specs/TS_001_Video_Functionality/TS_001_VF.js"
+                ],
+        TS_001_IF : [
+            "./scenarios/uiplayground/test/specs/TS_001_Image_Functionality/TS_001_IF.js"
+                ]
     },
     specs: [
         './test/specs/**/*.js'

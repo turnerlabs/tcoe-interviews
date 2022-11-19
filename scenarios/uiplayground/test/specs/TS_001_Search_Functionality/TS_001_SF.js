@@ -71,6 +71,7 @@ describe('TS_001_Search_Functionality', () => {
             await SearchResult.getListResults()
             await SearchResult.pressSearchClearBtn();
             expectchai(SearchResult.getValueSearchBar()).to.be.empty
+
             
         });
 

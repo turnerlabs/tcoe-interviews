@@ -9,7 +9,9 @@
     "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js",
     "mobile:android:local": "wdio mobile/config/wdio.android.local.app.conf.js",
     "wdio": "wdio run wdio.conf.js",
-    "TS_001_SF": "wdio run wdio.conf.js --suite TS_001_SF"
+    "TS_001_SF": "wdio run wdio.conf.js --suite TS_001_SF",
+    "TS_001_VF": "wdio run wdio.conf.js --suite TS_001_VF",
+    "TS_001_IF": "wdio run wdio.conf.js --suite TS_001_IF"
   },
   "keywords": [],
   "author": "",

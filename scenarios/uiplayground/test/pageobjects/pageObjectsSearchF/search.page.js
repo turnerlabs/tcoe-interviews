@@ -17,22 +17,35 @@ class SearchPage extends Page {
      open () {
         return super.open('');
     }
-
+    /**
+     * 
+     * @returns search button
+     */
     async getSearchButton() {
         await this.searchBtn.waitForDisplayed()
         return await this.searchBtn
     }
 
+    /**
+     * this method press search icon button
+     */
     async pressSearchBtn(){
         await this.searchBtn.waitForClickable();
         await this.searchBtn.click();
     }
 
+    /**
+     * this method sent keyword to searchBar
+     * @param {*} value keyword to find
+     */
     async setValueSearchBar(value){
        // await this.searchBar.waitForDisplayed();
         await this.searchBar.setValue(value)
     }
 
+    /**
+     * this method get the current value on search bar
+     */
     async getValueSearchBar(){
         //await this.searchBar.waitForDisplayed();
         await this.searchBar.getValue();
