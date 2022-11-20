@@ -1,0 +1,11 @@
+[
+  {
+    "keyword": "Tiffany Trump's wedding",
+    "hasResult": true
+  },
+  {
+    "keyword": "@#",
+    "hasResult": false,
+    "noResultMsg": "A few suggestions"
+  }
+]
