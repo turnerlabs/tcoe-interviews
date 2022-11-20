@@ -1,8 +1,5 @@
 const Page = require('../page');
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class ImagePage extends Page {
 
     get currentHero(){
@@ -21,9 +18,6 @@ class ImagePage extends Page {
         return $$('//img[@class="Image__image"]')
     }
 
-    /**
-    * overwrite specific options to adapt it to page object
-    */
     open () {
         return super.open('travel/gallery/top-christmas-markets/index.html');
     }

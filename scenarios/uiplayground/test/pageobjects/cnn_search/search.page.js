@@ -1,8 +1,5 @@
 const Page = require('../page');
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class SearchPage extends Page {
 
     get inputSearch(){
@@ -20,10 +17,7 @@ class SearchPage extends Page {
     get noSearchResult(){
         return $('[class="search__no-results__message"]')
     }
-
-    /**
-    * overwrite specific options to adapt it to page object
-    */
+    
     open () {
         return super.open('search');
     }

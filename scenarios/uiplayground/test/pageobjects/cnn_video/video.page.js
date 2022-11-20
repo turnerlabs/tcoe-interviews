@@ -1,9 +1,6 @@
 const Page = require('../page');
 const { execSync } = require('child_process');
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class VideoPage extends Page {
 
     get initialPlayButton(){
@@ -33,10 +30,7 @@ class VideoPage extends Page {
     get playerVideos(){
       return $$('//div[@data-editable="videos"]/*')
     }
-
-    /**
-    * overwrite specific options to adapt it to page object
-    */
+    
     open () {
         return super.open('videos/entertainment/2022/11/11/henry-winkler-career-struggle-grease-wtcw-cprog-vpx.cnn');
     }
