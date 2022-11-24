@@ -1,3 +1,4 @@
+const { default: ChromeDriverService } = require("wdio-chromedriver-service");
 const VideoPage = require("../pageobjects/video.page");
 const expectchai = require("chai").expect;
 
@@ -21,11 +22,14 @@ describe("Given: user wants to check video functionality of CNN website", () => 
     });
 
     it("Then: user can play video from suggested list", async () => {
+      const videoIndex = 1;
       await VideoPage.waitVideoToLoad();
-      await VideoPage.playSuggestedVideo();
+      await VideoPage.playSuggestedVideo(videoIndex);
       await VideoPage.waitVideoToPlay();
       const nowPlayingVideoTitle = await VideoPage.getNowPlayingTitle();
-      const suggestedVidoTitle = await VideoPage.getSuggestedVidoTitle();
+      const suggestedVidoTitle = await VideoPage.getSuggestedVidoTitle(
+        videoIndex - 1
+      );
       expectchai(nowPlayingVideoTitle).to.be.equals(suggestedVidoTitle);
     });
   });

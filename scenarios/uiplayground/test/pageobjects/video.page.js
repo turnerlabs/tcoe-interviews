@@ -17,23 +17,23 @@ class VideoPage extends Page {
   }
 
   get nowPlayingVideoTitle() {
-    return $("div.video-resource__details--leaf div.video-resource__headline");
+    return $("[id*='js-leaf-video_headline']");
   }
 
   get suggestedVideoCount() {
-    return $(".video-playlist__count");
+    return $("h2.cn__title");
   }
 
-  get videoHeadlines() {
-    return $$(
-      "div.video-playlist__items-container div div.video-resource__details div.video-resource__headline"
-    );
+  get activeVideoHeadlines() {
+    return $$("[class='owl-item active'] .cd__headline");
+  }
+
+  get otherVideoHeadlines() {
+    return $$("[class='owl-item'] .cd__headline");
   }
 
   get videoItem() {
-    return $$(
-      "div.video-playlist__items-container div div.video-resource__details"
-    );
+    return $$("[class='owl-item active']");
   }
 
   /**
@@ -83,7 +83,14 @@ class VideoPage extends Page {
    * @returns total number of suggested video by count
    */
   async getVideoCountFromList() {
-    return await super.getElementCount(this.videoHeadlines);
+    const activeVideoCount = await super.getElementCount(
+      this.activeVideoHeadlines
+    );
+    const otherVideoCount = await super.getElementCount(
+      this.otherVideoHeadlines
+    );
+    // active videos plus inactive videos minus current playing video
+    return activeVideoCount + otherVideoCount - 1;
   }
 
   /**
@@ -92,15 +99,14 @@ class VideoPage extends Page {
    */
   async getVideoCountFromText() {
     const videoCountText = await super.getElementText(this.suggestedVideoCount);
-    return parseInt(videoCountText.substring(0, 2));
+    return parseInt(videoCountText.split("(")[1]);
   }
 
   /**
    * method to scroll into view and play one suggested video from list
    */
-  async playSuggestedVideo() {
-    await super.scrollElIntoView(this.videoItem[1]);
-    await super.clickElement(this.videoItem[1]);
+  async playSuggestedVideo(index) {
+    await super.clickElement(this.videoItem[index]);
   }
 
   /**
@@ -115,8 +121,8 @@ class VideoPage extends Page {
    * method to get suggested video headline from list
    * @returns current plating video headline
    */
-  async getSuggestedVidoTitle() {
-    return await super.getElementText(this.videoHeadlines[1]);
+  async getSuggestedVidoTitle(index) {
+    return await super.getElementText(this.activeVideoHeadlines[index]);
   }
 }
 
