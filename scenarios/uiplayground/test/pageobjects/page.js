@@ -10,4 +10,12 @@ module.exports = class Page {
     open (path) {
         return browser.url(`https://the-internet.herokuapp.com/${path}`)
     }
+
+    /**
+     * Opens a sub-page of the home page
+     * @param path path of the sub-page (e.g. /path/to/page.html)
+     */
+    openPlayground (path) {
+        return browser.url(`http://uitestingplayground.com/${path}`);
+    }
 }
