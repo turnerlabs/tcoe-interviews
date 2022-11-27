@@ -1,3 +1,4 @@
+const { default: ChromeDriverService } = require("wdio-chromedriver-service");
 const Page = require("./page");
 
 class SearchResultPage extends Page {
@@ -60,13 +61,10 @@ class SearchResultPage extends Page {
    * @returns boolean value if keyword is in headline
    */
   async resultHeadlineIncludeKeyword(keyword) {
-    for (let i = 0; i < (await super.getElementCount(this.headlines)); i++) {
-      let headline = await this.headlines[i].getText();
-      if (await headline.includes(keyword)) {
-        return true;
-      }
-    }
-    return false;
+    const includeKeyword = (await this.headlines).some(async (headline) => {
+      (await super.getElementText(headline)).includes(keyword);
+    });
+    return includeKeyword;
   }
 
   /**
