@@ -105,3 +105,9 @@ dist
 
 .idea
 .DS_Store
+scenarios/devopsplayground/tf/.terraform.lock.hcl
+scenarios/devopsplayground/tf/.terraform/providers/registry.terraform.io/hashicorp/archive/2.2.0/linux_amd64/terraform-provider-archive_v2.2.0_x5
+scenarios/devopsplayground/tf/.terraform/providers/registry.terraform.io/hashicorp/aws/4.43.0/linux_amd64/terraform-provider-aws_v4.43.0_x5
+scenarios/devopsplayground/tf/lambda_function.zip
+scenarios/devopsplayground/tf/terraform.tfstate
+scenarios/devopsplayground/tf/terraform.tfstate.backup
