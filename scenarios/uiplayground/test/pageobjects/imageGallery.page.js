@@ -43,8 +43,8 @@ class ImageGalleryPage extends Page {
    * @returns current image number from indicator
    */
   async getCurrentImageIndicator() {
-    let countIndicator = await super.getElementText(this.imageCountIcon);
-    let currentImg = countIndicator.split("/")[0];
+    const countIndicator = await super.getElementText(this.imageCountIcon);
+    const currentImg = countIndicator.split("/")[0];
     return parseInt(currentImg);
   }
 
@@ -61,8 +61,8 @@ class ImageGalleryPage extends Page {
    * @returns total image number from indicator
    */
   async getTotalImageFromIndicator() {
-    let countIndicator = await super.getElementText(this.imageCountIcon);
-    let totalImage = countIndicator.split("/")[1];
+    const countIndicator = await super.getElementText(this.imageCountIcon);
+    const totalImage = countIndicator.split("/")[1];
     return parseInt(totalImage);
   }
 

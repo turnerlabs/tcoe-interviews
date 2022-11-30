@@ -72,7 +72,7 @@ class SearchResultPage extends Page {
    * @returns boolean value if keyword in result count text
    */
   async resultCountIncludeKeyword(keyword) {
-    let resultCount = await super.getElementText(this.resultCountText);
+    const resultCount = await super.getElementText(this.resultCountText);
     return (await resultCount.includes(keyword)) ? true : false;
   }
 
