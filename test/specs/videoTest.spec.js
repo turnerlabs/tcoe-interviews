@@ -23,7 +23,6 @@ beforeEach(async () => {
 
 
     it("User can scroll suggested videos", async () => {
-        await browser.url("https://www.cnn.com/videos/entertainment/2022/11/11/henry-winkler-career-struggle-grease-wtcw-cprog-vpx.cnn");
         const mediaPage = new MediaPage();
         const suggestedVideosCount = 5;
         let defaultDisplayList = await mediaPage.getDisplayedSuggestedVideos();
@@ -35,5 +34,14 @@ beforeEach(async () => {
         // This returns to the default 5 suggested videos
         let leftScrollDisplay = await mediaPage.getDisplayedSuggestedVideos();
         expect(defaultDisplayList === leftScrollDisplay).toBeFalsy();
+    });
+
+    it("User can play from suggested videos", async () => {
+        const mediaPage = new MediaPage();
+        await mediaPage.playRandomVideoFromSuggestions();
+        // verify video is playing
+        const attrValueWhenPlaying = "pause-icon";
+        let status = await mediaPage.getMediaPlayerStatus();
+        expect(status).toEqual(attrValueWhenPlaying);
     });
 });

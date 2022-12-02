@@ -2,7 +2,7 @@ const CnnPage = require("../pageobjects/CnnPage");
 
 describe("Search functionality", function() {
 
-    it("Display search dialog on CNN", async () => {
+    it("User can user search function", async () => {
         const searchTerm = "Ukraine";
         // Open page
         await browser.url("https://www.cnn.com/");

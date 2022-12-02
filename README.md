@@ -41,6 +41,7 @@ I also used xpath for locators.
 1. Verify user can play and pause a video
 2. Verify video playing corresponds to the video playing in the suggested video list
 3. Verify user can scroll to the left and right of suggested videos
+4. Verify user can play video from suggestions (I used fuzz logic for this so a random video is selected)
 
 #### Test cases for Gallery page
 1. Verify index of first video is 1.

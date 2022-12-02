@@ -56,7 +56,7 @@ class MediaPage{
             await $(this.playButton).click();
             await this.getPlayStatus.waitUntil(async function () {
                 return (await this.getAttribute("class")) === attrValueWhenPaused;
-            }, {timeoutMsg: "Play was not successful"});
+            }, {timeoutMsg: "Pause was not successful"});
         }
     }
 
@@ -74,6 +74,20 @@ class MediaPage{
 
     async getMediaPlayerStatus() {
         return await this.getPlayStatus.getAttribute("class");
+    }
+
+    async playRandomVideoFromSuggestions() {
+        const attrValueWhenPlaying = "pause-icon";
+        const videoElements = await $$(this.displayedSuggestedVideos);
+        let randomIndex = Math.floor(Math.random() * videoElements.length)
+        if(randomIndex === 0){
+            randomIndex = 1;// this makes sure the current video is not selected
+        }
+        console.log(`randomIndex chosen is ${randomIndex}`);
+        await videoElements[randomIndex].click();
+        await this.getPlayStatus.waitUntil(async function () {
+            return (await this.getAttribute("class")) === attrValueWhenPlaying;
+        }, {timeoutMsg: "Play was not successful"});
     }
 }
 module.exports =  MediaPage;
