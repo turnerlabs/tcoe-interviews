@@ -18,3 +18,50 @@ Feel free to reach out anytime if you have any questions.
 * [DevOps Challenges](./scenarios/devopsplayground/README.md)
 
 Your testing of the provided scenarios should demonstrate your ability to analyze a system and understand it's intended behavior, and verify that it succeeds or fails to meet those expectations.
+
+## Solution
+
+### Overview
+Coding model is the Page Object Model (POM)
+
+Exercise was Exercise 2.
+
+I set up my framework in the home directory so as not to delete the test data that exists in the fork.
+
+I also used xpath for locators.
+
+***
+### Test cases
+#### Test cases for the search function
+1. Verify user can open search dialog
+2. Verify new page contains search term in search result
+3. Verify url contains search term
+
+#### Test cases for Media page
+1. Verify user can play and pause a video
+2. Verify video playing corresponds to the video playing in the suggested video list
+3. Verify user can scroll to the left and right of suggested videos
+
+#### Test cases for Gallery page
+1. Verify index of first video is 1.
+2. Verify carousel work by clicking back control. Image index should be the max
+3. Verify right button loads a different image
+
+
+***
+### Running e2e tests
+
+The framework used is webdriverio
+
+#### Set up
+
+1. Checkout the branch
+
+2. Run `yarn install` or `npm run install` from the project root directory to install all dependencies.
+
+#### Run tests
+The following code has been added to package.json and can be run from the project root directory.
+* `npm run wdio` to run all tests in the e2e directory.
+
+***
+Thanks for the opportunity to participate in the code challenge.
