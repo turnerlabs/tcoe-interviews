@@ -9,10 +9,16 @@ describe("Image Galleries", function () {
         const defaultImageCaption = await galleryPage.getImageCaption();
         let maxCount = await galleryPage.getMaxImageCount();
         await galleryPage.scrollLeft();
-        const finalImageCount = await galleryPage.getImageCount();
-        const finalImageCaption = await galleryPage.getImageCaption();
+        let finalImageCount = await galleryPage.getImageCount();
+        let finalImageCaption = await galleryPage.getImageCaption();
         // Verify captions are different
         expect(finalImageCaption !== defaultImageCaption).toBeTruthy();
         expect(finalImageCount).toEqual(maxCount);
+        // Scroll right and verify the same image is displayed
+        await galleryPage.scrollRight();
+        finalImageCount = await galleryPage.getImageCount();
+        finalImageCaption = await galleryPage.getImageCaption();
+        expect(finalImageCaption === defaultImageCaption).toBeTruthy();
+        expect(finalImageCount).toEqual(defaultImageCount);
     });
 });
