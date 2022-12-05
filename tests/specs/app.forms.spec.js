@@ -7,7 +7,12 @@ describe('Form components validation', () => {
         await HomeScreen.waitForLoading();
         await expect(HomeScreen.formsOption).toHaveAttribute('selected', 'false');
     });
-
+    
+    it('form tab should be available for selection and is clickable', async () => {
+        await expect(HomeScreen.formsOption).toBeDisplayed();
+        await expect(HomeScreen.formsOption).toBeEnabled();
+        await expect(HomeScreen.formsOption).toHaveAttribute('clickable', 'true');
+    });
    
 });
 
