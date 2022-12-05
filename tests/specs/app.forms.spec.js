@@ -2,6 +2,7 @@ const HomeScreen = require('../screenobjects/HomeScreen');
 const FormsScreen = require('../screenobjects/FormsScreen');
 const StringUtils = require('../helpers/stringUtils');
 const Picker = require('../screenobjects/components/Picker');
+const Gestures = require('../helpers/Gestures');
 
 
 describe('Form tab', () => {
@@ -30,6 +31,13 @@ describe('Form tab', () => {
         await expect(HomeScreen.formsOption).toBeSelected();
     });
 
+    it('should have an input behaviour working as intended', async () => {
+        await HomeScreen.goToForms();
+        await FormsScreen.typeInInput(StringUtils.EXAMPLE_TEXT);
+        await expect(FormsScreen.inputTextResult).toHaveText(StringUtils.EXAMPLE_TEXT);
+        await FormsScreen.clearInput();
+    });
+
     it('should have a working picker element with 3 options to choose from', async () => {
         await HomeScreen.goToForms();
         await FormsScreen.tapOnDropdown();
@@ -44,6 +52,15 @@ describe('Form tab', () => {
         await Picker.tapOnDefaultPickerOption();
     });
 
+    it('should have an interactable inactive button', async () => {
+        await HomeScreen.goToForms();
+        await Gestures.swipeUp();
+        await FormsScreen.tapOnInactiveButton();
+        await expect(FormsScreen.inactiveButton).not.toBeSelected();
+        await expect(FormsScreen.formsContainer).toBeDisplayed();
+    });
+
+    
 
 });
 
