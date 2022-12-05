@@ -13,4 +13,12 @@ describe('WebdriverIO and Appium, when interacting with forms,', () => {
         await expect(await TabBar.isFormclickable()).toEqual("true");
     });
 
+    it('should validate the input behavior is working as intended', async () => {
+        await FormsScreen.tapOnInput();
+        await FormsScreen.setImputValue("Testing input behavior")
+        const inputText = await FormsScreen.getInputText();
+        const resultText = await FormsScreen.getInputResultText();
+        expect(inputText).toEqual(resultText);
+    });
+
 });

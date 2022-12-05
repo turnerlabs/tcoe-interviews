@@ -16,6 +16,26 @@ class FormsScreen extends AppScreen {
     get activeButton () {return $('~button-Active');}
     get inActiveButton () {return $('~button-Inactive');}
   
+    async tapOnInput(){
+        await this.input.click();
+    }
+
+    async setImputValue(message){
+        await this.input.setValue(message)
+    }
+
+    async getInputText () {
+        return await this.input.getText();
+    }
+
+    async tapOnInputTextResult(){
+        await this.inputTextResult.click();
+    }
+
+    async getInputResultText () {
+        await this.tapOnInputTextResult();
+        return await this.inputTextResult.getText();
+    }
 
 }
 
