@@ -1,4 +1,9 @@
 export default class TabBar {
+
+    public static get homeButton () {return $('~Home');};
+
+    public static get formsButton () {return $('~Forms');};
+
     static async openHome () {
         await $('~Home').click();
     }
