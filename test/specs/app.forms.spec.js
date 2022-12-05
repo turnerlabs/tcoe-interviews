@@ -44,7 +44,7 @@ describe("Interaction in Forms Screen", () => {
     await expect(await FormsScreen.textResultInput.getText()).toHaveLength(data.input_max_character);
   });
 
-  it.only("should validate picker element is working", async () => {
+  it("should validate picker element is working", async () => {
     await FormsScreen.tapOnDropDownButton();
     await expect(NativeDropDown.dropDownComponent).toBeDisplayed();
     expect(await NativeDropDown.getDropdownListSize()).toBe(data.dropdown_expected_size);
