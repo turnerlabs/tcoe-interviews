@@ -27,9 +27,10 @@ describe('WebdriverIO and Appium, when interacting with the forms tab,', () => {
         await expect(TabBar.formsButton).toBeSelected;
     })
 
-    it('Input field should work as intended', async () => {
+    it('Input field should work as intended and Keyboard is deploying', async () => {
         const text = "lorem ipsum";
         await FormsScreen.tapOnInput();
+        expect (FormsScreen.validateKeyboard()).toBeTruthy;
         await FormsScreen.submitInputText(text);
         await expect(FormsScreen.inputTextResult).toHaveText(text);
     })

@@ -1,3 +1,4 @@
+import { AppiumDriver } from 'appium/build/lib/appium';
 import AppScreen from './AppScreen';
 import TabBar from './components/TabBar';
 
@@ -42,6 +43,10 @@ class FormsScreen extends AppScreen {
              */
             await $('~Forms-screen').click();
         }
+    }
+
+    async validateKeyboard(){
+        return await AppiumDriver.isKeyboardShown();
     }
 
     async tapOnSwitch(){
