@@ -1,6 +1,7 @@
 const TabBar = require('../screenobjects/components/TabBar.js');
 const FormsScreen = require('../screenobjects/FormsScreen');
 const NativeAlert = require('../screenobjects/components/NativeAlert');
+const inputDataProvider = require('../../providers/formInputData');
 
 describe('WebdriverIO and Appium, when interacting with forms,', () => {
     beforeEach(async () => {
@@ -16,13 +17,13 @@ describe('WebdriverIO and Appium, when interacting with forms,', () => {
 
     it('should validate the input behavior is working as intended', async () => {
         await FormsScreen.tapOnInput();
-        await FormsScreen.setInputValue("Testing input behavior")
+        await FormsScreen.setInputValue(inputDataProvider.inputMessage.text)
         const inputText = await FormsScreen.getInputText();
         const resultText = await FormsScreen.getInputResultText();
         expect(inputText).toEqual(resultText);
     });
 
-    it('should Validate that picker element is working and it has 3 options to choose from', async () => {
+    it('should be able to display 3 options to choose from the picker element', async () => {
         await FormsScreen.tapOnDropDown();
         await expect(await FormsScreen.dropDownContainer).toBeDisplayed();
         await expect(await FormsScreen.getDropdownSize()).toEqual(3);

@@ -1,6 +1,7 @@
 const AppScreen= require('./AppScreen');
 const Utils = require('../helpers/Utils');
 const Gestures = require('../helpers/Gestures');
+const Actions = require('../helpers/Actions');
 
 
 
@@ -21,7 +22,7 @@ class FormsScreen extends AppScreen {
     get inActiveButton () {return $('~button-Inactive');}
   
     async tapOnInput(){
-        await this.input.click();
+        await Actions.tapOnElement(await this.input);
     }
 
     async setInputValue(message){
@@ -33,7 +34,7 @@ class FormsScreen extends AppScreen {
     }
 
     async tapOnInputTextResult(){
-        await this.inputTextResult.click();
+        await Actions.tapOnElement(await this.inputTextResult);
     }
 
     async getInputResultText () {

@@ -1,3 +1,5 @@
+
+
 class TabBar {
 
 
@@ -7,6 +9,10 @@ class TabBar {
 
     static async isFormSelected(){
         return await $('~Forms').getAttribute("selected");
+    }
+
+    static async isHomeSelected(){
+        return await $('~Home').getAttribute("selected");
     }
 
     static async isFormclickable(){
