@@ -13,7 +13,7 @@ describe("Interaction in Forms Screen", () => {
   it("should validate default selection of the tab, and if forms button is clickable", async () => {
     await expect(TabBar.homeOption).toHaveAttributeContaining("selected","true");
     await expect(TabBar.formsOption).toHaveAttributeContaining("selected","false");
-    await expect(TabBar.formsOption).toHaveAttributeContaining("clickable", "true");
+    await expect(TabBar.formsOption).toHaveAttributeContaining("clickable","true");
   });
 
   it("should navigate to forms", async () => {
@@ -32,7 +32,9 @@ describe("Interaction in Forms Screen", () => {
   it("should type on input and verify it work properly with special characters", async () => {
     await FormsScreen.tapOnInput();
     await FormsScreen.typeOnInput(data.text_with_special_characters);
-    await expect(await FormsScreen.textResultInput.getText()).toEqual(data.text_with_special_characters);
+    await expect(await FormsScreen.textResultInput.getText()).toEqual(
+      data.text_with_special_characters
+    );
   });
 
   it("should type on input and verify character boundaries", async () => {
@@ -47,7 +49,13 @@ describe("Interaction in Forms Screen", () => {
     await expect(NativeDropDown.dropDownComponent).toBeDisplayed();
     expect(await NativeDropDown.getDropdownListSize()).toBe(data.dropdown_expected_size);
 
-    await NativeDropDown.selectListOptionRandomly();
+    const dropDownOptionsTextList = await NativeDropDown.getDropDownOptionsList();
+
+    const optionSelected = await NativeDropDown.getOptionToSelectRandomly();
+    await NativeDropDown.selectListOption(optionSelected);
+
+    const optionSelectedText = await FormsScreen.dropdownText.getText();
+    await expect(NativeDropDown.checkOptionSelectedIndex(dropDownOptionsTextList,optionSelectedText)).toEqual(optionSelected);
   });
 
   it("should validate that inactive button is not interactable", async () => {

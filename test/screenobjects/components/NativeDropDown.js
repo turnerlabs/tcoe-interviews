@@ -23,12 +23,25 @@ class NativeDropDown {
     return (await this.dropDownOptionsList.length) - 1;
   }
 
-  async selectListOptionRandomly() {
-    const optionToSelect = Utils.getRandomNumber(
-      await this.getDropdownListSize()
-    );
+  async getDropDownOptionsList() {
+    const optionsList = [];
+    this.dropDownOptionsList.forEach(async (element) => {
+      const text = await element.getText();
+      optionsList.push(text);
+    });
+    return optionsList;
+  }
 
+  async getOptionToSelectRandomly() {
+    return Utils.getRandomNumber(await this.getDropdownListSize());
+  }
+
+  async selectListOption(optionToSelect) {
     await CommonActions.doClickOn(this.dropDownOptionsList[optionToSelect]);
+  }
+
+  checkOptionSelectedIndex(dropDownOptionsTextList, text) {
+    const index = dropDownOptionsTextList.indexOf(text);
   }
 }
 
