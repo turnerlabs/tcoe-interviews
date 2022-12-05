@@ -4,6 +4,7 @@ const StringUtils = require('../helpers/stringUtils');
 const Picker = require('../screenobjects/components/Picker');
 const Gestures = require('../helpers/Gestures');
 const NativeAlert = require('../screenobjects/components/NativeAlerts');
+const Utils = require('../helpers/Utils');
 
 
 describe('Form tab', () => {
@@ -14,7 +15,7 @@ describe('Form tab', () => {
 
     afterEach(async () => {
         await HomeScreen.goToHome();
-    }); 
+    });
 
     it('should not be selected by default', async () => {
         await HomeScreen.waitForLoading();
@@ -32,7 +33,7 @@ describe('Form tab', () => {
         await expect(HomeScreen.formsOption).toBeSelected();
     });
 
-    it('should have an input behaviour working as intended', async () => {
+    it('should have input behaviour working as intended', async () => {
         await HomeScreen.goToForms();
         await FormsScreen.typeInInput(StringUtils.EXAMPLE_TEXT);
         await expect(FormsScreen.inputTextResult).toHaveText(StringUtils.EXAMPLE_TEXT);
@@ -53,7 +54,7 @@ describe('Form tab', () => {
         await Picker.tapOnDefaultPickerOption();
     });
 
-    it('should have an interactable inactive button', async () => {
+    it('should have a non-interactable inactive button', async () => {
         await HomeScreen.goToForms();
         await Gestures.swipeUp();
         await FormsScreen.tapOnInactiveButton();
@@ -67,6 +68,15 @@ describe('Form tab', () => {
         await FormsScreen.tapOnActiveButton();
         await expect(await NativeAlert.isAlertDisplayed()).toBe(true);
         await NativeAlert.getOutFromAlert();
+    });
+
+    it('should have an available keyboard to provide input in the text field', async () => {
+        await HomeScreen.goToForms();
+        await FormsScreen.tapOnInputText();
+        await expect(await driver.isKeyboardShown()).toBe(true)
+        await Utils.simulateTypingOnKeyboard();
+        await expect(FormsScreen.input).not.toHaveText(StringUtils.DEFAULT_INPUT_TEXT);
+        await Utils.goBack();
     });
 
 });

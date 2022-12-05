@@ -1,3 +1,4 @@
+const Gestures = require('./Gestures');
 
 class Utils {
 
@@ -22,9 +23,11 @@ class Utils {
     static async androidElementSelector(uiSelector) {
         return $(`android=${uiSelector}`);
     }
+
     static async androidElementsSelector(uiSelector) {
         return $$(`android=${uiSelector}`);
     }
+
     static async simulateTypingOnKeyboard() {
         const height = ((await Gestures.windowSize).height) * 5 / 6;
 
@@ -34,6 +37,10 @@ class Utils {
             { action: 'press', options: { x: 1000, y: height } },
             { action: 'release' }
         ]);
+    }
+
+    static async goBack() {
+        await driver.back();
     }
 }
 
