@@ -3,6 +3,7 @@ const FormsScreen = require('../screenobjects/FormsScreen');
 const StringUtils = require('../helpers/stringUtils');
 const Picker = require('../screenobjects/components/Picker');
 const Gestures = require('../helpers/Gestures');
+const NativeAlert = require('../screenobjects/components/NativeAlerts');
 
 
 describe('Form tab', () => {
@@ -60,7 +61,13 @@ describe('Form tab', () => {
         await expect(FormsScreen.formsContainer).toBeDisplayed();
     });
 
-    
+    it('should have functional android native alerts', async () => {
+        await HomeScreen.goToForms();
+        await Gestures.swipeUp();
+        await FormsScreen.tapOnActiveButton();
+        await expect(await NativeAlert.isAlertDisplayed()).toBe(true);
+        await NativeAlert.getOutFromAlert();
+    });
 
 });
 

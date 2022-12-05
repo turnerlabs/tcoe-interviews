@@ -25,7 +25,16 @@ class Utils {
     static async androidElementsSelector(uiSelector) {
         return $$(`android=${uiSelector}`);
     }
+    static async simulateTypingOnKeyboard() {
+        const height = ((await Gestures.windowSize).height) * 5 / 6;
 
+        driver.touchPerform([
+            { action: 'press', options: { x: 400, y: height } },
+            { action: 'release' },
+            { action: 'press', options: { x: 1000, y: height } },
+            { action: 'release' }
+        ]);
+    }
 }
 
 module.exports = Utils;
