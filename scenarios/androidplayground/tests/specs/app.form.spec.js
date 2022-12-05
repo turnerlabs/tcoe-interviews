@@ -21,4 +21,12 @@ describe('WebdriverIO and Appium, when interacting with forms,', () => {
         expect(inputText).toEqual(resultText);
     });
 
+    it('should Validate that picker element is working and it has 3 options to choose from', async () => {
+        await FormsScreen.tapOnDropDown();
+        await expect(await FormsScreen.dropDownContainer).toBeDisplayed();
+        await expect(await FormsScreen.getDropdownSize()).toEqual(3);
+        await FormsScreen.tapOnDropdownOptionRandomly();
+        await expect(await FormsScreen.dropDownContainer).not.toBeDisplayed();
+    });
+
 });
