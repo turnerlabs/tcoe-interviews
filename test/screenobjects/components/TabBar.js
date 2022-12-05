@@ -15,6 +15,12 @@ class TabBar {
     return $("~Forms");
   }
 
+  get homeScreenIconSelected() {
+    const homeSelectedLocator =
+      CommonActions.findElementByDescriptionWithSelectProperty("Home", true);
+    return $(`android=${homeSelectedLocator}`);
+  }
+
   /**
    * Methods
    */
