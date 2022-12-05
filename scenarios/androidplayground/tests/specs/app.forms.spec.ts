@@ -1,6 +1,7 @@
 import TabBar from '../screenobjects/components/TabBar';
 import FormsScreen from '../screenobjects/FormsScreen';
 import Picker from '../screenobjects/components/Picker';
+import NativeAlert from '../screenobjects/components/NativeAlert';
 
 describe('WebdriverIO and Appium, when interacting with the forms tab,', () => {
     beforeEach(async () => {
@@ -39,6 +40,12 @@ describe('WebdriverIO and Appium, when interacting with the forms tab,', () => {
         for (let option in Picker.pickerOptions) {
             await expect(option).toBeDisplayedInViewport;
         }
+        await Picker.selectValue('Select an item...')
+    })
+
+    it.only('Inactive button should be inactive', async () => {
+        await FormsScreen.tapOnInActiveButton();
+        expect(NativeAlert.alertTitle).not.toExist;
     })
 
 });

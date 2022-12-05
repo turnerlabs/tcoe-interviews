@@ -26,6 +26,10 @@ class NativeAlert {
         });
     }
 
+    public static alertTitle (){
+        return $(SELECTORS.ANDROID.ALERT_TITLE);
+    }
+
     /**
      * Press a button in a cross-platform way.
      *
