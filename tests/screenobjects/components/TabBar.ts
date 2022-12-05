@@ -41,6 +41,10 @@ class TabBar {
         return await this.home.isSelected();
     }
 
+    async isFormsSelected(): Promise<boolean> {
+        return await this.forms.isSelected();
+    }
+
     async isFormBtnAvailable(): Promise<boolean> {
         return await this.forms.isDisplayed();
     }

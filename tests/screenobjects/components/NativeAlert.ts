@@ -1,15 +1,12 @@
-const SELECTORS = {
-    ALERT_TITLE: '*//android.widget.TextView[@resource-id="android:id/alertTitle"]',
-    ALERT_MESSAGE: '*//android.widget.TextView[@resource-id="android:id/message"]',
-    ALERT_BUTTON: '*//android.widget.Button[@text="{BUTTON_TEXT}"]',
-};
+import { ALERT_SELECTORS } from "../../helpers/data";
+
 
 class NativeAlert {
     /**
      * Wait for the alert to exist.
      */
     static async waitForIsShown(isShown = true) {
-        const selector = SELECTORS.ALERT_TITLE;
+        const selector = ALERT_SELECTORS.ALERT_TITLE;
 
         return $(selector).waitForExist({
             timeout: 11000,
@@ -22,7 +19,7 @@ class NativeAlert {
      *  and click on the button
      */
     static async tapOnButtonWithText(selector: string) {
-        const buttonSelector = SELECTORS.ALERT_BUTTON.replace(/{BUTTON_TEXT}/, selector.toUpperCase())
+        const buttonSelector = ALERT_SELECTORS.ALERT_BUTTON.replace(/{BUTTON_TEXT}/, selector.toUpperCase())
         await $(buttonSelector).click();
     }
 
@@ -30,7 +27,7 @@ class NativeAlert {
      * Get the alert text
      */
     static async text(): Promise<string> {
-        return `${await $(SELECTORS.ALERT_TITLE).getText()}\n${await $(SELECTORS.ALERT_MESSAGE).getText()}`;
+        return `${await $(ALERT_SELECTORS.ALERT_TITLE).getText()}\n${await $(ALERT_SELECTORS.ALERT_MESSAGE).getText()}`;
     }
 }
 
