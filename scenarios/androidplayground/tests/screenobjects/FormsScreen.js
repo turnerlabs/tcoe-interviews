@@ -64,6 +64,15 @@ class FormsScreen extends AppScreen {
         return (await this.inActiveButton).getAttribute("selected");
     }
 
+    async clickOnActiveButton(){
+        await Gestures.checkIfDisplayedWithSwipeUp(await this.activeButton, 4);
+        await this.activeButton.click();
+    }
+
+    async isKeyboardDisplayed(){
+        return await driver.isKeyboardShown();
+    }
+
 }
 
 module.exports = new FormsScreen();

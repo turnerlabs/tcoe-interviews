@@ -1,5 +1,6 @@
 const TabBar = require('../screenobjects/components/TabBar.js');
 const FormsScreen = require('../screenobjects/FormsScreen');
+const NativeAlert = require('../screenobjects/components/NativeAlert');
 
 describe('WebdriverIO and Appium, when interacting with forms,', () => {
     beforeEach(async () => {
@@ -34,6 +35,18 @@ describe('WebdriverIO and Appium, when interacting with forms,', () => {
         await expect(await FormsScreen.isInactiveButtonSelected()).toEqual("false");
     });
 
+    it('should be able to display android native alerts successfully', async () => {
+        await FormsScreen.clickOnActiveButton();
+        await NativeAlert.waitForIsShown();
+        await expect(await NativeAlert.text()).toContain('active');
+        await NativeAlert.topOnButtonWithText('OK');
+        await NativeAlert.waitForIsShown(false);
+    });
 
+    it('should Validate that keyboard is available to provide input in the text field', async () => {
+        await FormsScreen.tapOnInput();
+        expect(await FormsScreen.isKeyboardDisplayed()).toEqual(true);
+        await FormsScreen.getInputResultText();
+    });
 
 });
