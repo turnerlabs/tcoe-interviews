@@ -1,17 +1,11 @@
 export const inputString: string = 'typing Test';
 
-const options: string[] = ['webdriver.io', 'Appium', 'This app']
-export function getRandomOption(): string {
-    let optionIndex: number = Math.floor(Math.random() * options.length);
-    let option: string = options[optionIndex];
-    return option;
-}
+export const options: string[] = ['webdriver.io', 'Appium', 'This app']
 
 export const ALERT_TEXTS = {
     titleKeyword: 'active',
     closeBtn: 'OK'
 }
-
 
 export const PICKER = {
     PICKER_SELECTORS: {

@@ -1,4 +1,4 @@
-import { ALERT_SELECTORS } from "../../helpers/data";
+import { ALERT_SELECTORS } from "../../helpers/constants";
 
 
 class NativeAlert {
@@ -18,7 +18,7 @@ class NativeAlert {
      *  Use the text of the button, provide a string and it will automatically transform it to uppercase
      *  and click on the button
      */
-    static async tapOnButtonWithText(selector: string) {
+    static async tapOnButtonWithText(selector: string): Promise<void> {
         const buttonSelector = ALERT_SELECTORS.ALERT_BUTTON.replace(/{BUTTON_TEXT}/, selector.toUpperCase())
         await $(buttonSelector).click();
     }

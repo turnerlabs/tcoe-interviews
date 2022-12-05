@@ -1,7 +1,7 @@
 import AppScreen from './AppScreen';
 
 class HomeScreen extends AppScreen {
-    constructor () {
+    constructor() {
         super('~Home-screen');
     }
 }

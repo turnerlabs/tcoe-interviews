@@ -16,27 +16,27 @@ class FormsScreen extends AppScreen {
     get activeButton() { return $('~button-Active'); }
     get inActiveButton() { return $('~button-Inactive'); }
 
-    async tapOnInputTextResult() {
+    async tapOnInputTextResult(): Promise<void> {
         await this.inputTextResult.click();
     }
 
-    async tapOnInput() {
+    async tapOnInput(): Promise<void> {
         await this.input.click();
     }
 
-    async tapOnSwitch() {
+    async tapOnSwitch(): Promise<void> {
         await this.switch.click();
     }
 
-    async tapOnDropDown() {
+    async tapOnDropDown(): Promise<void> {
         await this.dropDown.click();
     }
 
-    async tapOnActiveButton() {
+    async tapOnActiveButton(): Promise<void> {
         await this.activeButton.click();
     }
 
-    async tapOnInActiveButton() {
+    async tapOnInActiveButton(): Promise<void> {
         await this.inActiveButton.click();
     }
 
@@ -70,11 +70,6 @@ class FormsScreen extends AppScreen {
      * Get the text of the drop down component
      */
     async getDropDownText(): Promise<string> {
-        // We need to do some magic here to get the value of the dropdown for Android and for iOS
-        // return getTextOfElement(this.dropDown);
-        // For Android the selected value can be found with this XPATH
-        // `//android.view.ViewGroup[@content-desc="Dropdown"]/android.view.ViewGroup/android.widget.EditText`
-        // Which is `//*[@content-desc="Dropdown"]/*/android.widget.EditText` so it's let element dependent
         let selector = '//*[@content-desc="Dropdown"]/*/android.widget.EditText';
 
         return $(selector).getText();
