@@ -19,7 +19,7 @@ describe('Android forms performance testing by using WebdriverIO and  Appium',  
         await expect(await TabBar.formsOptionIsSelected(), 'Forms tab cannot be selected').to.be.true;
     });
 
-    it.only('Forms tab should be available for selection and be clickable', async() => {
+    it('Forms tab should be available for selection and be clickable', async() => {
         await expect(await TabBar.formsOptionCanBeSelected(), 'Forms tab is not available for selection').to.be.true;
         await expect(await TabBar.formsOptionIsClickable(), 'Forms tab is not clickable').to.be.true;
     });
@@ -32,7 +32,7 @@ describe('Android forms performance testing by using WebdriverIO and  Appium',  
         });
     });
 
-    it('Picker should be working as intended', async() => {
+    it('Picker element should be working and it has 3 options to choose from', async() => {
         let options = ['webdriver.io is awesome',
                         'Appium is awesome',
                         'This app is awesome'
