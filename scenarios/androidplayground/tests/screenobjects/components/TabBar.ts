@@ -1,4 +1,5 @@
 export default class TabBar {
+    
     static async openHome () {
         await $('~Home').click();
     }
@@ -27,5 +28,25 @@ export default class TabBar {
         return $('~Home').waitForDisplayed({
             timeout: 20000,
         });
+    }
+
+    static async isHomeSelected() : Promise<boolean|void> {
+        return (await (await $('~Home')).isSelected());
+    }
+
+    static async isFormsSelected() : Promise<boolean|void> {
+        return (await (await $('~Forms')).isSelected());
+    }
+
+    static async isFormsAvailable() : Promise<boolean|void> {
+        return (await (await $('~Forms').isDisplayed()));
+    }
+
+    static async isFormsClickable() : Promise<boolean|void> {
+        return (await (await $('~Forms').isClickable()));
+    }
+
+    static async isFormsAvailableClickable() : Promise<boolean|void> {
+        return this.isFormsAvailable() && this.isFormsClickable();
     }
 }

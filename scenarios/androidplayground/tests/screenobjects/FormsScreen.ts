@@ -1,6 +1,13 @@
 import AppScreen from './AppScreen';
+import Gestures from '../helpers/Gestures';
+
+const STRINGS = {
+    TEST_INPUT: 'TCoE RULES!',
+    MODIFIED_TEST_INPUT: 'TCoE RULES',
+};
 
 class FormsScreen extends AppScreen {
+      
     constructor () {
         super('~Forms-screen');
     }
@@ -12,25 +19,93 @@ class FormsScreen extends AppScreen {
     private get dropDown () {return $('~Dropdown');}
     get activeButton () {return $('~button-Active');}
     get inActiveButton () {return $('~button-Inactive');}
+    get dropDownList() {return $('android.widget.ListView');}
+    get listElements() {return $$('android.widget.CheckedTextView')}
 
-    async tapOnInputTextResult(){
-        await this.inputTextResult.click();
+    async getInput() {
+        return this.input;
     }
 
-    async tapOnSwitch(){
-        await this.switch.click();
+    async getTextResult() {
+        return this.inputTextResult;
     }
 
-    async tapOnDropDown(){
-        await this.dropDown.click();
+    async getSwitch() {
+        return this.switch;
     }
 
-    async tapOnActiveButton(){
-        await this.activeButton.click();
+    async getSwitchText() {
+        return this.switchText;
     }
 
-    async tapOnInActiveButton(){
-        await this.inActiveButton.click();
+    async getDropDown() {
+        return this.dropDown;
+    }
+
+    async getActiveButton() {
+        return this.activeButton;
+    }
+
+    async getInactiveButton() {
+        return this.inActiveButton;
+    }
+
+    async getListView() {
+        return this.dropDownList;
+    }
+
+    async getListElements() {
+        return this.listElements;
+    }
+
+    async getInputString() : Promise<string> {
+        return STRINGS.TEST_INPUT;
+    }
+
+    async getModifiedInputString() : Promise<string> {
+        return STRINGS.MODIFIED_TEST_INPUT;
+    }
+
+    async tapOn(element : Promise<WebdriverIO.Element>) {
+        if(!await (await element).isDisplayed()){
+            await Gestures.checkIfDisplayedWithSwipeUp(await element, 2);
+            await (await element).click();
+        }
+        else {
+            await (await element).click();
+        }
+    }
+
+    async setInputText(text : string) {
+        if (driver.isKeyboardShown()) {
+            await this.input.setValue(text);
+            driver.hideKeyboard();
+        }
+    }
+
+    async getInputText(): Promise<string> {
+        return (await $('~text-input')).getText();
+    }
+
+    async getInputValidationText(): Promise<string> {
+        return (await $('~input-text-result')).getText();
+    }
+
+    async countDropDownElements (){
+        let listLength = (await this.listElements.length);
+        return listLength;
+    }
+
+    async getRandomListElement() {
+        let size = this.listElements.length;
+        let index = await Math.floor(Math.random() * await size);
+        return this.listElements[index];
+    }
+
+    async getLastOfList() {
+        let size = await this.listElements.length;
+        let finalIndex = size -1;
+        return this.listElements[finalIndex];   
     }
 
     /**
