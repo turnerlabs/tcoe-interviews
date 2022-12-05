@@ -1,6 +1,8 @@
 const TabBar = require("../screenobjects/components/TabBar");
 const FormsScreen = require("../screenobjects/FormsScreen");
-const data = require("../../test_data_source/data.provider");
+const NativeDropDown = require("../screenobjects/components/NativeDropDown");
+const NativeAlert = require("../screenobjects/components/NativeAlert");
+const data = require("../../providers/strings.and.limits.providers");
 
 describe("Interaction in Forms Screen", () => {
   beforeEach(async () => {
@@ -9,27 +11,15 @@ describe("Interaction in Forms Screen", () => {
   });
 
   it("should validate default selection of the tab, and if forms button is clickable", async () => {
-    await expect(TabBar.homeOption).toHaveAttributeContaining(
-      "selected",
-      "true"
-    );
-    await expect(TabBar.formsOption).toHaveAttributeContaining(
-      "selected",
-      "false"
-    );
-    await expect(TabBar.formsOption).toHaveAttributeContaining(
-      "clickable",
-      "true"
-    );
+    await expect(TabBar.homeOption).toHaveAttributeContaining("selected","true");
+    await expect(TabBar.formsOption).toHaveAttributeContaining("selected","false");
+    await expect(TabBar.formsOption).toHaveAttributeContaining("clickable", "true");
   });
 
   it("should navigate to forms", async () => {
     await expect(FormsScreen.formsScreen).toBeDisplayed();
     await expect(TabBar.homeScreenIconSelected).not.toBeDisplayed();
-    await expect(TabBar.formsOption).toHaveAttributeContaining(
-      "selected",
-      "true"
-    );
+    await expect(TabBar.formsOption).toHaveAttributeContaining("selected","true");
   });
 
   it("should validate keyboard is available to provide input in the text field", async () => {
@@ -39,24 +29,44 @@ describe("Interaction in Forms Screen", () => {
     await expect(await driver.isKeyboardShown()).toBeFalsy();
   });
 
-  it("should type on input and verify it work properly", async () => {
+  it("should type on input and verify it work properly with special characters", async () => {
     await FormsScreen.tapOnInput();
-    await FormsScreen.typeOnInput(data.text_with_special_characters.text);
-    await expect(await FormsScreen.textResultInput.getText()).toEqual(
-      data.text_with_special_characters.text
-    );
+    await FormsScreen.typeOnInput(data.text_with_special_characters);
+    await expect(await FormsScreen.textResultInput.getText()).toEqual(data.text_with_special_characters);
+  });
 
+  it("should type on input and verify character boundaries", async () => {
     await FormsScreen.tapOnInput();
-    await FormsScreen.typeOnInput(data.text_which_exceeds_capacity.text);
+    await FormsScreen.typeOnInput(data.text_which_exceeds_capacity);
+    await expect((await FormsScreen.textResultInput.getText()).length).toBeLessThan(data.text_which_exceeds_capacity.length);
+    await expect(await FormsScreen.textResultInput.getText()).toHaveLength(data.input_max_character);
+  });
 
-    await expect(
-      (
-        await FormsScreen.textResultInput.getText()
-      ).length
-    ).toBeLessThan(data.text_which_exceeds_capacity.text.length);
+  it("should validate picker element is working", async () => {
+    await FormsScreen.tapOnDropDownButton();
+    await expect(NativeDropDown.dropDownComponent).toBeDisplayed();
+    expect(await NativeDropDown.getDropdownListSize()).toBe(data.dropdown_expected_size);
 
-    await expect(await FormsScreen.textResultInput.getText()).toHaveLength(
-      data.input_max_character
-    );
+    await NativeDropDown.selectListOptionRandomly();
+  });
+
+  it("should validate that inactive button is not interactable", async () => {
+    await FormsScreen.scrollToScreenEnd();
+    await FormsScreen.tapOnInactiveButton();
+    await expect(NativeAlert.alertTitle).not.toBeDisplayed();
+    await expect(FormsScreen.formsScreen).toBeDisplayed();
+  });
+
+  it("should validate that android native alerts are functional", async () => {
+    await FormsScreen.scrollToScreenEnd();
+    await expect(FormsScreen.activeButton).toBeDisplayed();
+    await FormsScreen.tapOnActiveButton();
+
+    await NativeAlert.waitForAlertShown();
+    await expect(FormsScreen.activeButton).not.toBeDisplayed();
+    await expect(NativeAlert.alertTitle).toBeDisplayed();
+
+    await NativeAlert.tapOnOkAlertButton();
+    await expect(NativeAlert.alertTitle).not.toBeDisplayed();
   });
 });
