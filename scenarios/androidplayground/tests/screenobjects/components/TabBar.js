@@ -5,6 +5,14 @@ class TabBar {
         await $('~Forms').click();
     }
 
+    static async isFormSelected(){
+        return await $('~Forms').getAttribute("selected");
+    }
+
+    static async isFormclickable(){
+        return await  $('~Forms').getAttribute("clickable");
+    }
+
     static async waitForTabBarShown (){
         return $('~Home').waitForDisplayed({
             timeout: 20000,
