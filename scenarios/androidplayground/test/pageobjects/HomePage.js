@@ -1,5 +1,4 @@
 const Page = require('./Page.js');
-const LoginPage = require('./LoginPage.js');
 const FormPage = require('./FormPage.js');
 
 class HomePage extends Page{
@@ -23,11 +22,6 @@ class HomePage extends Page{
     constructor() {
        super();
        this.waitForIsShown(this.homeView);
-    }
-
-    async goToLogin() {
-        await this.changeViewTo(this.loginOption)
-        return new LoginPage();
     }
 
     async goToForm() {

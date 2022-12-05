@@ -1,4 +1,5 @@
 const HomePage = require('../pageobjects/HomePage');
+const formData = require('../testdata/formData');
 
 describe('Form test', () => {
     it('Should validate that form tab is available for selection and is clickable', async () => {
@@ -14,7 +15,7 @@ describe('Form test', () => {
         await driver.hideKeyboard();
     })
     it('Should validate the input behavior is working as intended', async () => {
-        await expect(await formPage.formsInput('test working')).toEqual(true);
+        await expect(await formPage.formsInput(formData.formInput)).toEqual(true);
     })
     it('Should validate that picker element is working and it has 3 options to choose from', async () => {
         dropdown = await formPage.goToDropdown();
