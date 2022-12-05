@@ -1,5 +1,6 @@
 const AppScreen= require('./AppScreen');
 const Utils = require('../helpers/Utils');
+const Gestures = require('../helpers/Gestures');
 
 
 
@@ -23,7 +24,7 @@ class FormsScreen extends AppScreen {
         await this.input.click();
     }
 
-    async setImputValue(message){
+    async setInputValue(message){
         await this.input.setValue(message)
     }
 
@@ -52,6 +53,15 @@ class FormsScreen extends AppScreen {
     async tapOnDropdownOptionRandomly() {
         const option = Utils.getRandom(1,await this.getDropdownSize())
         await (this.dropDownList[option]).click();
+    }
+
+    async clickOnInactiveButton(){
+        await Gestures.checkIfDisplayedWithSwipeUp(await this.inActiveButton, 4);
+        await this.inActiveButton.click();
+    }
+
+    async isInactiveButtonSelected(){
+        return (await this.inActiveButton).getAttribute("selected");
     }
 
 }

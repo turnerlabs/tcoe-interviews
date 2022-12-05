@@ -15,7 +15,7 @@ describe('WebdriverIO and Appium, when interacting with forms,', () => {
 
     it('should validate the input behavior is working as intended', async () => {
         await FormsScreen.tapOnInput();
-        await FormsScreen.setImputValue("Testing input behavior")
+        await FormsScreen.setInputValue("Testing input behavior")
         const inputText = await FormsScreen.getInputText();
         const resultText = await FormsScreen.getInputResultText();
         expect(inputText).toEqual(resultText);
@@ -28,5 +28,12 @@ describe('WebdriverIO and Appium, when interacting with forms,', () => {
         await FormsScreen.tapOnDropdownOptionRandomly();
         await expect(await FormsScreen.dropDownContainer).not.toBeDisplayed();
     });
+
+    it('should Validate that Inactive button is not interactable', async () => {
+        await FormsScreen.clickOnInactiveButton();
+        await expect(await FormsScreen.isInactiveButtonSelected()).toEqual("false");
+    });
+
+
 
 });
