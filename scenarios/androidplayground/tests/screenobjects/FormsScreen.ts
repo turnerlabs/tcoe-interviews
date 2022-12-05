@@ -9,7 +9,10 @@ class FormsScreen extends AppScreen {
     get inputTextResult () {return $('~input-text-result');}
     private get switch () {return $('~switch');}
     private get switchText () {return $('~switch-text');}
-    private get dropDown () {return $('~Dropdown');}
+    get dropDown () {return $('~Dropdown');}
+    get dropDownText () {
+        return $('//*[@content-desc="Dropdown"]/*/android.widget.EditText');
+    }
     get activeButton () {return $('~button-Active');}
     get inActiveButton () {return $('~button-Inactive');}
 
