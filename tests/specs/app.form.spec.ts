@@ -3,8 +3,9 @@ import FormsScreen from '../screenobjects/FormsScreen';
 import NativeAlert from '../screenobjects/components/NativeAlert';
 import Picker from '../screenobjects/components/Picker';
 import { assert, expect } from 'chai';
-import { ALERT_TEXTS, inputString} from '../helpers/constants';
+import { ALERT_TEXTS, inputString } from '../helpers/constants';
 import { getOptionText, getRandomOption } from '../helpers/utils';
+
 
 
 describe('WebdriverIO and Appium, when interacting with Forms, Inputs, Buttons, and Alerts', () => {

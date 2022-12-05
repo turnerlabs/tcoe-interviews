@@ -1,5 +1,5 @@
-import { getElementsByResourceID } from '../helpers/selector';
 import AppScreen from './AppScreen';
+import { getElementsByResourceID } from '../helpers/genericActions';
 
 
 class FormsScreen extends AppScreen {
