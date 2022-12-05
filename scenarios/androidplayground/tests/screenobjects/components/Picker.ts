@@ -18,6 +18,11 @@ class Picker {
         });
     }
 
+    public static get pickerOptions(){
+        const selector = "new UiSelector().resourceId('android:id/text1');"
+        return $$(selector);
+    }
+
     /**
      * Select a value from the picker
      */

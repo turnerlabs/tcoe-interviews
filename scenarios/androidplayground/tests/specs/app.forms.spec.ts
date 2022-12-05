@@ -1,6 +1,6 @@
 import TabBar from '../screenobjects/components/TabBar';
 import FormsScreen from '../screenobjects/FormsScreen';
-import NativeAlert from '../screenobjects/components/NativeAlert';
+import Picker from '../screenobjects/components/Picker';
 
 describe('WebdriverIO and Appium, when interacting with the forms tab,', () => {
     beforeEach(async () => {
@@ -31,6 +31,14 @@ describe('WebdriverIO and Appium, when interacting with the forms tab,', () => {
         await FormsScreen.tapOnInput();
         await FormsScreen.submitInputText(text);
         await expect(FormsScreen.inputTextResult).toHaveText(text);
+    })
+
+    it('Picker should have 3 visible options', async () => {
+        await FormsScreen.tapOnDropDown();
+        await Picker.waitForIsShown(true);
+        for (let option in Picker.pickerOptions) {
+            await expect(option).toBeDisplayedInViewport;
+        }
     })
 
 });
