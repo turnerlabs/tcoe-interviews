@@ -22,4 +22,15 @@ describe('WebdriverIO and Appium, when interacting with the forms tab,', () => {
         await expect(TabBar.formsButton).toBeClickable;
     })
 
+    it('forms tab color should change on tap', async () => {
+        await expect(TabBar.formsButton).toBeSelected;
+    })
+
+    it('Input field should work as intended', async () => {
+        const text = "lorem ipsum";
+        await FormsScreen.tapOnInput();
+        await FormsScreen.submitInputText(text);
+        await expect(FormsScreen.inputTextResult).toHaveText(text);
+    })
+
 });
