@@ -41,11 +41,20 @@ describe('WebdriverIO and Appium, when interacting with the forms tab,', () => {
             await expect(option).toBeDisplayedInViewport;
         }
         await Picker.selectValue('Select an item...')
+        await FormsScreen.waitForIsShown(true);
     })
 
-    it.only('Inactive button should be inactive', async () => {
+    it('Inactive button should be inactive', async () => {
         await FormsScreen.tapOnInActiveButton();
-        expect(NativeAlert.alertTitle).not.toExist;
+        await expect(NativeAlert.alertTitle).not.toExist;
+    })
+
+    it('Android native alerts should be functional', async () => {
+        await FormsScreen.tapOnActiveButton();
+        await NativeAlert.waitForIsShown(true);
+        await expect(NativeAlert.alertTitle).toExist;
+        await NativeAlert.topOnButtonWithText('OK');
+        await FormsScreen.waitForIsShown(true);
     })
 
 });
