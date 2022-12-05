@@ -25,7 +25,7 @@ class NativeDropDown {
 
   async getDropDownOptionsList() {
     const optionsList = [];
-    this.dropDownOptionsList.forEach(async (element) => {
+    await this.dropDownOptionsList.forEach(async (element) => {
       const text = await element.getText();
       optionsList.push(text);
     });
@@ -42,6 +42,7 @@ class NativeDropDown {
 
   checkOptionSelectedIndex(dropDownOptionsTextList, text) {
     const index = dropDownOptionsTextList.indexOf(text);
+    return index;
   }
 }
 

@@ -44,18 +44,17 @@ describe("Interaction in Forms Screen", () => {
     await expect(await FormsScreen.textResultInput.getText()).toHaveLength(data.input_max_character);
   });
 
-  it("should validate picker element is working", async () => {
+  it.only("should validate picker element is working", async () => {
     await FormsScreen.tapOnDropDownButton();
     await expect(NativeDropDown.dropDownComponent).toBeDisplayed();
     expect(await NativeDropDown.getDropdownListSize()).toBe(data.dropdown_expected_size);
 
     const dropDownOptionsTextList = await NativeDropDown.getDropDownOptionsList();
-
     const optionSelected = await NativeDropDown.getOptionToSelectRandomly();
     await NativeDropDown.selectListOption(optionSelected);
 
     const optionSelectedText = await FormsScreen.dropdownText.getText();
-    await expect(NativeDropDown.checkOptionSelectedIndex(dropDownOptionsTextList,optionSelectedText)).toEqual(optionSelected);
+    await expect(NativeDropDown.checkOptionSelectedIndex(dropDownOptionsTextList,optionSelectedText)).toEqual(optionSelected-1);
   });
 
   it("should validate that inactive button is not interactable", async () => {
