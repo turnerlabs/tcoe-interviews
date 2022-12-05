@@ -1,11 +1,11 @@
 import TabBar from '../screenobjects/components/TabBar';
 import LoginScreen from '../screenobjects/LoginScreen';
 import NativeAlert from '../screenobjects/components/NativeAlert';
+import HomeScreen from ''
 
 describe('WebdriverIO and Appium, when interacting with a login form,', () => {
     beforeEach(async () => {
         await TabBar.waitForTabBarShown();
-        await TabBar.openLogin();
         await LoginScreen.waitForIsShown(true);
     });
 
