@@ -1,20 +1,16 @@
-# Welcome to TCoE Interviews!
+# Android Challenge
 
-We have created a variety of Scenarios that we think are good ways to evaluate candidates technical skills during the interview process.
+In this challenge, your task is to test an Android for proper UI functionality for the app provided in the apps folder. You are expected to have basic setup ready to perform Mobile Application testing through Appium and WebdriverIO.
 
+## What you will be building
 
-## Instructions
-
-Create a fork in your account, perform one of the following scenarios, and then submit a pull request back to this repository turnerlabs/tcoe-interviews (github.com). 
-Once you start working on the coding challenge, you have to finish the challenge and raise the pull request within 4 hours. 
-Make sure that you have to submit a PR within 48 hours from the time of invitation to complete the coding exercise. 
-Feel free to reach out anytime if you have any questions.
-
-## Scenarios
-
-* [API Challenges](scenarios/apiplayground/README.md)
-* [UI Challenges](./scenarios/uiplayground/README.md)
-* [Android Challenges](./scenarios/androidplayground/README.md)
-* [DevOps Challenges](./scenarios/devopsplayground/README.md)
-
-Your testing of the provided scenarios should demonstrate your ability to analyze a system and understand it's intended behavior, and verify that it succeeds or fails to meet those expectations.
+* Write following test cases to validate the different elements on the form tab
+  - Validate the default selection of the tab
+  - Validate that form tab is available for selection and is clickable
+  - Validate the color change on the selection of the form tab
+  - Validate the Input behaviour is working as intended
+  - Validate that picker element is working and it has 3 options to choose from.
+  - Validate that all options from picker elements are visible within the screen.
+  - Validate that Inavtive button is not interactable
+  - Validate that android native alerts are functional
+  - Validate that keyboard is available to provide input in the text field
