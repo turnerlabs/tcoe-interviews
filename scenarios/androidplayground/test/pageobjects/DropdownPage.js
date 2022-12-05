@@ -1,10 +1,6 @@
 const Page = require('./Page');
  class DropdownPage extends Page {
     
-    get dropdownContent() {
-        return $$('android.widget.CheckedTextView');
-    }
-
     get dropdownListView() {
         return $('android.widget.ListView')
     }
@@ -34,7 +30,7 @@ const Page = require('./Page');
 
     }
 
-    async dropdownOptionsVisibility(){
+    async dropdownOptionsVisibility() {
         if(await expect(this.firstOption).toBeDisplayed && await expect(this.secondOption).toBeDisplayed && await expect(this.thirdOption).toBeDisplayed){
         return true;
         } else {

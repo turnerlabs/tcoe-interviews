@@ -4,27 +4,27 @@ const Page = require('./Page');
 
 class FormPage extends Page {
 
-    get formsView () {
+    get formsView() {
         return $('~Forms-screen')
     }
 
-    get inputField () {
+    get inputField() {
         return $('~text-input');
     }
 
-    get formsOption () {
+    get formsOption() {
         return $('~Forms');
     }
 
-    get inputResult () {
+    get inputResult() {
         return $('~input-text-result');
     }
 
-    get dropdownOption () {
+    get dropdownOption() {
         return $('~Dropdown');
     }
 
-    get btnActive () {
+    get btnActive() {
         return $('~button-Active')
     }
 
@@ -69,11 +69,6 @@ class FormPage extends Page {
 
     async keyBoardValidator() {
         await this.doTap(this.inputField);
-        // if(await formsView.isKeyboardShown()){
-        //     return true;
-        // } else {
-        //     return false;
-        // }
         return await driver.isKeyboardShown();
     }
  }
