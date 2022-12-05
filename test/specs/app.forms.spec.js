@@ -30,4 +30,11 @@ describe("Interaction in Forms Screen", () => {
       "true"
     );
   });
+
+  it("should validate keyboard is available to provide input in the text field", async () => {
+    await FormsScreen.tapOnInput();
+    await expect(await driver.isKeyboardShown()).toBeTruthy();
+    await driver.back();
+    await expect(await driver.isKeyboardShown()).toBeFalsy();
+  });
 });
