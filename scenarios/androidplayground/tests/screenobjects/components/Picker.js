@@ -1,12 +1,6 @@
 const { tapOn } = require('../../helpers/Utils');
 const Utils = require('../../helpers/Utils');
-
-const SELECTORS = {
-    ANDROID_LISTVIEW: '//android.widget.ListView',
-    OPTION_LISTVIEW: '//android.widget.CheckedTextView',
-    DROPDOWN_OPTIONS: 'new UiSelector().className("android.widget.CheckedTextView").checked(false)',
-    DEFAULT_OPTION: 'new UiSelector().className("android.widget.CheckedTextView").checked(true)'
-}
+const {SELECTORS} = require('../../../data/formsData');
 
 module.exports = class Picker {
     

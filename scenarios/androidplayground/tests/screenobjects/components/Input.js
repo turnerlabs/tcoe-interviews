@@ -1,4 +1,4 @@
-const { textInput } = require("../../../data/formsData");
+const { textInput } = require('../../../data/formsData');
 
 module.exports = class Input {
 

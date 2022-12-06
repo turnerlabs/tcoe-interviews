@@ -1,10 +1,10 @@
-const TabBar = require("../screenObjects/components/TabBar");
-const NativeAlert = require("../screenObjects/components/NativeAlert");
-const Picker = require("../screenObjects/components/Picker");
-const Input = require("../screenObjects/components/Input");
-const formsData = require("../../data/formsData");
+const TabBar = require('../screenObjects/components/TabBar');
+const NativeAlert = require('../screenObjects/components/NativeAlert');
+const Picker = require('../screenObjects/components/Picker');
+const Input = require('../screenObjects/components/Input');
+const formsData = require('../../data/formsData');
 
-describe("WebdriverIO and Appium, validating interactions and functionality of elements on Forms Screen,", () => {
+describe('WebdriverIO and Appium, validating interactions and functionality of elements on Forms Screen,', () => {
   let formsScreenShown;
   beforeEach(async () => {
     await TabBar.waitForTabBarShown();
@@ -16,13 +16,13 @@ describe("WebdriverIO and Appium, validating interactions and functionality of e
 
   })
 
-  it("should check if the form tab is available and is clickable", async () => {
+  it('should check if the form tab is available and is clickable', async () => {
     await expect(formsScreenShown.formsTitle).toBeDisplayed();
     await expect(formsScreenShown.formsOptionOnTabBarSelected).toBeDisplayed();
     await expect(formsScreenShown.formsOptionOnTabBarSelected).toHaveAttribute('clickable', 'true')
   });
 
-  it("shoud validate that the input value is the same ad the output value", async () => {
+  it('shoud validate that the input value is the same ad the output value', async () => {
     await formsScreenShown.tapOnInput();
     await formsScreenShown.sendInputKeys(formsData.textInput);
     await expect(await formsScreenShown.inputTextResult.getText()).toEqual(
@@ -30,7 +30,7 @@ describe("WebdriverIO and Appium, validating interactions and functionality of e
     );
   });
 
-  it("should validate picker element is working and it has 3 options to choose from", async () => {
+  it('should validate picker element is working and it has 3 options to choose from', async () => {
     await formsScreenShown.tapOnDropDown();
     expect(await Picker.dropDownToBeDisplayed()).toBeTruthy;
     await expect(await Picker.getDropDownOptionsLenght()).toEqual(3);
@@ -38,20 +38,20 @@ describe("WebdriverIO and Appium, validating interactions and functionality of e
   });
 
 
-  it("Verify that all options from picker are visible within the screen", async () => {
+  it('Verify that all options from picker are visible within the screen', async () => {
     await formsScreenShown.tapOnDropDown();
     expect(await Picker.dropDownToBeDisplayed()).toBeTruthy;
     await Picker.tapRandomOption();
   })
 
-  it("The inactive button is not interactable", async () => {
+  it('The inactive button is not interactable', async () => {
     await formsScreenShown.tapOnInactiveButton();
     await expect(formsScreenShown.inActiveButton).toBeDisplayed();
 
   })
 
 
-  it("should validate that android native alerts are functional", async () => {
+  it('should validate that android native alerts are functional', async () => {
     await expect(formsScreenShown.activeButton).toBeDisplayed();
     await formsScreenShown.tapOnActiveButton();
     await NativeAlert.waitForIsShown();
@@ -59,7 +59,7 @@ describe("WebdriverIO and Appium, validating interactions and functionality of e
     await formsScreenShown.tapOnOkBtn();
   });
 
-  it("keyboardshould be available to provide input in the text field", async () => {
+  it('keyboard should be available to provide input in the text field', async () => {
     await formsScreenShown.tapOnInput();
     await expect(await formsScreenShown.isKeyboardProvider()).toBe(true);
   });

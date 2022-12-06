@@ -1,7 +1,4 @@
-const SELECTORS = {
-    ALERT_TITLE: '*//android.widget.TextView[@resource-id="android:id/alertTitle"]',
-    ALERT_MESSAGE: '*//android.widget.TextView[@resource-id="android:id/message"]'
-  }
+  const {SELECTORS} = require('../../../data/formsData');
   
   module.exports = class NativeAlert {
   

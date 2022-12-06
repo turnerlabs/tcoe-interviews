@@ -1,24 +1,17 @@
-const AppScreen = require("./AppScreen");
-
-const SELECTORS = {
-  FORMBUTTON_SELECTED: 'android=new UiSelector().description("Forms")',
-  ALERT_BUTTON: 'android.widget.Button',
-  DROPDOWN: '//*[@content-desc="Dropdown"]/*/android.widget.EditText',
-  OK_BUTTON: '*//android.widget.Button[@resource-id="android:id/button1"]'
-
-}
+const AppScreen = require('./AppScreen');
+const {SELECTORS} = require('../../data/formsData');
 
 class FormsScreen extends AppScreen {
-  constructor() { super("~Forms-screen"); }
+  constructor() { super('~Forms-screen'); }
 
-  get formsTitle() { return $("~Forms-screen"); }
-  get input() { return $("~text-input"); }
-  get inputTextResult() { return $("~input-text-result"); }
-  get switch() { return $("~switch"); }
-  get switchText() { return $("~switch-text"); }
-  get dropDown() { return $("~Dropdown"); }
-  get activeButton() { return $("~button-Active"); }
-  get inActiveButton() { return $("~button-Inactive"); }
+  get formsTitle() { return $('~Forms-screen'); }
+  get input() { return $('~text-input'); }
+  get inputTextResult() { return $('~input-text-result'); }
+  get switch() { return $('~switch'); }
+  get switchText() { return $('~switch-text'); }
+  get dropDown() { return $('~Dropdown'); }
+  get activeButton() { return $('~button-Active'); }
+  get inActiveButton() { return $('~button-Inactive'); }
   get formsOptionOnTabBarSelected() { return $(SELECTORS.FORMBUTTON_SELECTED); }
   get okButton() { return $(SELECTORS.OK_BUTTON); }
 
@@ -55,7 +48,7 @@ class FormsScreen extends AppScreen {
     await this.input.setValue(newText);
 
     if (await driver.isKeyboardShown()) {
-      await $("~Forms-screen").click();
+      await $('~Forms-screen').click();
     }
   }
 
