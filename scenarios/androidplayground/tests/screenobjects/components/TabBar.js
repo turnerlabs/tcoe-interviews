@@ -1,5 +1,4 @@
 const FormsScreen = require("../FormsScreen.js");
-const consoleLog = require('console');
 
 module.exports = class TabBar {
   static async waitForTabBarShown() {
