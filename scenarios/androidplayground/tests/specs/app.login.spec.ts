@@ -1,6 +1,6 @@
-import TabBar from '../screenobjects/components/TabBar';
-import LoginScreen from '../screenobjects/LoginScreen';
-import NativeAlert from '../screenobjects/components/NativeAlert';
+import TabBar from '../screenObjects/components/TabBar';
+import LoginScreen from '../screenObjects/LoginScreen';
+import NativeAlert from '../screenObjects/components/NativeAlert';
 
 describe('WebdriverIO and Appium, when interacting with a login form,', () => {
     beforeEach(async () => {
