@@ -1,18 +1,10 @@
-export default class AppScreen {
-    private selector: string;
+module.exports = class AppScreen {
 
-    constructor (selector: string) {
-        this.selector = selector;
-    }
-
-    /**
-     * Wait for the login screen to be visible
-     *
-     * @param {boolean} isShown
-     */
-    async waitForIsShown (isShown = true): Promise<boolean | void> {
-        return $(this.selector).waitForDisplayed({
-            reverse: !isShown,
-        });
-    }
-}
+    constructor(selector){
+      this.selector = selector;
+  }
+  
+  /*async waitForIsShown(isShown = true) {
+    return $(this.selector).waitForDisplayed({reverse: !isShown,});
+  }*/
+  };
