@@ -1,11 +1,10 @@
-const { tapOn } = require('../../helpers/Utils');
-const Utils = require('../../helpers/Utils');
+const { tapOn, chooseOneOption, waitForIsShown } = require('../../helpers/Utils');
 const {SELECTORS} = require('../../../data/formsData');
 
 module.exports = class Picker {
     
     static async dropDownToBeDisplayed() {
-        await Utils.waitForIsShown($(SELECTORS.ANDROID_LISTVIEW));
+        await waitForIsShown($(SELECTORS.ANDROID_LISTVIEW));
         return await $(SELECTORS.ANDROID_LISTVIEW).isDisplayed();
     }
 
@@ -17,7 +16,7 @@ module.exports = class Picker {
     
    static async tapOnDefaultOption() {
         const defaultOption = $(`android=${SELECTORS.DEFAULT_OPTION}`);
-        await Utils.chooseOneOption(defaultOption);
+        await chooseOneOption(defaultOption);
     }
 
     static async tapRandomOption() {

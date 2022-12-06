@@ -11,18 +11,18 @@ describe('WebdriverIO and Appium, validating interactions and functionality of e
     formsScreenShown = await TabBar.openForms();
   });
 
-  it('Validate Forms is not the default selection on tab', async () => {
+  it('Validate "Forms" is not the default selection on tab', async () => {
     await expect(formsScreenShown.formsTitle).toHaveAttribute('selected', 'false')
 
   })
 
-  it('should check if the form tab is available and is clickable', async () => {
+  it('Should check if the form tab is available and is clickable', async () => {
     await expect(formsScreenShown.formsTitle).toBeDisplayed();
     await expect(formsScreenShown.formsOptionOnTabBarSelected).toBeDisplayed();
     await expect(formsScreenShown.formsOptionOnTabBarSelected).toHaveAttribute('clickable', 'true')
   });
 
-  it('shoud validate that the input value is the same ad the output value', async () => {
+  it('Input should be working as intended', async () => {
     await formsScreenShown.tapOnInput();
     await formsScreenShown.sendInputKeys(formsData.textInput);
     await expect(await formsScreenShown.inputTextResult.getText()).toEqual(
@@ -30,7 +30,7 @@ describe('WebdriverIO and Appium, validating interactions and functionality of e
     );
   });
 
-  it('should validate picker element is working and it has 3 options to choose from', async () => {
+  it('Should validate picker element is working and it has 3 options to choose from', async () => {
     await formsScreenShown.tapOnDropDown();
     expect(await Picker.dropDownToBeDisplayed()).toBeTruthy;
     await expect(await Picker.getDropDownOptionsLenght()).toEqual(3);
