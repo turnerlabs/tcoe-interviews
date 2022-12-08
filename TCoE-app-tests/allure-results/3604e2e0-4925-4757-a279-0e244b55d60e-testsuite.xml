@@ -1,0 +1,60 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1670516834538' stop='1670516836173'>
+    <name>Test cases</name>
+    <title>Test cases</title>
+    <test-cases>
+        <test-case start='1670516834538' status='broken' stop='1670516836172'>
+            <name>Test 1:Validate the default selection of the tab</name>
+            <title>Test 1:Validate the default selection of the tab</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Pixel 3 for TEST 11-11'/>
+            </parameters>
+            <steps>
+                <step start='1670516834540' status='passed' stop='1670516835332'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='91c3b44b-4515-4881-8455-8faa93f81bfe-attachment.json' type='application/json' size='85'/>
+                        <attachment title='Response' source='8d74827e-cd1b-4add-8c7c-e19778283503-attachment.json' type='application/json' size='136'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670516835345' status='passed' stop='1670516835386'>
+                    <name>POST /session/:sessionId/element/00000000-0000-00bf-ffff-ffff00000024/click</name>
+                    <title>POST /session/:sessionId/element/00000000-0000-00bf-ffff-ffff00000024/click</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1670516835386' status='broken' stop='1670516836171'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='8cdfa000-1100-4647-b80f-05a6a145165c-attachment.json' type='application/json' size='95'/>
+                    </attachments>
+                    <steps>
+                        <step start='1670516836013' status='passed' stop='1670516836170'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments>
+                                <attachment title='Screenshot' source='13499b58-335c-41d0-ae1e-da8df9cd5688-attachment.png' type='image/png' size='112527'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>The selector "//android.widget.ScrollView[@content-desc="Forms-screen"" used with strategy "xpath" is invalid! For more information on selectors visit the WebdriverIO docs at: https://webdriver.io/docs/selectors</message>
+                <stack-trace>invalid selector: The selector "//android.widget.ScrollView[@content-desc="Forms-screen"" used with strategy "xpath" is invalid! For more information on selectors visit the WebdriverIO docs at: https://webdriver.io/docs/selectors
+                    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at async Context.&lt;anonymous> (/Users/jahangirulhassan/Documents/TCoE-app-tests/test/specs/mobiletest/testscripts.js:12:26)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

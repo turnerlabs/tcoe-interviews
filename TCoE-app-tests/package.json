@@ -1,0 +1,20 @@
+{
+    "name": "webdriverio-tests",
+    "version": "0.1.0",
+    "description": "",
+    "private": true,
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@wdio/allure-reporter": "^8.0.8",
+        "@wdio/appium-service": "^8.0.9",
+        "@wdio/cli": "^8.0.9",
+        "@wdio/local-runner": "^8.0.9",
+        "@wdio/mocha-framework": "^8.0.9",
+        "@wdio/spec-reporter": "^8.0.8"
+    },
+    "scripts": {
+        "wdio": "wdio run wdio.conf.js"
+    }
+}

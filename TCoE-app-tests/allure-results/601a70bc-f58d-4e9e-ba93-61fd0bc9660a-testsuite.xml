@@ -1,0 +1,51 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1670518836073' stop='1670518847051'>
+    <name>Test cases</name>
+    <title>Test cases</title>
+    <test-cases>
+        <test-case start='1670518836073' status='failed' stop='1670518847050'>
+            <name>Test 2:Validate form tab is available and clickable</name>
+            <title>Test 2:Validate form tab is available and clickable</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Pixel 3 for TEST 11-11'/>
+            </parameters>
+            <steps>
+                <step start='1670518836074' status='passed' stop='1670518836771'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='5359c43f-90a2-4c5f-a863-1e0230ecd340-attachment.json' type='application/json' size='53'/>
+                        <attachment title='Response' source='900a29c7-9cee-4ac8-8944-10c9134f2290-attachment.json' type='application/json' size='136'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670518846829' status='passed' stop='1670518847047'>
+                    <name>GET /session/:sessionId/screenshot</name>
+                    <title>GET /session/:sessionId/screenshot</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='c6aad51b-58b0-4766-940e-1a79604ed2e6-attachment.png' type='image/png' size='167148'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Expect  to have text
+                
+                Expected: "Forms"
+                Received: undefined</message>
+                <stack-trace>Error: Expect  to have text
+                
+                Expected: "Forms"
+                Received: undefined
+                    at Context.&lt;anonymous> (/Users/jahangirulhassan/Documents/TCoE-app-tests/test/specs/mobiletest/testscripts.js:5:40)
+                    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

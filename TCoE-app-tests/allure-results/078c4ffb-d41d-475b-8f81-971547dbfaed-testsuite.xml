@@ -1,0 +1,61 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1670519117740' stop='1670519118650'>
+    <name>Test cases</name>
+    <title>Test cases</title>
+    <test-cases>
+        <test-case start='1670519117741' status='broken' stop='1670519118649'>
+            <name>Test 2:Validate form tab is available and clickable</name>
+            <title>Test 2:Validate form tab is available and clickable</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Pixel 3 for TEST 11-11'/>
+            </parameters>
+            <steps>
+                <step start='1670519117744' status='passed' stop='1670519118439'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='3c79bfce-d2c4-454c-937e-82bda78538bc-attachment.json' type='application/json' size='53'/>
+                        <attachment title='Response' source='554e9e57-cc34-4213-880a-45dd0bcb27e5-attachment.json' type='application/json' size='136'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670519118449' status='passed' stop='1670519118467'>
+                    <name>GET /session/:sessionId/element/00000000-0000-0159-ffff-ffff00000024/displayed</name>
+                    <title>GET /session/:sessionId/element/00000000-0000-0159-ffff-ffff00000024/displayed</title>
+                    <attachments>
+                        <attachment title='Response' source='52fcaae2-18ad-4bc2-b6f4-d695c5d01391-attachment.json' type='application/json' size='4'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670519118467' status='passed' stop='1670519118475'>
+                    <name>GET /session/:sessionId/context</name>
+                    <title>GET /session/:sessionId/context</title>
+                    <attachments>
+                        <attachment title='Response' source='be7999bd-04cc-4153-b591-3b8f6da4156d-attachment.json' type='application/json' size='12'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670519118476' status='passed' stop='1670519118647'>
+                    <name>GET /session/:sessionId/screenshot</name>
+                    <title>GET /session/:sessionId/screenshot</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='bd724217-70a9-46ad-aff7-40bdcc3afefb-attachment.png' type='image/png' size='167688'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Method not supported in mobile native environment. It is unlikely that you need to use this command.</message>
+                <stack-trace>Error: Method not supported in mobile native environment. It is unlikely that you need to use this command.
+                    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at async Context.&lt;anonymous> (/Users/jahangirulhassan/Documents/TCoE-app-tests/test/specs/mobiletest/testscripts.js:5:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

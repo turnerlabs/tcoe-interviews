@@ -1,0 +1,63 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1670519665499' stop='1670519666429'>
+    <name>Test cases</name>
+    <title>Test cases</title>
+    <test-cases>
+        <test-case start='1670519665500' status='pending' stop='1670519665500'>
+            <name>Test 2:Validate form tab is available and clickable</name>
+            <title>Test 2:Validate form tab is available and clickable</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Test ignored</message>
+                <stack-trace>undefined</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1670519665501' status='broken' stop='1670519666428'>
+            <name>Test 3:Validate color changen on selection</name>
+            <title>Test 3:Validate color changen on selection</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Pixel 3 for TEST 11-11'/>
+            </parameters>
+            <steps>
+                <step start='1670519665502' status='passed' stop='1670519666194'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='ad97330e-650f-4657-ac5f-8f9f475ecb3d-attachment.json' type='application/json' size='53'/>
+                        <attachment title='Response' source='23a6650e-c28f-40de-9660-1f72f4115a86-attachment.json' type='application/json' size='136'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670519666207' status='broken' stop='1670519666428'>
+                    <name>GET /session/:sessionId/element/00000000-0000-016f-ffff-ffff00000024/property/color</name>
+                    <title>GET /session/:sessionId/element/00000000-0000-016f-ffff-ffff00000024/property/color</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1670519666273' status='passed' stop='1670519666427'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments>
+                                <attachment title='Screenshot' source='ef3cfd29-1bc4-4168-ad83-eb6f5ddf73ce-attachment.png' type='image/png' size='166871'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource</message>
+                <stack-trace>unknown command: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+                    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

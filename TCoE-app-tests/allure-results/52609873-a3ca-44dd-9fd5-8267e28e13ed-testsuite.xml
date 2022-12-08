@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1670516569764' stop='1670516570611'>
+    <name>Test cases</name>
+    <title>Test cases</title>
+    <test-cases>
+        <test-case start='1670516569765' status='passed' stop='1670516570610'>
+            <name>Test 1:Validate the default selection of the tab</name>
+            <title>Test 1:Validate the default selection of the tab</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Pixel 3 for TEST 11-11'/>
+            </parameters>
+            <steps>
+                <step start='1670516569766' status='passed' stop='1670516570551'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='18f80147-6812-47c2-abd9-32d4aa06156e-attachment.json' type='application/json' size='85'/>
+                        <attachment title='Response' source='8df6fb22-5ee8-4457-bbff-459b6d16ce0d-attachment.json' type='application/json' size='136'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670516570565' status='passed' stop='1670516570609'>
+                    <name>POST /session/:sessionId/element/00000000-0000-0093-ffff-ffff00000024/click</name>
+                    <title>POST /session/:sessionId/element/00000000-0000-0093-ffff-ffff00000024/click</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
