@@ -4,10 +4,26 @@
 */
 module.exports = class Page {
     /**
-    * Opens a sub page of the page
-    * @param path path of the sub page (e.g. /path/to/page.html)
+     * Visits the baseUrl pointing to the path and to the subPath if provided
+     * @param path path of the path page (e.g. example.com/path)
+     * @param subPath path of the subPath (e.g. example.com/path/subPath)
+    */
+    visit(path, subPath) {
+        return browser.url(`/${path}/${subPath || ''}`);
+    }
+ 
+    /**
+      * Opens the baseUrl pointing to the path
+      * @param path path of the path page (e.g. example.com/path)
     */
     open (path) {
-        return browser.url(`https://the-internet.herokuapp.com/${path}`)
+         return browser.url(`/${path}`)
+    }
+
+    /**
+      * Refreshes the browser
+    */
+    async refreshBrowser() {
+      await browser.refresh();
     }
 }

@@ -105,3 +105,6 @@ dist
 
 .idea
 .DS_Store
+
+# Logs folder
+all-logs
