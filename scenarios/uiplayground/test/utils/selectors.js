@@ -8,3 +8,9 @@ exports.cssProps = {
         warningLabel: '#212529',
     }
 }
+
+exports.pageElements = {
+    shadowRootElements: {
+        cell: 'span[role="cell"]'
+    }
+}

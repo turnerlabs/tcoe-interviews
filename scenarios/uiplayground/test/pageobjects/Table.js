@@ -1,5 +1,5 @@
 // Description: This file contains the selectors and methods for the table page
-const { cssProps } = require("../utils/selectors");
+const { cssProps, pageElements } = require("../utils/selectors");
 const Page = require("./page");
 
 const expectedColumns = require("../utils/selectors"). expectedColumns;
@@ -55,12 +55,17 @@ class Table extends Page {
     }
   }
 
+  async getShadowElement(element) {
+    await element.shadow$$(pageElements.shadowRootElements.cell)
+  }
+    
   async fillRowArr() {
     this.allRows.forEach(async (row, index) => {
       if (index > 0) {
-        await row.shadow$$('span[role="cell"]').forEach(async (row, idx) => {
+        await row.getShadowElement().forEach(async (row, idx) => {
           if (idx === 0) {
             let r = await row.getText();
+            console.log(r);
             this.rowArr.push(r);
           }
         });
@@ -100,12 +105,10 @@ class Table extends Page {
         let columnName = await column.getText();
         if (index > 0 && colName === columnName) {
           this.allRows.forEach(async (row) => {
-            await row
-              .shadow$$('span[role="cell"]')
-              .forEach(async (cell, idx) => {
+            await row.getShadowElement().forEach(async (cell, idx) => {
                 if (idx === index) {
                   let cellValue = await cell.getText();
-
+                  console.log(cellValue);
                   resolve(cellValue);
                 } else {
                   reject(0);
