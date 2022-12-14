@@ -65,7 +65,6 @@ class Table extends Page {
         await row.getShadowElement().forEach(async (row, idx) => {
           if (idx === 0) {
             let r = await row.getText();
-            console.log(r);
             this.rowArr.push(r);
           }
         });
@@ -108,7 +107,6 @@ class Table extends Page {
             await row.getShadowElement().forEach(async (cell, idx) => {
                 if (idx === index) {
                   let cellValue = await cell.getText();
-                  console.log(cellValue);
                   resolve(cellValue);
                 } else {
                   reject(0);
