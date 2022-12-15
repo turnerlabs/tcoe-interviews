@@ -15,7 +15,7 @@ exports.config = {
   ],
   logLevel: 'info',
   bail: 0,
-  baseUrl: 'https://uitestingplayground.com/',
+  baseUrl: 'http://uitestingplayground.com/',
   waitforTimeout: 10000,
   connectionRetryTimeout: 120000,
   connectionRetryCount: 3,
