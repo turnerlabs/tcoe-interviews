@@ -13,6 +13,6 @@ describe('Ajax E2E tests', () => {
     await expect(await AjaxPage.contentContainer).toHaveChildren(1);
     await AjaxPage.clickAjaxButton();
     await AjaxPage.waitForContent();
-    await expect(await AjaxPage.contentContainer).toHaveChildren(1);
+    await expect(await AjaxPage.contentContainer).toHaveChildren(2);
   });
 });

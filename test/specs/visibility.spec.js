@@ -8,6 +8,7 @@ describe('Visibility E2E tests', () => {
 
   it('Should show unhide button after clicking hide button', async () => {
     await VisibilityPage.clickHideButton();
-    await expect(await VisibilityPage.hideButton).toHaveText('Unhide');
+    await expect(await VisibilityPage.unhideButton).toBeDisplayed();
+    await expect(await VisibilityPage.hideButton).not.toBeDisplayed();
   });
 });

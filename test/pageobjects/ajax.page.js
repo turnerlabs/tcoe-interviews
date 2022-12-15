@@ -13,12 +13,19 @@ class AjaxPage extends Page {
     return $('#content').$('p.bg-success');
   }
 
+  get loadingSpinner() {
+    return $('#spinner');
+  }
+
   async clickAjaxButton() {
     await this.ajaxButton.click();
   }
 
   async waitForContent() {
-    await browser.pause(17000);
+    await this.loadingSpinner.waitForDisplayed({
+      reverse: true,
+      timeout: 17000,
+    });
   }
 
   open() {
