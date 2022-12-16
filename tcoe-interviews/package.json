@@ -1,0 +1,29 @@
+{
+  "name": "tcoe-interviews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "local:api": "node ./scenarios/apiplayground/api/server.js",
+    "test:stocksapi": "mocha ./scenarios/apiplayground/test/**/*.js",
+    "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js",
+    "mobile:android:local": "wdio mobile/config/wdio.android.local.app.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^7.24.0",
+    "@wdio/local-runner": "^7.24.0",
+    "@wdio/mocha-framework": "^7.24.0",
+    "@wdio/spec-reporter": "^7.24.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "chromedriver": "^105.0.0",
+    "mocha": "^10.0.0",
+    "wdio-chromedriver-service": "^7.3.2"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
