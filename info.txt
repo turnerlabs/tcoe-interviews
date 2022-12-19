@@ -1,0 +1,8 @@
+Assumption
+1) We will be saving the js file in S3
+2) tf needs to run from any bastion server/host.
+3) Single AWS role is considered for both lambada and API gateway attachment.
+4) Lambda funtion is deployed with name "Warner"
+5) Use latest version of Node js can be used.
+6) terraform plan -out <file-name.out> <<output the deployment plan to .out file>>
+7) terraform apply <file-name.out> use the plan.out plan file to deploy infrastructure
