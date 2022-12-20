@@ -31,8 +31,7 @@ class Forms extends Page{
 
     async countOptions(){
         const dropDownLength = await this.dropDownMean.length;
-        return dropDownLength - 1;       
-                
+        return dropDownLength - 1;                  
     }
 
     async tapOnDropDownMean(){
