@@ -76,11 +76,22 @@ variable "bucket_name" {
   description = "The AWS S3 bucket name"
   type        = string
 }
+
 variable "aws_config_file" {
   description = "The AWS config file"
   type        = string
 }
+
 variable "aws_credentials_file" {
+  description = "The AWS credentials file"
+  type        = string
+}
+
+variable "cf_custom_eks_origin" {
+  type = string
+}
+
+variable "cf_origin_id" {
   description = "The AWS credentials file"
   type        = string
 }
