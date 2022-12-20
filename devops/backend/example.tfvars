@@ -1,5 +1,5 @@
-allowed_account_id   = ""
-key_admin            = ""
+account_id           = ""
+admin_user           = ""
 aws_profile          = ""
 bucket_name          = ""
 aws_config_file      = ""

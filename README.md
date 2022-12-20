@@ -32,6 +32,12 @@ Your testing of the provided scenarios should demonstrate your ability to analyz
 
 1. Create the .env file with the EXEC_DIR variable value, in this case we are going to create first the infrastructure for an AWS centrilized remote backend, so the variable value should be "./devops/backend".
 
-2. Execute the Makefile phony target "make create-project" to call the necessary terraform commands to deploy our backend (You can also use each phony target called inside create-backend for development and testing purposes).
+2. Create the terraform.tfvars file with the necessary values for the backend creation you can use the corresponding example.tfvars as reference.
 
-3. Change the EXEC_DIR variable value in the .env file for "./devops/infra" and execute the Makefile phony target "make create-project" to call the necessary terraform commands to deploy our complete infrastructure stack.
+3. Execute the Makefile phony target "make create-project" to call the necessary terraform commands to deploy our backend (You can also use each phony target called inside create-backend for development and testing purposes).
+
+4. Change the EXEC_DIR variable value in the .env file for "./devops/infra".
+
+5. Create the terraform.tfvars file with the necessary values for the infra stack creation you can use the corresponding example.tfvars as reference.
+
+6. Execute the Makefile phony target "make create-project" to call the necessary terraform commands to deploy our complete infrastructure stack.

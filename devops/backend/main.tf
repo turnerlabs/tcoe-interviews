@@ -23,13 +23,16 @@ resource "aws_kms_key" "terraform-backend" {
       "Action": ["kms:*"],
       "Resource": ["*"],
       "Principal": {
-        "AWS": "arn:aws:iam::${var.allowed_account_id}:root"
+        "AWS": "arn:aws:iam::${var.account_id}:root"
       }
     },
     {
       "Sid": "Allow access for Key Administrators",
       "Effect": "Allow",
-      "Principal": { "AWS": ["arn:aws:iam::${var.allowed_account_id}:user/${var.key_admin}"] },
+      "Principal": { "AWS": [
+        "arn:aws:iam::${var.account_id}:user/${var.admin_user}",
+        "arn:aws:iam::${var.account_id}:user/svc-terraform"
+        ] },
       "Action": [
         "kms:Create*",
         "kms:Describe*",

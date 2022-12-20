@@ -1,8 +1,8 @@
-variable "allowed_account_id" {
+variable "account_id" {
   description = "The AWS account id"
   type        = string
 }
-variable "key_admin" {
+variable "admin_user" {
   description = "The AWS account username of the encryption KMS key administrator"
   type        = string
 }
@@ -21,4 +21,7 @@ variable "aws_config_file" {
 variable "aws_credentials_file" {
   description = "The AWS credentials file"
   type        = string
+}
+variable "dynamodb_table" {
+  type = string
 }
