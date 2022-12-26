@@ -21,8 +21,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './scenarios/uiplayground/test/specs/**/*.js'
-       //'./scenarios/uiplayground/test/specs/**/cnn.video.spec.js'
+        //'./scenarios/uiplayground/test/specs/**/*.js'
+       './scenarios/uiplayground/test/specs/**/cnn.video.spec.js'
     ],
     // Patterns to exclude.
     exclude: [

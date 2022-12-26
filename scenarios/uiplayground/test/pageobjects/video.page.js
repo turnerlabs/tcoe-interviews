@@ -67,6 +67,7 @@ class VideoPage extends Page {
         const name = await this.lblMainTitle.getText();
         await this.waitOriginalVideo();  
         await this.btnPrevVideo.moveTo();
+        await this.btnPause.click();
         await this.btnPrevVideo.click();
         const othertitle = await this.lblMainTitle.getText();
         expect (name).toHaveText(othertitle);
