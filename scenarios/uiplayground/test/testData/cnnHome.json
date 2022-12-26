@@ -1,0 +1,14 @@
+[
+    {
+        "optionMenu": "Stories",
+        "value":""
+    },
+    {
+        "optionMenu": "Videos",
+        "value":"VIDEO"
+    },
+    {
+        "optionMenu": "Photos",
+        "value":"GALLERY"
+    }
+]
