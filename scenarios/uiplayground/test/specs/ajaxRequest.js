@@ -14,11 +14,12 @@ describe('Ajax data message', () => {
         
     });
 
-    xit('Should not duplicate the message after clicking the request button again', async () => {
+    //BUG CASE
+    it('Should not duplicate the message after clicking the request button again', async () => {
 
         await AjaxPage.requestBtn.click();
-        await browser.pause(16000);
-        await expect(AjaxPage.contentMessages).toHaveChildren({ lte: 1 });
+        await AjaxPage.loadingIcon.waitForDisplayed({ reverse: true });
+        await expect(AjaxPage.contentMessages).toBeElementsArrayOfSize(1,{ wait: 5000 });
         
     });
     

@@ -23,7 +23,7 @@ export const config = {
     // will be called from there.
     //
     specs: [
-        // ToDo: define location for spec files here
+        './scenarios/uiplayground/test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -96,10 +96,10 @@ export const config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    baseUrl: 'http://uitestingplayground.com',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 50000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response

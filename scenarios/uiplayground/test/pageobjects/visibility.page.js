@@ -2,16 +2,40 @@ import Page from './page.js';
 
 class VisibilityPage extends Page {
 
-    get startBtn () {
-        return $('#startButton');
+    get hideBtn () {
+        return $('#hideButton');
     }
 
-    get progressBar(){
-        return $('#progressBar');
+    get unHideBtn () {
+        return $$('#unHideButton');
     }
 
-    get stopBtn () {
-        return $('#stopButton');
+    get removedBtn () {
+        return $('#removedButton');
+    }
+
+    get zeroWidthBtn () {
+        return $('#zeroWidthButton');
+    }
+
+    get overlappedBtn () {
+        return $('#overlappedButton');
+    }
+
+    get transparentBtn () {
+        return $('#transparentButton');
+    }
+
+    get invisibleBtn () {
+        return $('#invisibleButton');
+    }
+
+    get notdisplayedBtn () {
+        return $('#notdisplayedButton');
+    }
+
+    get offscreenBtn () {
+        return $('#offscreenButton');
     }
 
     open(){

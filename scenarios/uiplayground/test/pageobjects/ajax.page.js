@@ -11,7 +11,7 @@ class AjaxPage extends Page {
     }
 
     get contentMessages(){
-        return $('#content');
+        return $$('#content > p');
     }
 
     get loadingIcon(){
