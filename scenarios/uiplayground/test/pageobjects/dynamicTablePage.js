@@ -23,33 +23,9 @@ class dinamicTablePage extends Page {
         return $("p.bg-warning");
     }
 
-    async getData() {
-        var table = [], i = 0;
-
-        for (let h = 0; h < await this.columnheaders.length; h++) {
-            table[h] = [];
-            for (let r = 0; r < await this.rows.length; r++) {
-                table[h][r] = await this.cells[i].getText();
-                i++;
-            }
-        }
-        return table;
-    }
-
     async getHeaders() {
         return (await this.getData())[0]
     }
-
-    async getRows() {
-        let table = await this.getData();
-        let res = [];
-        for (let r = 0; r < table.length; r++) {
-            res[r] = (table[r][0])
-        }
-        return res;
-    }
-
-
 
     async getInfo() {
         var table = [],
@@ -81,17 +57,9 @@ class dinamicTablePage extends Page {
         return info;
     }
 
-
-
-
-
-
     async getWarningLabelColor() {
         return (await this.warnigLabel.getCSSProperty(data.colorProperty)).parsed.hex
     }
-
-
-
 
     open() {
         return super.openPlayground(data.url);
