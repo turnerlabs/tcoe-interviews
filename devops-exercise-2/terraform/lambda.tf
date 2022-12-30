@@ -49,7 +49,6 @@ data "archive_file" "python_lambda_package" {
   type        = var.lambda_package_type
   source_file = var.lambda_package_source_file
   output_path = var.lambda_package_output_path
-  # output_path = "${path.module}${var.lambda_package_output_path}"
 }
 
 resource "aws_lambda_function" "lambda" {
