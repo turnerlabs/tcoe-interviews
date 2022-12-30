@@ -3,7 +3,7 @@ const data = require('./data').dynamicTable;
 
 class dinamicTablePage extends Page {
 
-    get dinamicTdataable() {
+    get dinamicDataTable() {
         return $("div[role='table']");
     }
 
@@ -23,6 +23,11 @@ class dinamicTablePage extends Page {
         return $("p.bg-warning");
     }
 
+    async isTableVisibility(){
+        await this.dinamicDataTable.waitForDisplayed();
+        return await this.dinamicDataTable.isDisplayed();
+    }
+
     async getHeaders() {
         return (await (await this.getInfo()).table[0])
     }
@@ -31,6 +36,7 @@ class dinamicTablePage extends Page {
         var table = [],
             info = { cols: {}, rows: {} },
             i = 0;
+        await this.dinamicDataTable.waitForDisplayed();
 
         for (let h = 0; h < await this.columnheaders.length; h++) {
             table[h] = [];
@@ -57,6 +63,7 @@ class dinamicTablePage extends Page {
     }
 
     async getWarningLabelColor() {
+        await this.warnigLabel.isDisplayed();
         return (await this.warnigLabel.getCSSProperty(data.colorProperty)).parsed.hex
     }
 

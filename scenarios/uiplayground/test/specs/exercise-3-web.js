@@ -3,6 +3,11 @@ const data = require("../pageobjects/data").dynamicTable;
 
 describe('exercise-3 UI web', () => {
 
+    it('Validate that table is visible', async () => {
+        await dynamicTable.open();
+        expect(await dynamicTable.isTableVisibility()).to.equal(true)
+    });
+
     it('validate columns in table', async () => {
         await dynamicTable.open();
         expect(await dynamicTable.getHeaders()).to.have.members(data.cols);
