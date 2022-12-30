@@ -24,7 +24,7 @@ class dinamicTablePage extends Page {
     }
 
     async getHeaders() {
-        return (await this.getData())[0]
+        return (await (await this.getInfo()).table[0])
     }
 
     async getInfo() {
@@ -62,7 +62,7 @@ class dinamicTablePage extends Page {
     }
 
     open() {
-        return super.openPlayground(data.url);
+        return super.open(data.url);
     }
 }
 
