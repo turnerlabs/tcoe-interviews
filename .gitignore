@@ -105,3 +105,17 @@ dist
 
 .idea
 .DS_Store
+
+# Terraform tfstate
+terraform.tfstate
+terraform.tfstate.backup
+
+# Plan file
+plan
+
+# Lambda function zip
+lambdaTestCode.zip
+
+# Terraform provider
+.terraform*
+.terraform.lock.hcl
