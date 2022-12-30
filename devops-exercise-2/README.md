@@ -87,7 +87,7 @@ curl https://9c0epwtxod.execute-api.us-east-1.amazonaws.com/dev/test
 
 >Note: This URL must be changed every deploy.
 
-Fifth step: Initialize 'backend.tf'
+Fifth step: Uncomment 'backend.tf' and Initialize it
 
 ```tf
 terraform init -backend-config "bucket=iac-state-demo" -backend-config "key=dev/terraform.tfstate" -backend-config "region=us-east-1" -backend-config "dynamodb_table=terraform-state"
