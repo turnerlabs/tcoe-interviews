@@ -53,7 +53,6 @@ class dinamicTablePage extends Page {
             }
         }
         info.table = table;
-        console.log(info);
         return info;
     }
 
