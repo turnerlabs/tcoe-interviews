@@ -1,4 +1,5 @@
-class ProgressBarPage {
+const Page = require("./page");
+class ProgressBarPage extends Page {
   get startButton() {
     return $("#startButton");
   }
@@ -10,6 +11,10 @@ class ProgressBarPage {
   }
   get result() {
     return $("#result");
+  }
+
+  async open() {
+    await super.open("progressbar");
   }
 
   async clickAndWait(percentage) {

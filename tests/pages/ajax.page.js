@@ -1,4 +1,5 @@
-class AjaxPage {
+const Page = require("./page");
+class AjaxPage extends Page {
   get ajaxButton() {
     return $("#ajaxButton");
   }
@@ -7,6 +8,10 @@ class AjaxPage {
   }
   get successLabel() {
     return $$(".bg-success");
+  }
+
+  async open() {
+    await super.open("ajax");
   }
 
   async clickButtonManyTimes(times) {
