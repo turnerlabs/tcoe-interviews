@@ -79,7 +79,7 @@ class DynamicTable extends Page {
      */
     async getWarningLabelColorCode () {
 
-        return /\w{4}\([0-9,]+\)/.exec(JSON.stringify(await this.warningLabel.getCSSProperty("background-color")))[0]
+        return (await this.warningLabel.getCSSProperty("background-color")).value;
         
     }
 
