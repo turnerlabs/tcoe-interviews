@@ -12,6 +12,8 @@ class DynamicTable extends Page {
     
     columnValuesTemplate(indexHeader){return $$(`div[role='row'] span[role='cell']:nth-child(${indexHeader})`)}
     
+    columnHeaderSelectorTemplate(header){return $(`//span[text() = '${header}'][@role= 'columnheader']`)}
+    
     /**
      * This method opens the dynamic table page
      */
@@ -95,12 +97,13 @@ class DynamicTable extends Page {
         const secondCheck = await this.browsersAndSystemSelector.map(browserSystem => browserSystem.getText())
 
         return JSON.stringify(firstCheck)  !== JSON.stringify(secondCheck) 
+        
     }
     
     /**
      * This method validates the data for the CPU column values
      * 
-     * @returns {Boolean} False if any value is null or has an incorrect format
+     * @returns {Boolean} False if any value is null or bad format, must include a percentage symbol
      */
     async cpuColumnValuesShouldAppear () {
 
@@ -119,7 +122,7 @@ class DynamicTable extends Page {
     /**
      * This method validates the data for the memory column values
      * 
-     * @returns {Boolean} False if any value is null or has an incorrect format 
+     * @returns {Boolean} False if any value is null or bad format, must include a storage size
      */
     async memoryColumnValuesShouldAppear () {
 
@@ -138,7 +141,7 @@ class DynamicTable extends Page {
     /**
      * This method validates the data for the network column values
      * 
-     * @returns {Boolean} False if any value is null or has an incorrect format
+     * @returns {Boolean} False if any value is null or bad format, must include a transfer speed
      */
     async networkColumnValuesShouldAppear () {
         
@@ -151,12 +154,13 @@ class DynamicTable extends Page {
             return false;})
             
         return true;
+
         }
         
     /**
      * This method validates the data for the disk column values
      * 
-     * @returns {Boolean} False if any value is null or has an incorrect format
+     * @returns {Boolean} False if any value is null or bad format, must include a speed by seconds
      */
     async diskColumnValuesShouldAppear () {
 
@@ -169,6 +173,7 @@ class DynamicTable extends Page {
             return false;})
 
         return true;
+
         }
     }
     
