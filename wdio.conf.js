@@ -1,7 +1,7 @@
 exports.config = {
     runner: 'local',
     specs: [
-        './scenarios/uiplayground/test/specs/videoValidation.js'
+        './scenarios/uiplayground/test/specs/imageGalleryValidation.js'
     ],
     maxInstances: 1,
     capabilities: [{

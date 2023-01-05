@@ -32,15 +32,15 @@ class VideoPage {
     };
 
     async assertVideoTitle(videoTitle) {
-        return await expect(this.videoTitleDiv).toHaveText(videoTitle)
+        return expect(this.videoTitleDiv).toHaveText(videoTitle)
     };
 
     async assertVideoDescription(videoDescription) {
-        return await expect(this.videoDescriptionDiv).toHaveText(videoDescription);
+        return expect(this.videoDescriptionDiv).toHaveText(videoDescription);
     };
 
     async assertPlayVideoIsDisplayed() {
-        return await expect(this.videoPlayDiv).toBeDisplayed();
+        return expect(this.videoPlayDiv).toBeDisplayed();
     };
 
     async clickAtPlayVideo() {
@@ -48,15 +48,15 @@ class VideoPage {
     };
 
     async assertPlayVideoDisappear() {
-        return await expect(this.videoPlayDiv).not.toBeDisplayed();
+        return expect(this.videoPlayDiv).not.toBeDisplayed();
     };
 
     async assertExpandVideoIsDisplayed() {
-        return await expect(this.extendWindowVideoButton).toBeDisplayed();
+        return expect(this.extendWindowVideoButton).toBeDisplayed();
     };
 
     async assertAdIsBeingDisplayed() {
-        return await this.adTitleVideoDiv.waitForDisplayed();
+        return this.adTitleVideoDiv.waitForDisplayed();
     }
 
     async waitAdDisappear() {

@@ -12,15 +12,15 @@ class SearchPage {
     }
 
     async assertSearchResultContext(searchContext) {
-        return await expect(this.searchResultContext).toHaveText(searchContext)
+        return expect(this.searchResultContext).toHaveText(searchContext)
     };
 
     async assertSearchResultListIsPresent() {
-        return await expect(this.searchResultList).toBeDisplayed()
+        return expect(this.searchResultList).toBeDisplayed()
     }
 
     async waitForResultsBeDisplayed() {
-        return await this.searchResultsModule.waitForDisplayed({ timeout: 10000 });
+        return this.searchResultsModule.waitForDisplayed({ timeout: 10000 });
     }
 }
 

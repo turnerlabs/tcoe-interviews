@@ -12,8 +12,6 @@ describe('Search validation', () => {
         await HomePage.fillSearchField(searchContext);
         await HomePage.clickAtSubmitSearch();
         
-        await browser.pause(5000);
-
         await SearchPage.waitForResultsBeDisplayed();
         await SearchPage.assertSearchResultContext(searchContext)
         await SearchPage.assertSearchResultListIsPresent();
