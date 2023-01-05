@@ -1,5 +1,3 @@
-const CNNPage = require('./cnnPage.js');
-
 class HomePage {
     get buttonSearch() {
         return $('button[data-test=searchButton')

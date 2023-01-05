@@ -25,7 +25,7 @@ class VideoPage {
 
     get recommendationSectionTitle() {
         return $('.video-playlist__info-headline');
-    }
+    };
 
     get recommendationSection() {
         return $('.video-playlist__playlist-wrapper')
@@ -57,7 +57,7 @@ class VideoPage {
 
     async assertAdIsBeingDisplayed() {
         return this.adTitleVideoDiv.waitForDisplayed();
-    }
+    };
 
     async waitAdDisappear() {
         await this.adTitleVideoDiv.waitUntil(async function () {
@@ -77,10 +77,6 @@ class VideoPage {
             timeoutMsg: 'expected video was playing'
         });
     };
-
-    async assertRecommendSectionTitle(recommendationTitle) {
-        await expect(this.recommentationSectionTitle).toHaveText(recommendationTitle)
-    }
 
     async assertRecommendedVideosAreDisplayed() {
         await expect(this.recommendationSection).toBeDisplayed();
