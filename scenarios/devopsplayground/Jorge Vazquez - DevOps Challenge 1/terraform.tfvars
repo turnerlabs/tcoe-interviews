@@ -1,0 +1,5 @@
+my_access_key = ""
+my_secret_key = ""
+region        = "us-west-2"
+origin_id     = "web-wbd-tcoe"
+s3_endpoint   = "web-wbd-tcoe.s3.amazonaws.com/index.html"
