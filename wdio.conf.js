@@ -1,9 +1,9 @@
 exports.config = {
     runner: 'local',
     specs: [
-        './scenarios/uiplayground/test/specs/**.js'
+        './scenarios/uiplayground/test/specs/videoValidation.js'
     ],
-    maxInstances: 10,
+    maxInstances: 1,
     capabilities: [{
         maxInstances: 5,
         browserName: 'chrome',
