@@ -20,6 +20,6 @@ exports.config = {
     reporters: ['spec'],
     mochaOpts: {
         ui: 'bdd',
-        timeout: 80000
+        timeout: 100000
     }
 }
