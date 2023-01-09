@@ -5,7 +5,7 @@ import config from './wdio.shared.local.appium.conf';
 // Specs
 // ============
 config.specs = [
-    './tests/specs/**/app*.spec.ts',
+    './tests/specs/**/app.tests.spec.ts',
 ];
 
 // ============
@@ -21,7 +21,7 @@ config.capabilities = [
         // For W3C the appium capabilities need to have an extension prefix
         // http://appium.io/docs/en/writing-running-appium/caps/
         // This is `appium:` for all Appium Capabilities which can be found here
-        'appium:deviceName': 'eaa05f6a',
+        'appium:deviceName': 'Pixel_2_API_30',
         'appium:platformVersion': '11.0',
         'appium:orientation': 'PORTRAIT',
         'appium:automationName': 'UiAutomator2',
@@ -29,6 +29,7 @@ config.capabilities = [
         'appium:app': join(process.cwd(), './apps/Android-NativeDemoApp-0.4.0.apk'),
         // @ts-ignore
         'appium:appWaitActivity': 'com.wdiodemoapp.MainActivity',
+        path: '/wd/hub',
         'appium:newCommandTimeout': 240,
     },
 ];

@@ -10,11 +10,21 @@ class FormsScreen extends AppScreen {
     private get switch () {return $('~switch');}
     private get switchText () {return $('~switch-text');}
     private get dropDown () {return $('~Dropdown');}
-    get activeButton () {return $('~button-Active');}
-    get inActiveButton () {return $('~button-Inactive');}
+    get activeButton () {return $('//android.view.ViewGroup[@content-desc="button-Active"]/android.view.ViewGroup');}
+    get inActiveButton () {return $('//android.view.ViewGroup[@content-desc="button-Inactive"]/android.view.ViewGroup');}
+    get formIcon() {return $('~Forms');}
+    get dropdownOptionOne() {return $('android=new UiSelector().className("android.widget.CheckedTextView").index(1)');}
+    get dropdownOptionTwo() {return $('android=new UiSelector().className("android.widget.CheckedTextView").index(2)');}
+    get dropdownOptionThree() {return $('android=new UiSelector().className("android.widget.CheckedTextView").index(3)');}
+    get nativeMessageButton() {return $('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[3]');}
+
 
     async tapOnInputTextResult(){
         await this.inputTextResult.click();
+    }
+
+    async tapOnInputField(){
+        await this.input.click();
     }
 
     async tapOnSwitch(){
@@ -29,8 +39,16 @@ class FormsScreen extends AppScreen {
         await this.activeButton.click();
     }
 
+    async nativeMessage(){
+        await this.nativeMessageButton.click();
+    }
+
     async tapOnInActiveButton(){
         await this.inActiveButton.click();
+    }
+
+    async setTextInput(){
+        await this.input.addValue("Test");
     }
 
     /**
@@ -42,6 +60,94 @@ class FormsScreen extends AppScreen {
 
         return (await this.switch.getText()).includes(active);
     }
+
+    async tapOnFormIcon(){
+        return await this.formIcon.click();
+    }
+
+    async selectedFormAction(){
+        return await this.formIcon.isSelected();
+    }
+    
+    async enableFormAction(){
+        return await this.formIcon.isEnabled();
+    }
+
+    async getAttributeFormAction(){
+        const clickable = await this.formIcon.getAttribute("clickable");
+        return clickable
+    }
+
+    async getAttributeInputTextResult(){
+        const text = await this.inputTextResult.getAttribute("text");
+        return text
+    }
+
+    async getAttributeDropdownOptionOne(){
+        const index = await this.dropdownOptionOne.getAttribute("text");
+        return index
+    }
+
+    async getAttributeDropdownOptionTwo(){
+        const index = await this.dropdownOptionTwo.getAttribute("text");
+        return index
+    }
+
+    async getAttributeDropdownOptionThree(){
+        const index = await this.dropdownOptionThree.getAttribute("text")
+        return index
+    }
+
+    async dropdwonOptionFourDisplayed(){
+
+        let data = await $('android=new UiSelector().className("android.widget.CheckedTextView").index(4)').isDisplayed();
+
+            if(data != true){
+                await expect(data).toEqual(false);
+            }
+    }
+
+    async dropDownOptionOneDisplayed(){
+
+        let data = await this.dropdownOptionOne.isDisplayed();
+
+            if(data != true){
+                await expect(data).toEqual(false);
+            }
+
+    }
+
+    async dropDownOptionTwoDisplayed(){
+
+        let data = await this.dropdownOptionTwo.isDisplayed();
+
+            if(data != true){
+                await expect(data).toEqual(false);
+            }
+    }
+
+    async dropDownOptionThreeDisplayed(){
+
+        let data = await this.dropdownOptionThree.isDisplayed();
+
+            if(data != true){
+                await expect(data).toEqual(false);
+            }
+    }
+
+    async inactiveButtonNotIteractable(){
+
+        const attribute = await this.inActiveButton.getAttribute("clickable");
+       
+        return attribute
+
+    }
+
+    async tapOnDropdownOne(){
+
+        await this.dropdownOptionOne.click();
+    }
+
 
     /**
      * Get the text of the drop down component

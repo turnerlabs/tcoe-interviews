@@ -31,8 +31,8 @@ const SWIPE_DIRECTION = {
         end: { x: 95, y: 50 },
     },
     up: {
-        start: { x: 50, y: 85 },
-        end: { x: 50, y: 15 },
+        start: { x: 10, y: 85 },
+        end: { x: 10, y: 15 },
     },
 };
 
@@ -58,7 +58,7 @@ class Gestures {
     /**
      * Swipe down based on a percentage
      */
-    static async swipeDown (percentage = 1) {
+    static async swipeDown (percentage = 50) {
         await this.swipeOnPercentage(
             this.calculateXY(SWIPE_DIRECTION.down.start, percentage),
             this.calculateXY(SWIPE_DIRECTION.down.end, percentage),
