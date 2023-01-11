@@ -1,4 +1,6 @@
-class ProgressPage {
+import Page from "./page.js"
+
+class ProgressPage extends Page{
 
     get startButton () {
         return $("#startButton")
@@ -11,6 +13,9 @@ class ProgressPage {
     get stopButton(){
         return $("#stopButton")
     }
-}
 
+    open(){
+        return super.open("progressbar")
+    }
+}
 export default new ProgressPage();

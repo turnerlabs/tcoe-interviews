@@ -1,9 +1,11 @@
-class ShadowCopy{
+import { Key } from 'webdriverio'
+import Page from "./page.js";
+
+class ShadowCopy extends Page{
 
     get generator() {
         return $('guid-generator');
     }
-
 
     get generatorTextButton() {
         return this.generator.shadow$('button#buttonGenerate');
@@ -21,17 +23,12 @@ class ShadowCopy{
         * a method to get value in element
         */
     async generatorText() {
-        await (await this.generatorTextButton).waitForClickable()
+        await this.generatorTextButton.waitForClickable()
         await this.generatorTextButton.click()
-        let valueStart = await this.editField.getValue()
-        return valueStart;
-    }
-    /**
-         * a method to get value of text field
-         */
-    async saveText() {
-        let valueStart = await this.editField.getValue()
-        return valueStart;
+        //Below code is to cope text form input field to clipboard
+        // await this.editField.click()
+        // await browser.keys([Key.Control, 'a', 'c'])
+        // await browser.pause(3000)
     }
     /**
      * a method to click on copy button
@@ -40,14 +37,26 @@ class ShadowCopy{
         await this.copyButton.click()
     }
     /**
+         * a method to get value of text field
+         */
+    async saveText() {
+        return await this.editField.getValue()
+    }
+    /**
         * a method to paste value after click on copy button
-        */
+        */     
     async pasteText() {
         await this.editField.clearValue()
+        // await browser.pause(3000)
         await this.editField.click()
-        await browser.keys(['Control', 'v'])
+        // await browser.pause(3000)
+        await browser.keys([Key.Control, 'v'])
+        // await browser.pause(3000)
+        return await this.editField.getValue()
     }
-
+    open(){
+        return super.open("shadowdom")
+    }
 }
 
 export default new ShadowCopy();
