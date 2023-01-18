@@ -18,11 +18,17 @@ class HomePage {
         return $('.search__results-list');
     }
 
-    
+    /***
+     *  to validate if the result string matches the search data input
+     */
     async validateSearchData() {
         await this.searchSection.waitForDisplayed({timeout:Constants.twentySec});
         await expect(this.searchQueryText).toHaveText(SearchData.searchDataInput);
     }
+
+    /**
+     * To verify if the list after the search is displayed or not
+     */
 
     async validateSearchList() {
         await this.searchResultList.waitForDisplayed({timeout:Constants.twentySec});

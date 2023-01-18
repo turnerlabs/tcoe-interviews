@@ -28,6 +28,10 @@ class VideoPage {
 
     get recommendedSection() { return $$('//div[@class="video-playlist__items-container video-playlist__items-container--expanded"]/div');}
 
+    /**
+     *  To validate if the VideoTitle and Play button are displayed
+     */
+
     async validateVideo() {
         await this.videoTitle.waitForDisplayed({timeout:Constants.twentySec});
         await expect(this.videoTitle).toBeDisplayed();
@@ -35,11 +39,18 @@ class VideoPage {
         await expect(this.playButton).toBeDisplayed();
     }
 
+    /**
+     *  To click play button 
+     */
+
     async playVideo() {
         await this.playButton.waitForClickable({timeout:Constants.twentySec});
         await this.playButton.click();
     }
 
+    /**
+     *  To validate if the advertisement is visible or not
+     */
     async validateAdvertisement() {
         await this.advertisementDiv.waitForDisplayed({timeout:Constants.sixtySec});
         await expect(this.advertisementDiv).toBeDisplayed();
@@ -48,6 +59,10 @@ class VideoPage {
         }
     }
 
+    /**
+     *  To validate if the video is playing or not
+     * 
+     */
     async validateVideoPlaying(){
         await browser.waitUntil(async () =>{
             return (await this.videoStatus.getText()) == 'NOW PLAYING' 
@@ -56,15 +71,25 @@ class VideoPage {
         await expect(this.videoStatus).toHaveText('NOW PLAYING');
     }
 
+    /**
+     * methos to pause the video
+     */
+
     async pauseVideo(){
         await this.pauseIcon.waitForExist({timeout:Constants.fiftySec});
         await this.pauseIcon.click();
     }
 
+    /**
+     * Verify if the pause is clicked or not
+     */
     async validatePause() {
         await this.playIcon.waitForDisplayed({timeout:Constants.twentySec});
         await expect (this.playIcon).toBeDisplayed();
     }
+    /**
+     * Verify if the other video list is displayed or not
+     */
 
     async validateRecommendedVideos() {
         await expect (this.recommendedSection).toBeDisplayed();
