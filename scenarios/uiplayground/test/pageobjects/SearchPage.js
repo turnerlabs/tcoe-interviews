@@ -6,17 +6,11 @@ class HomePage {
     /**
      * define selectors using getter methods
      */
-    get searchSection () {
-        return $('.search__results');
-    }
+    get searchSection () {return $('.search__results');  }
 
-    get searchQueryText () {
-        return $('#search__query');
-    }
+    get searchQueryText () { return $('#search__query'); }
 
-    get searchResultList () {
-        return $('.search__results-list');
-    }
+    get searchResultList () { return $('.search__results-list'); }
 
     /***
      *  to validate if the result string matches the search data input

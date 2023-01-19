@@ -9,7 +9,7 @@ class GalleryPage {
      */
     get galleryTitle () {  return $('.Gallery__title');  }
 
-    get currentImage () {  return $('.Image__image');  }
+    get currentImage () {  return $('//li[@class="slider-slide"]/div[@class="GalleryHero__slide GalleryHero__active"]//img');  }
 
     get buttonNext () {  return $('//div[contains(@class,"GalleryHeroDecorators__next")]');  }
 
@@ -21,10 +21,20 @@ class GalleryPage {
     /**
      * To Validate the image 
      */
-    async validateImage() {
+    async validateImage(imgSrc) {
         await this.currentImage.waitForDisplayed({timeout:Constants.twentySec});
         await expect(this.currentImage).toBeDisplayed();
-        await this.validateSrcUrl();
+        await this.validateSrcUrl(imgSrc);
+    }
+
+     /**
+     * To Validate the image Description
+     */
+    async validateAltDescription(imgDesc) {
+        await this.currentImage.waitForDisplayed({timeout:Constants.twentySec});
+        await expect(this.currentImage).toBeDisplayed();
+        const altDesc = await this.currentImage.getAttribute('alt');
+        expect(altDesc).toEqual(imgDesc);
     }
 
     /**
@@ -49,9 +59,10 @@ class GalleryPage {
     /**
      *  To verify if the src url of the image has the valid url or not (if the response is 200)
      */
-    async validateSrcUrl() {
+    async validateSrcUrl(imgSrc) {
         await this.currentImage.waitForDisplayed({timeout:Constants.twentySec});
         const srcUrl = await this.currentImage.getAttribute('src');
+        expect(srcUrl).toEqual(imgSrc);
         const response = await fetch(srcUrl);
         expect(response.status).toEqual(200);
     }
