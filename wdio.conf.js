@@ -3,7 +3,9 @@ exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-    //
+    // WebdriverIO supports running e2e tests as well as unit and component tests.
+    runner: 'local',
+    
     //
     // ==================
     // Specify Test Files
@@ -54,7 +56,7 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        maxInstances: 1,
         //
         browserName: 'chrome',
         acceptInsecureCerts: true
@@ -94,7 +96,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://www.cnn.com/',
+    baseUrl: 'https://edition.cnn.com',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 30000,
@@ -141,7 +143,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 40000
     },
     //
     // =====
