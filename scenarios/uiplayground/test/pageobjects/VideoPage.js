@@ -44,6 +44,7 @@ class VideoPage {
 
     get advertisementCountDown() {  return $('.tui-ad-slate__countdown');  }
 
+
     get videoStatus() {   return $('//div[contains(@class,"pui_metadata_status ")]');  }
 
     get mainVideoDiv() { return $('//div[@class="sc-gzVnrw pui sc-kkGfuU IAmeA"]');  }
@@ -89,12 +90,21 @@ class VideoPage {
      *  To validate if the video is playing or not
      * 
      */
-    async validateVideoPlaying(){
-        await browser.waitUntil(async () =>{
+    async validateVideoPlaying(){ 
+        await this.videoStatus.waitForExist({timeout: Constants.sixtySec});
+        await this.videoStatus.waitUntil(async () =>{
             return (await this.videoStatus.getText()) == 'NOW PLAYING' 
-        }, {timeout: Constants.sixtySec}
+        }, {timeout: Constants.twentySec}
         );
-        expect(await this.videoStatus).toHaveText('NOW PLAYING');
+            await browser.pause(Constants.three);
+            await this.pauseVideo();
+            const getInitialTimestamp = await this.getPlaybackTime();           
+            await this.playAndPauseClick();
+            await browser.pause(Constants.three);
+            const getFinalTimestamp = await this.getPlaybackTime();
+            console.log(getInitialTimestamp);
+            console.log(getFinalTimestamp);
+            expect(getFinalTimestamp - getInitialTimestamp).toBeGreaterThanOrEqual(1);
     }
 
 

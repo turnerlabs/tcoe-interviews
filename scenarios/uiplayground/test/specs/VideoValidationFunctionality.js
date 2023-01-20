@@ -17,18 +17,21 @@ describe('Video Functionality Validation', async () =>{
 
     it('should able to watch the main video',async () =>{
         await VideoPage.validateVideoPlaying();
+       
     });
 
    
-    it('should able to pause the video',async () =>{
-        await VideoPage.pauseVideo();
-        await VideoPage.validatePause();
-    });
+  
 
     it('should validate recommended videos ',async () =>{
         await VideoPage.validateRecommendedVideos();
     });
 
+    it('should able to pause the video',async () =>{
+        await VideoPage.pauseVideo();
+        await VideoPage.validatePause();
+    });
+    
     it('should able to play  the  paused video ',async () =>{
         await VideoPage.playAndPauseClick();
         await VideoPage.validatePlayingPausedVideo();

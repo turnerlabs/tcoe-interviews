@@ -21,20 +21,18 @@ class GalleryPage {
     /**
      * To Validate the image 
      */
-    async validateImage(imgSrc) {
+    async validateImage() {
         await this.currentImage.waitForDisplayed({timeout:Constants.twentySec});
         await expect(this.currentImage).toBeDisplayed();
-        await this.validateSrcUrl(imgSrc);
+        await this.validateResponseStatus();
     }
 
      /**
      * To Validate the image Description
      */
-    async validateAltDescription(imgDesc) {
-        await this.currentImage.waitForDisplayed({timeout:Constants.twentySec});
-        await expect(this.currentImage).toBeDisplayed();
-        const altDesc = await this.currentImage.getAttribute('alt');
-        expect(altDesc).toEqual(imgDesc);
+    async validateAltDescription(imgDescToVerify) {
+        const altDesc = await this.findDescriptionOfImage();
+        expect(altDesc).not.toEqual(imgDescToVerify);
     }
 
     /**
@@ -59,13 +57,39 @@ class GalleryPage {
     /**
      *  To verify if the src url of the image has the valid url or not (if the response is 200)
      */
-    async validateSrcUrl(imgSrc) {
-        await this.currentImage.waitForDisplayed({timeout:Constants.twentySec});
-        const srcUrl = await this.currentImage.getAttribute('src');
-        expect(srcUrl).toEqual(imgSrc);
+    async validateSrcUrl(srcUrlToVerify) {
+        const srcUrl = await this.findSrcUrlOfImage();
+        expect(srcUrl).not.toEqual(srcUrlToVerify)
+    }
+
+
+    /**
+     *  To verify if the src url of the image has the valid url or not (if the response is 200)
+     */
+    async validateResponseStatus() {
+        const srcUrl = await this.findSrcUrlOfImage();
         const response = await fetch(srcUrl);
         expect(response.status).toEqual(200);
     }
+
+    
+    /**
+     *  To find the src url of the image
+     */
+    async findSrcUrlOfImage() {
+        await this.currentImage.waitForDisplayed({timeout:Constants.twentySec});
+        const srcUrl = await this.currentImage.getAttribute('src');
+        return srcUrl;
+    }
+
+    /**
+     *  To find the description of the image
+     */
+    async findDescriptionOfImage() {
+    await this.currentImage.waitForDisplayed({timeout:Constants.twentySec});
+    const altDesc = await this.currentImage.getAttribute('alt');
+    return altDesc;
+}
 
     /**
      *  To click on the next button

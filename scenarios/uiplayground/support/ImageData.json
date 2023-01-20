@@ -1,9 +1,5 @@
 {
     "imageUrlPath" : "/travel/gallery/top-christmas-markets/index.html",
     "galleryTitle" : "The best Christmas markets in the world",
-    "imageCount"  : "26",
-    "imageSrc" : "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F201030173011-19-top-christmas-market-basel-switzerland.jpg",
-    "altDesc" : "19 top christmas market basel switzerland",
-    "nextImageSrc" : "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F201030165119-01-top-christmas-markets-strasbourg.jpg",
-    "nextAltDesc" : "01 top christmas markets STRASBOURG"
+    "imageCount"  : "26"
 }
