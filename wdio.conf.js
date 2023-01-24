@@ -3,13 +3,15 @@ exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-      runner: 'local',
+    // WebdriverIO supports running e2e tests as well as unit and component tests.
+    runner: 'local',
+    
     //
     // ==================
     // Specify Test Files
     // ==================
     // Define which test specs should run. The pattern is relative to the directory
-    // from which `wdio` was called.
+    // of the configuration file being run.
     //
     // The specs are defined as an array of spec files (optionally using wildcards
     // that will be expanded). The test for each spec file will be run in a separate
