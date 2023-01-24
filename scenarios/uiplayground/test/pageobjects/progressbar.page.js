@@ -1,5 +1,7 @@
 const Page = require('./page');
-const Utils = require('../helpers/stringUtils/progressbar')
+const Utils = require('../helpers/stringUtils/progressbar');
+const GeneralUtils = require('../helpers/stringUtils/general');
+
 
 class ProgressBarPage extends Page {
 
@@ -16,7 +18,7 @@ class ProgressBarPage extends Page {
     }
 
     open() {
-        return super.open('progressbar');
+        return super.open(GeneralUtils.PROGRESS_BAR_PATH);
     }
 
     async clickStart() {

@@ -1,4 +1,6 @@
 const Page = require('./page');
+const GeneralUtils = require('../helpers/stringUtils/general');
+
 
 class VisibilityPage extends Page {
 
@@ -7,7 +9,7 @@ class VisibilityPage extends Page {
     }
 
     open() {
-        return super.open('visibility');
+        return super.open(GeneralUtils.VISIBILITY_PATH);
     }
 
     async clickHideBtn() {

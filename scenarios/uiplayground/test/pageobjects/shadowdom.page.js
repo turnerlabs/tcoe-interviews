@@ -1,4 +1,5 @@
 const Page = require('./page');
+const GeneralUtils = require('../helpers/stringUtils/general');
 
 class ShadowDomPage extends Page {
 
@@ -15,7 +16,7 @@ class ShadowDomPage extends Page {
     }
 
     open() {
-        return super.open('shadowdom');
+        return super.open(GeneralUtils.SHADOW_DOM_PATH);
     }
 
     async clickGenerateBtn() {

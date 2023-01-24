@@ -1,4 +1,6 @@
 const Page = require('./page');
+const GeneralUtils = require('../helpers/stringUtils/general');
+
 
 class AjaxPage extends Page {
 
@@ -15,7 +17,7 @@ class AjaxPage extends Page {
     }
 
     open() {
-        return super.open('ajax');
+        return super.open(GeneralUtils.AJAX_PATH);
     }
 
     async clickAjaxBtn() {
