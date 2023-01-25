@@ -21,10 +21,7 @@ class DynamicTable extends Page {
   get warning() {
     return $(".bg-warning");
   }
-  get row(){
-    return $$("div[role='row']");
-  }
-
+  
   async open() {
     return await super.open("dynamictable");
   }
