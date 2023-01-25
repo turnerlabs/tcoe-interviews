@@ -21,6 +21,9 @@ class DynamicTable extends Page {
   get warning() {
     return $(".bg-warning");
   }
+  get row(){
+    return $$("div[role='row']");
+  }
 
   async open() {
     return await super.open("dynamictable");
@@ -79,6 +82,15 @@ class DynamicTable extends Page {
         return PATTERN.test(str);
       });
     return filtered;
+  }
+/**
+ * 
+ * @returns the amount of rows without including the header
+ */
+  async getRowsLength(){
+    let rowsLength = await this.rows.length;
+    return rowsLength -1;
+
   }
 }
 
