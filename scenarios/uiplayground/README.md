@@ -17,17 +17,24 @@ https://www.cnn.com/
 
 # Get Started
 To properly setup babel (To  use new js features), run
-* npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/register
+```bash
+npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/register
+```
 Make sure to update the node version in the babel.config.js
 To properly setup eslint for wdio, run 
-* npm i eslint --save-dev
-to install eslint, then 
-* npm install eslint-plugin-wdio --save-dev
-to install eslint wdio plugin
+```bash
+npm i eslint --save-dev
+npm install eslint-plugin-wdio --save-dev
+```
 
 # Important!
-Be sure to update your chromedriver version in the package.json and run **npm install**
+Be sure to update your chromedriver version in the package.json and run **npm install**.
+
 To run the suite, run 
-* npm run --suite cnn
+```bash
+npm run --suite cnn
+```
 To run an specific test, paste the relative path in the specs field in wdio.config.json and run
-* npx wdio
+```bash
+npx wdio
+```
