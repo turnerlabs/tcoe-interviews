@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "types": [
+            "node",
+            "webdriverio/async",
+            "@wdio/mocha-framework"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "json.schemas": [
+        { 
+          "$schema": "https://json.schemastore.org/jsconfig" 
+        }
+      ]
+}
