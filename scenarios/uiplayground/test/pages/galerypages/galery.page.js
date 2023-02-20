@@ -1,11 +1,13 @@
+import utils from "../../utils/utils"
+
 const SELECTORS = {
     PAGE_TITLE: ".Gallery__title",
     IMAGES_LIST: ".slider-list li",
     PREVIOUS_IMAGE: ".GalleryHeroDecorators__arrows div[class*='previous']",
     NEXT_IMAGE: ".GalleryHeroDecorators__arrows div[class*='next']",
-    COUNTER_OF_IMAGES: ".GalleryHeroDecorators__count",
-    IMAGE_DESCRIPTION: ".GalleryHero__caption",
-    COPYRIGTH_IMAGE: ".GalleryHero__credit"
+    COUNTER_OF_IMAGES: "div.GalleryHeroDecorators__count",
+    IMAGE_DESCRIPTION: "div.GalleryHero__caption",
+    COPYRIGTH_IMAGE: "div.GalleryHero__credit"
 }
 
 class GaleryPage {
@@ -18,7 +20,7 @@ class GaleryPage {
     }
 
     get firstImage() {
-        return $(SELECTORS.IMAGES_LIST);
+        return $(SELECTORS.IMAGES_LIST)
     }
 
     get previousImageButton() {
@@ -43,12 +45,12 @@ class GaleryPage {
 
     async getTotalOfImagesInCounter() {
         const counterText = await this.counterOfImages.getText()
-        return counterText.split('/')[1]
+        return parseInt(counterText.split('/')[1])
     }
 
     async getActualImageCounter() {
         const counterText = await this.counterOfImages.getText()
-        return counterText.split('/')[0]
+        return parseInt(counterText.split('/')[0])
     }
 
     async getAmountOfImages() {
@@ -79,7 +81,24 @@ class GaleryPage {
     }
 
     async areImageElementsDisplayed() {
-        return await this.imageDescription.isDisplayed() && this.getActualImageCounter() > 0 && await this.copyrigthImage.isDisplayed()
+        return await this.imageDescription.isDisplayed() && await this.getActualImageCounter() > 0 && await this.copyrigthImage.isDisplayed()
+    }
+
+    async verifyAllImagesDetailsAreDifferent() {
+        let isCounterUpdating = true
+        let isCopyrigthDisplayed = true
+        let descriptions = new Set()
+        let totalOfImages = await this.getAmountOfImages()
+
+        for(let i = 0; i < totalOfImages; i++) {
+            descriptions.add(await this.getImageDescription())
+            isCounterUpdating = isCounterUpdating && await this.getActualImageCounter() == (i + 1)
+            isCopyrigthDisplayed = isCopyrigthDisplayed && await this.copyrigthImage.isDisplayed()
+            if(i == 25) break
+            await utils.click(this.nextImageButton)
+            await browser.waitUntil(async () => parseInt(await this.getActualImageCounter()) == (i + 2))
+        }
+        return isCounterUpdating && descriptions.size == totalOfImages && isCopyrigthDisplayed
     }
 }
 
