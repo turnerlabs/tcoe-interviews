@@ -1,4 +1,9 @@
 class Utils {
+
+    async open(path) {
+        await browser.url(path)
+    }
+
     async getUrl() {
         return await browser.getUrl();
     }

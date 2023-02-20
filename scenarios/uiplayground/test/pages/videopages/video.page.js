@@ -54,4 +54,4 @@ class VideoPage {
     
 }
 
-export default new VideoPage();
+export default new VideoPage()
