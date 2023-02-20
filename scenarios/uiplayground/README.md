@@ -14,3 +14,16 @@ https://www.cnn.com/
 - [Exercise 1](./exercise-1.md)
 - [Exercise 2](./exercise-2.md)
 - [Exercise 3](./exercise-3.md)
+
+# Get Started
+To properly setup babel (To  use new js features), run
+* npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/register
+Make sure to update the node version in the babel.config.js
+To properly setup eslint for wdio, run 
+* npm i eslint --save-dev
+to install eslint, then 
+* npm install eslint-plugin-wdio --save-dev
+to install eslint wdio plugin
+
+# Important!
+Be sure to update your chromedriver version in the package.json and run **npm install**

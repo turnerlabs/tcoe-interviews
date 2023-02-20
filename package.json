@@ -23,7 +23,7 @@
     "@wdio/spec-reporter": "^7.24.0",
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
-    "chromedriver": "^105.0.0",
+    "chromedriver": "^109.0.0",
     "eslint": "^8.34.0",
     "eslint-plugin-wdio": "^8.0.14",
     "mocha": "^10.0.0",
