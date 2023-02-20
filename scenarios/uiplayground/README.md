@@ -27,3 +27,7 @@ to install eslint wdio plugin
 
 # Important!
 Be sure to update your chromedriver version in the package.json and run **npm install**
+To run the suite, run 
+* npm run --suite cnn
+To run an specific test, paste the relative path in the specs field in wdio.config.json and run
+* npx wdio

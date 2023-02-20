@@ -37,12 +37,12 @@ class SearchResultsPage {
 
     async isFirstResultDisplayed() {
         await this.waitForListToLoad()
-        return this.firstSearchResult.isDisplayed()
+        return await this.firstSearchResult.isDisplayed()
     }
 
-    areElementsDisplayed() {
-        return this.filterDropdown.isDisplayed() && this.newestButton.isDisplayed() && this.relevanceButton.isDisplayed()
-                && this.searchInput.isDisplayedc()
+    async areElementsDisplayed() {
+        return await this.filterDropdown.isDisplayed() && await this.newestButton.isDisplayed() && await this.relevanceButton.isDisplayed()
+                && await this.searchInput.isDisplayed()
     }
 }
 

@@ -96,7 +96,7 @@ class GaleryPage {
             isCopyrigthDisplayed = isCopyrigthDisplayed && await this.copyrigthImage.isDisplayed()
             if(i == 25) break
             await utils.click(this.nextImageButton)
-            await browser.waitUntil(async () => parseInt(await this.getActualImageCounter()) == (i + 2))
+            await utils.waitUntil(async () => parseInt(await this.getActualImageCounter()) == (i + 2))
         }
         return isCounterUpdating && descriptions.size == totalOfImages && isCopyrigthDisplayed
     }

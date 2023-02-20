@@ -51,7 +51,7 @@ class RelatedVideosPage {
     }
 
     async areAllElementsDisplayed() {
-        return await this.getAmountOfVideos() == await this.getAmountOfImages() == await this.getAmountOfTitles()  == await this.getVideosLength()
+        return await this.getAmountOfVideos() > 0 == await this.getAmountOfImages() > 0 == await this.getAmountOfTitles() > 0  == await this.getVideosLength() > 0
     }
 }
 

@@ -15,6 +15,10 @@ class Utils {
     async sendKeys(webElement, string) {
         await webElement.setValue(string);
     }
+
+    async waitUntil(func, time) {
+        browser.waitUntil(func(), {timeout: time})
+    }
 }
 
 export default new Utils();
