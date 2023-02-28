@@ -15,7 +15,7 @@ exports.config = {
     // ==================
  
     specs: [
-        './test/specs/AndroidAppDemo.js'
+        '../../test/specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -40,7 +40,7 @@ exports.config = {
         "appium:launchTimeout": 10000,
         "appium:platformVersion": "11.0",
         "platformName": "Android",
-        "appium:app": location.join(process.cwd(),"/test/resources/Android-NativeDemoApp-0.4.0.apk"),
+        "appium:app": location.join(process.cwd(),"/scenarios/androidplayground/apps/Android-NativeDemoApp-0.4.0.apk"),
         "appium:appWaitActivity": "com.wdiodemoapp.MainActivity"
       
     }],
