@@ -2,5 +2,6 @@
     "InputKeyword":"Input value",
     "defaultSelectedTab":"Home",
     "ValidPickerOptions":3,
-    "tenSeconds":10000
+    "tenSeconds":10000,
+    "compareScreenshotName":"base"
 }

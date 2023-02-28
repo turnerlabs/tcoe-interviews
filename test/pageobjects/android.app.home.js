@@ -47,17 +47,12 @@ class AndroidAppHome extends AndroidBase {
      * Method to verify the Form button 
      */
     async verifyFormBtn() {
-        expect((await this.formsBtn).isEnabled());
-        return expect((await this.formsBtn).isClickable());
-    }
-
-    /**
-     * Method to verify the selected attribute of Form button
-     * @returns the boolean
-     */
-    async isFormButtonSelected() {
-        await this.waitForElement();
-        return await this.getElementAttribute(this.formsBtn, "selected");
+        try {
+            return await this.explicitWaitDisplay(await this.formsBtn);
+        }
+        catch (error) {
+            return false;
+        }
     }
     /**
      * Method to click the form button
@@ -65,6 +60,21 @@ class AndroidAppHome extends AndroidBase {
 
     async verifyClickFormButton() {
         await this.waitAndClick(this.formsBtn);
+        await this.waitForElement();
+    }
+
+    /**
+     * Method to get the screenshot of the base image
+     */
+    async getScreenshotOfFormButton(nameOfScreenshot) {
+        return await this.takeElementScreenshot(this.formsBtn, nameOfScreenshot);
+    }
+
+    /**
+     * Method to compare the before and after click Form button
+     */
+    async compareFormButtonColorAfterClick(baseImg) {
+        return await this.compareElementImages(this.formsBtn, baseImg);
     }
 
 }

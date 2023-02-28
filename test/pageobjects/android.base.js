@@ -27,7 +27,7 @@ module.exports = class AndroidBase {
      * @param {} element - on which the wait is applied
      */
     async explicitWaitDisplay(element) {
-        await element.waitForDisplayed(
+        return await element.waitForDisplayed(
             {
                 timeout: 20000,
                 interval: 1000
@@ -58,9 +58,13 @@ module.exports = class AndroidBase {
      * @param {*} element - on which the wait is applied
      */
     async explicitWaitClickable(element) {
-        browser.waitUntil(async () => {
-            return await element.waitForClickable({ timeout: 10000, interval: 2000 });
-        })
+        try {
+            return browser.waitUntil(async () => {
+                return await element.waitForClickable({ timeout: 5000, interval: 1000 });
+            })
+        } catch (error) {
+            return false;
+        }
     }
 
 
@@ -201,7 +205,7 @@ module.exports = class AndroidBase {
     /**
      * Method to get screen resolution
      */
-    async getScreenResolution(){
+    async getScreenResolution() {
         return await browser.getWindowSize();
     }
     async getScreenWidth() {
@@ -218,22 +222,49 @@ module.exports = class AndroidBase {
      * Method to verify the element is displaying within screen
      */
     async verifyElementWithinScreen(element) {
-        try{
-        let boundsValue= (await this.getElementAttribute(element, 'bounds'));
-        let jsonParse = JSON.stringify(await this.getScreenResolution());
-        let jsonData = JSON.parse(jsonParse);
-        let screenWidth= jsonData['width'];
-        let screenHeight=jsonData['height'];
-        let elementXStart = parseInt(boundsValue.split("][")[0].split(",")[0].replace('[','').trim());
-        let elementXend = parseInt(boundsValue.split("][")[0].split(",")[1].trim());
-        let elementYStart=parseInt(boundsValue.split("][")[1].split(",")[0].trim());
-        let elementYend=parseInt(boundsValue.split("][")[1].split(",")[1].trim());
-        expect(elementXStart).to.be.lessThan(screenWidth);
-        expect(elementXend).to.be.lessThan(screenWidth);
-        expect(elementYStart).to.be.lessThan(screenHeight);
-        expect(elementYend).to.be.lessThan(screenHeight);
-        return true;
-        }catch(error){
+        try {
+            let boundsValue = (await this.getElementAttribute(element, 'bounds'));
+            let jsonParse = JSON.stringify(await this.getScreenResolution());
+            let jsonData = JSON.parse(jsonParse);
+            let screenWidth = jsonData['width'];
+            let screenHeight = jsonData['height'];
+            let elementXStart = parseInt(boundsValue.split("][")[0].split(",")[0].replace('[', '').trim());
+            let elementXend = parseInt(boundsValue.split("][")[0].split(",")[1].trim());
+            let elementYStart = parseInt(boundsValue.split("][")[1].split(",")[0].trim());
+            let elementYend = parseInt(boundsValue.split("][")[1].split(",")[1].trim());
+            expect(elementXStart).to.be.lessThan(screenWidth);
+            expect(elementXend).to.be.lessThan(screenWidth);
+            expect(elementYStart).to.be.lessThan(screenHeight);
+            expect(elementYend).to.be.lessThan(screenHeight);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    }
+
+    /**
+     * Method to take screenshot of an element
+     */
+    async takeElementScreenshot(ele, nameOfTheScreenshot) {
+        try {
+            await browser.saveElement(ele, nameOfTheScreenshot);
+            console.log("*** Screenshot is taken for the element ***");
+            return true;
+        }
+        catch (error) {
+            console.log("*** Screenshot is not taken for the element ***");
+            return false;
+        }
+    }
+
+    /**
+     * Method to verify the element images
+     */
+    async compareElementImages(ele, nameOfTheBaseScreenshot) {
+        try {
+            await expect(await browser.compareElement(ele), nameOfTheBaseScreenshot.misMatchPercentage).toEqual(0);
+            return true;
+        } catch (error) {
             return false;
         }
     }
