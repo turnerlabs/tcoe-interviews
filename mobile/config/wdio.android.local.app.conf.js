@@ -35,7 +35,7 @@ exports.config = {
   capabilities: [{
     "path": "/wd/hub",
     "appium:deviceName": "Pixel 5",
-    "appium:udid": "emulator-5554",
+    "appium:udid": "q8obxkbmcqkn996t",
     "appium:appPackage": "com.wdiodemoapp",
     "appium:launchTimeout": 10000,
     "appium:platformVersion": "11.0",
@@ -78,8 +78,10 @@ exports.config = {
   services: ['appium', [
     'native-app-compare',
     {
-        baselineFolder: 'test/resources/image-baseline',
-        screenshotPath: 'test/resources/image-compare',
+        baselineFolder: './test/resources/image-baseline',
+        screenshotPath: './test/resources/image-compare',
+        autoSaveBaseline: true,
+        ignoreNothing: true
     },
 ],
   ],

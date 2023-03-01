@@ -14,9 +14,10 @@ describe('Verify the WDIO Demo App', () => {
         expect(await AndroidAppHome.verifyFormBtn()).to.be.true;
     })
     it('Validate the color change on the selection of the form tab', async () => {
+
+        await AndroidAppHome.compareFormButtonColorAfterClick(testData.compareScreenshotName);// Creates a baseline image, if not available
         await AndroidAppHome.verifyClickFormButton();
-        await AndroidAppHome.getScreenshotOfFormButton(testData.compareScreenshotName); // Verified the color change using image comparision
-        expect(await AndroidAppHome.compareFormButtonColorAfterClick(testData.compareScreenshotName)).to.be.false;
+        expect(await AndroidAppHome.compareFormButtonColorAfterClick(testData.compareScreenshotName)).to.be.false;// Compares with baseline image after click
     })
     it('Validate the Input behaviour is working as intended', async () => {
         await AndroidAppForm.enterTextInput(testData.InputKeyword);

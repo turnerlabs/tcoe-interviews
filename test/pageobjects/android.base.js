@@ -247,6 +247,7 @@ module.exports = class AndroidBase {
      */
     async takeElementScreenshot(ele, nameOfTheScreenshot) {
         try {
+            this.waitForElement();
             await browser.saveElement(ele, nameOfTheScreenshot);
             console.log("*** Screenshot is taken for the element ***");
             return true;
@@ -260,10 +261,10 @@ module.exports = class AndroidBase {
     /**
      * Method to verify the element images
      */
-    async compareElementImages(ele, nameOfTheBaseScreenshot) {
+    async compareElementImages(ele, nameOfTheActualScreenshot) {
         try {
-            await expect(await browser.compareElement(ele), nameOfTheBaseScreenshot.misMatchPercentage).toEqual(0);
-            return true;
+            this.waitForElement();
+            await expect(await browser.compareElement(ele, nameOfTheActualScreenshot,{}).misMatchPercentage).toEqual(0);
         } catch (error) {
             return false;
         }

@@ -71,10 +71,10 @@ class AndroidAppHome extends AndroidBase {
     }
 
     /**
-     * Method to compare the before and after click Form button
+     * Method to compare the before and after click Form buttonß
      */
-    async compareFormButtonColorAfterClick(baseImg) {
-        return await this.compareElementImages(this.formsBtn, baseImg);
+    async compareFormButtonColorAfterClick(actualImg) {
+        return await this.compareElementImages(this.formsBtn, actualImg);
     }
 
 }
