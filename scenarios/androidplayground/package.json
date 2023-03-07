@@ -3,6 +3,7 @@
     "version": "5.3.1",
     "description": "Boilerplate project to run WebdriverIO tests with Appium to test native applications on iOS and Android",
     "scripts": {
+        "android:local.exercise": "wdio config/wdio.android.app.conf.ts --spec scenarios/androidplayground/tests/specs/app.form-validation.spec.ts",
         "android.browserstack.app": "wdio ./config/browserstack/wdio.android.bs.app.conf.ts",
         "android.sauce.emulators.app.eu": "REGION=eu  wdio config/saucelabs/wdio.android.emulators.app.conf.ts",
         "android.sauce.emulators.app.us": "wdio config/saucelabs/wdio.android.emulators.app.conf.ts",
@@ -47,6 +48,7 @@
         "@wdio/spec-reporter": "^7.19.7",
         "eslint-plugin-wdio": "^7.19.4",
         "ts-node": "^10.8.0",
-        "typescript": "^4.6.4"
+        "typescript": "^4.6.4",
+        "wdio-native-app-compare-service": "^2.1.0"
     }
 }

@@ -2,7 +2,7 @@ import { config } from "./wdio.shared.conf";
 
 //
 // ======
-// Appium
+// Appium & image compare services
 // ======
 //
 config.services = (config.services ? config.services : []).concat([
@@ -20,7 +20,10 @@ config.services = (config.services ? config.services : []).concat([
                 log: "./appium.log",
             },
         },
-    ],
+    ],['native-app-compare',{ baselineFolder: './test/resources/image-baseline',
+    screenshotPath: './test/resources/image-compare',
+    autoSaveBaseline: true,
+    ignoreNothing: true }],
 ]);
 //
 // =====================
