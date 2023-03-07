@@ -1,0 +1,6 @@
+{
+    "inputText":"WebdriverIO",
+    "dropDownOptions" : ["webdriver.io is awesome","Appium is awesome","This app is awesome"],
+    "nav-bar":["Webview","Login","Swipe","Drag","Forms","Home"],
+    "screenshot":"from-btn"
+}
