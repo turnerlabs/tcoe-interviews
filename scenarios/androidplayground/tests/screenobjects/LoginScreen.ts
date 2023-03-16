@@ -77,6 +77,24 @@ class LoginScreen extends AppScreen {
         await Gestures.checkIfDisplayedWithSwipeUp(await this.signUpButton, 2);
         await this.signUpButton.click();
     }
+
+    async setUserName({ username}:{username:string}) {
+        await this.email.setValue(username);
+        
+    }
+
+    async setPassword({ password }:{password:string;}) {
+        await this.password.setValue(password);
+    }
+
+    async getUserName() {
+        return await this.email
+        
+    }
+
+    async getPassword() {
+        return await this.password;
+    }
 }
 
 export default new LoginScreen();

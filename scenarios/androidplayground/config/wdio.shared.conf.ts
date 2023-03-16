@@ -10,6 +10,7 @@ export const config: WebdriverIO.Config = {
     // ====================
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
+    path:"/wd/hub/",
     runner: "local",
     //
     // ==================
@@ -90,7 +91,7 @@ export const config: WebdriverIO.Config = {
     // - wdio.shared.local.appium.conf.ts
     // - wdio.shared.sauce.conf.ts
     // configuration files
-    services: [],
+    
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -111,6 +112,24 @@ export const config: WebdriverIO.Config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ["spec"],
+
+    services:[
+        ['image-comparison',
+        // The options
+        {
+            // Some options, see the docs for more
+            baselineFolder: './tests/sauceLabsBaseline/',
+            formatImageName: '{tag}-{logName}-{width}x{height}',
+            screenshotPath:  '.tmp/',
+            savePerInstance: true,
+            autoSaveBaseline: true,
+            blockOutStatusBar: true,
+            blockOutToolBar: true,
+            // NOTE: When you are testing a hybrid app please use this setting
+            isHybridApp: true,
+        }]
+    
+    ],
     // Options to be passed to Mocha.
     mochaOpts: {
         ui: "bdd",
