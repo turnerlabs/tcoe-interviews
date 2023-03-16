@@ -1,0 +1,12 @@
+{
+    "sampleData": [
+      {
+        "sampleEnteredValue": "WarnerMedia"
+      }
+    ],
+    "alertButtonTypes":[
+      "ok", 
+      "cancel", 
+      "AskMeLater"
+    ]
+  }

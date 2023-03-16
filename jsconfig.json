@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "types": [
+            "node",
+            "@wdio/mocha-framework"
+        ],
+        "module": "CommonJS",
+        "target": "ES2019"
+    }
+}
