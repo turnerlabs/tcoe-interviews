@@ -37,7 +37,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/*.js'
+        '../test/specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -160,11 +160,11 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: [
                      'spec',
-                    //  ['allure', {
-                    //     outputDir: 'allure-results',
-                    //     disableWebdriverStepsReporting: true,
-                    //     disableWebdriverScreenshotsReporting: false,
-                    // }]
+                     ['allure', {
+                        outputDir: 'allure-results',
+                        disableWebdriverStepsReporting: true,
+                        disableWebdriverScreenshotsReporting: false,
+                    }]
             ],
     //
     // Options to be passed to Mocha.

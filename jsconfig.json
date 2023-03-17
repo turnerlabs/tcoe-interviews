@@ -4,6 +4,7 @@
         "esModuleInterop": true,
         "types": [
             "node",
+            "@wdio/globals/types",
             "@wdio/mocha-framework"
         ],
         "module": "CommonJS",
