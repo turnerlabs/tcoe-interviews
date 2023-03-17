@@ -1,8 +1,8 @@
-const homepage = require('../pageobjects/homePage.js');
-const formsPage = require('../pageobjects/formsPage.js');
-const commonActions = require('../util/commonActions.js');
-const constants = require('../constants/constants.js');
-const testData = require('../testdata/sample.json');
+import homepage from "../pageObjects/homepage";
+import formsPage from "../pageObjects/formsPage.js";
+import testData from "../testdata/sample.json";
+import commonActions from "../util/commonActions.js";
+import constants from "../constants/constants.js";
 
 describe('Warner media applications', () => {
     it('Validate the default selection of the tab', async () => {

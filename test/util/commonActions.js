@@ -1,4 +1,4 @@
-const homePageLocators = require('../locators/homePageLocators.js');
+import homePageLocators from '../locators/homePageLocators.js';
 
 class commonAction{
 
@@ -90,5 +90,4 @@ class commonAction{
         }
     }
 }
-
-module.exports =  new commonAction();
+export default new commonAction();

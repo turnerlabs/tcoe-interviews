@@ -1,16 +1,8 @@
-// import Page from "./page";
-// import formsPageLocators from "../locators/formsPageLocators";
-// import constants from "../constants/constants";
-// import testData from "../testdata/sample.json";
-// import commonActions from "../util/commonActions";
-
-const page = require('../pageObjects/page');
-const formsPageLocators = require('../locators/formsPageLocators');
-const constants = require('../constants/constants');
-const testData = require('../testdata/sample.json');
-const commonActions = require('../util/commonActions');
-
-
+import page from "./page";
+import formsPageLocators from "../locators/formsPageLocators";
+import constants from "../constants/constants";
+import testData from "../testdata/sample.json";
+import commonActions from "../util/commonActions";
 class formsPage extends page {
 
     /**
@@ -215,4 +207,4 @@ class formsPage extends page {
     }
 }
 
-module.exports = new formsPage();
+export default new formsPage();

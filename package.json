@@ -11,7 +11,7 @@
     "wdio": "wdio run config/wdio.conf.js",
     "report-open": "allure open allure-report",
     "report-generate": "allure generate --clean allure-results",
-    "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs"
+    "pretest": "rimraf allure-results && rimraf allure-results && rimraf test-screenshots && rimraf wdio-logs"
   },
   "keywords": [],
   "author": "",

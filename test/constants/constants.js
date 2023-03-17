@@ -7,5 +7,4 @@ class constants {
     selectDropDownValuesCount = 3;
     screenShotName = "formButton";
 }
-
-module.exports =  new constants();
+export default new constants();

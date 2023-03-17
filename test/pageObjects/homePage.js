@@ -1,6 +1,6 @@
-const page = require('../pageObjects/page');
-const constants = require('../constants/constants.js');
-const homePageLocators = require('../locators/homePageLocators');
+import page from "./page";
+import constants from "../constants/constants.js";
+import homePageLocators from "../locators/homePageLocators.js";
 
 class homePage extends page {
 
@@ -46,5 +46,4 @@ class homePage extends page {
         await expect(formsTab).toBeSelected();
     }
 }
-
-module.exports = new homePage();
+export default new homePage();

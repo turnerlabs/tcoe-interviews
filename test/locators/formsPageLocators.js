@@ -1,4 +1,4 @@
-const constants =  require('../constants/constants');
+import constants from '../constants/constants';
 
 class formsPageLocators {
 
@@ -65,4 +65,4 @@ class formsPageLocators {
 
 }
 
-module.exports = new formsPageLocators();
+export default new formsPageLocators();

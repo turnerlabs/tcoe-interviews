@@ -14,4 +14,4 @@ class homePageLocators {
     }
 }
 
-module.exports = new homePageLocators();
+export default new homePageLocators();
