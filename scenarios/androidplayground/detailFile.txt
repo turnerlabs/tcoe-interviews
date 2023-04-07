@@ -1,0 +1,9 @@
+Created a very basic framework for wdio app
+In Test folder we have page object package nad test package
+Integrated alllure and specs reproter
+To run this test case follow the below steps:
+    a. go to ANDROIDPLAYGROUND folder in terminal
+    b. run "npm install" command on terminal
+    c. before running the test case make sure you have running emulater or device
+    d. run "npm run wdio" on terminal
+    e. Allure report integrated once execution is done ,it will automatically launch.   
