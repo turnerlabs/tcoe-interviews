@@ -2,7 +2,25 @@
     "name": "appium-boilerplate",
     "version": "5.3.1",
     "description": "Boilerplate project to run WebdriverIO tests with Appium to test native applications on iOS and Android",
-    "scripts": {"wdio": "wdio run ./tests/config/wdio.conf.js"},
+    "scripts": {
+    "wdio": "wdio run ./tests/config/wdio.conf.js", 
+    "android.browserstack.app": "wdio ./config/browserstack/wdio.android.bs.app.conf.ts",
+    "android.sauce.emulators.app.eu": "REGION=eu  wdio config/saucelabs/wdio.android.emulators.app.conf.ts",
+    "android.sauce.emulators.app.us": "wdio config/saucelabs/wdio.android.emulators.app.conf.ts",
+    "android.sauce.rdc.app.eu": "REGION=eu wdio config/saucelabs/wdio.android.rdc.app.conf.ts",
+    "android.sauce.rdc.app.us": "wdio config/saucelabs/wdio.android.rdc.app.conf.ts",
+    "android.app": "wdio config/wdio.android.app.conf.ts",
+    "android.browser": "wdio config/wdio.android.browser.conf.ts",
+    "ios.app": "wdio config/wdio.ios.app.conf.ts",
+    "ios.sauce.simulators.app.eu": "REGION=eu wdio ./config/saucelabs/wdio.ios.simulators.app.conf.ts",
+    "ios.sauce.simulators.app.us": "wdio ./config/saucelabs/wdio.ios.simulators.app.conf.ts",
+    "ios.browser": "wdio config/wdio.ios.browser.conf.ts",
+    "lint": "eslint config tests"
+        },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webdriverio/appium-boilerplate.git"
+    },
     "keywords": [
         "WebdriverIO",
         "WebDriver",
@@ -12,7 +30,16 @@
         "android",
         "ios"
     ],
+    "author": "Wim Selles <wim@wswebcreation.nl>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/webdriverio/appium-boilerplate/issues"
+    },
+    "homepage": "https://github.com/webdriverio/appium-boilerplate#readme",
     "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.25.0",
+        "@typescript-eslint/parser": "^5.25.0",
+        "@wdio/browserstack-service": "^8.7.0",
         "@babel/core": "^7.21.4",
         "@babel/preset-env": "^7.21.4",
         "@babel/register": "^7.21.0",
@@ -23,7 +50,11 @@
         "@wdio/mocha-framework": "^8.7.0",
         "@wdio/spec-reporter": "^8.7.0",
         "appium": "^1.22.3",
-        "wdio-wait-for": "^3.0.3"
+        "wdio-wait-for": "^3.0.3",
+        "@wdio/sauce-service": "^8.7.0",
+        "eslint-plugin-wdio": "^7.19.4",
+        "ts-node": "^10.8.0",
+        "typescript": "^4.6.4"
     },
     "dependencies": {
         "allure-commandline": "^2.21.0",
