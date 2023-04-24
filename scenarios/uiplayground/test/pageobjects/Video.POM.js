@@ -88,7 +88,7 @@ class VideoPage extends BaseURL {
 
         expect (await $(SETTINGS_OFF).isDisplayed()).to.be.true;
         await $(SETTINGS_OFF).click()
-        await $(SETTINGS_OFF).waitForDisplayed()
+        await $(SETTINGS_ON).waitForDisplayed()
         expect (await $(SETTINGS_OFF).isDisplayed()).to.be.false;
 
         expect (await $(SETTINGS_ON).isDisplayed()).to.be.true;
