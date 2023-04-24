@@ -3,7 +3,7 @@ const Search = require('../pageobjects/Search.POM')
 const VideoPage = require("../pageobjects/Video.POM")
 const Gallery = require("../pageobjects/Gallery.POM")
 
-const textToSearch = 'India' //Text to be entered in search box
+const textToSearch = 'India' //Text to be entered in search box 
 let expectedNextCount = '2 of 26'
 let expectedPrevCount = '1 of 26'
 let invalidExpectedNextCount = '1 of 26'
