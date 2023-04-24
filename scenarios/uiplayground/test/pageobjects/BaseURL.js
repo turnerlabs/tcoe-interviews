@@ -1,5 +1,5 @@
 module.exports = class BaseURL {
-    open (path) {
+    open (path) { 
         return browser.url(`https://www.cnn.com/${path}`)
     }
 }
