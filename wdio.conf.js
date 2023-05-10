@@ -23,7 +23,7 @@ export const config = {
     // will be called from there.
     //
     specs: [
-        './scenarios/uiplayground/test/specs/assignments.js'
+        './scenarios/uiplayground/test/specs/assessment.js'
         
     ],
     // Patterns to exclude.
