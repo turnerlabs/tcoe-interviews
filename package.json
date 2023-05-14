@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "local:api": "node ./scenarios/apiplayground/api/server.js",
-    "test:stocksapi": "mocha ./scenarios/apiplayground/test/**/*.js",
+    "test:stocksapi": "mocha ./scenarios/apiplayground/test/**/*.js --reporter mochawesome",
     "test:uiplayground": "mocha ./scenarios/uiplayground/test/**/*.js",
     "mobile:android:local": "wdio mobile/config/wdio.android.local.app.conf.js"
   },
