@@ -1,0 +1,8 @@
+{
+    "API": {
+        "BASE_URL": "http://localhost:3000/api/stocks?date=",
+        "INVALID_BASE_URL":"http://localhost:3000/api/stock?date=",
+        "DATE_PARAMETER": "14-May-2023",
+        "INVALID_DATE_PARAMETER": "02-May-2023"
+    }
+}
